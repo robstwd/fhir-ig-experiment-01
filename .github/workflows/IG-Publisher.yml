@@ -1,0 +1,67 @@
+name: Run IG Publisher and Validator
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    
+    - name: Setup JVM
+      uses: actions/setup-java@v1
+      with:
+        java-version: '13.0.2'
+    
+    - name: Download FHIR IG Publisher
+      run: wget -q https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -O publisher.jar
+    
+    - name: Download FHIR validator
+      run: wget -q https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -O validator.jar
+    
+    - name: Install Jekyll
+      run: gem install jekyll
+    
+    - name: Build with FHIR IG Publisher
+      run: java -jar publisher.jar -ig ig.ini
+    
+    # due to certain ImplementationGuide parameter values, the validation is performed against 4.4.0
+    # otherwise, against 4.0.1, the validator returns errors re the unknown parameters  
+    - name: Validate ImplementationGuide resources, against FHIRVersion 4.4.0
+      run: java -jar validator.jar  -version 4.4.0 input/resources/ImplementationGuide/*.xml
+    
+    # validate the meta StructureDefinition resource, against core FHIRVersion 4.0.1
+    - name: Validate meta StructureDefinition resource, against core FHIRVersion 4.0.1
+      run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition-meta/*.xml
+    
+    # validate StructureDefinition resources, against core FHIRVersion 4.0.1
+    - name: Validate StructureDefinition resources, against core FHIRVersion 4.0.1
+      run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition/*.xml
+      
+    # validate StructureDefinition resources, against the meta StructureDefinition profile that checks metadata and structure
+    - name: Validate StructureDefinition resources, against the meta StructureDefinition profile that checks metadata and structure
+      run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition/*.xml -ig fhir.ig.experiment.01#dev -profile "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1"
+    
+    # validate all Observation resources against the 4.0.1 spec
+    - name: Validate all Observation resources against the 4.0.1 spec
+      run: java -jar validator.jar -version 4.0.1 input/resources/Observation/*.xml
+    
+    # validate all Patient resources against the 4.0.1 spec
+    - name: Validate all Patient resources against the 4.0.1 spec
+      run: java -jar validator.jar -version 4.0.1 input/resources/Patient/*.xml
+      
+    # deploy outputs to ./docs folder for publishing to GitHub pages
+    # TODO
+    - name: Deploy outputs to GitHub pages
+      run: echo TODO

@@ -1,0 +1,20 @@
+language: ruby
+
+jdk: openjdk11
+
+rvm: 2.5
+
+env:
+- JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+
+before_install: 
+- gem install jekyll
+
+before_script:
+- mkdir tools
+- wget -q https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -O tools/publisher.jar
+- wget -q https://github.com/hapifhir/org.hl7.fhir.core/releases/download/5.0.10/validator_cli.jar -O tools/validator.jar
+
+script:
+- java -jar tools/publisher.jar -ig ig.ini
+- java -jar tools/validator.jar -ig output/validator-fhir.ig.experiment.01.pack -version 4.4.0 input/resources/ImplementationGuide/*.xml

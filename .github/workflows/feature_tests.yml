@@ -1,0 +1,42 @@
+name: Run feature tests with cucumber
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    
+    - name: Setup JVM
+      uses: actions/setup-java@v1
+      with:
+        java-version: '13.0.2'
+    
+    - name: Download FHIR IG Publisher
+      run: wget -q https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -O org.hl7.fhir.publisher.jar
+    
+    - name: Install Jekyll, for IG Publisher
+      run: gem install jekyll
+    
+    - name: Build with FHIR IG Publisher
+      run: java -jar org.hl7.fhir.publisher.jar -ig ig.ini
+    
+    - name: Install bundler and install gems, for cucumber tests
+      run: |
+        gem install bundler
+        bundle install --jobs 4
+    
+    - name: Run cucumber tests
+      run: bundle exec cucumber --color
