@@ -1,0 +1,24 @@
+﻿FHIRIGExperiment01 : Validation Results
+=========================================
+
+err = 1, warn = 1, info = 0
+IG Publisher Version: 1.1.17
+Generated Fri Sep 04 02:37:00 UTC 2020. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
+
+ Build Errors : 0 / 0 / 0
+ /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/ImplementationGuide/fhir.ig.experiment.01 : 0 / 0 / 1
+ /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/Patient/patient-example-01 : 1 / 0 / 1
+ /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-meta-1 : 0 / 1 / 1
+ /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/Patient-base : 0 / 0 / 1
+</table>
+== n/a ==
+== /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/ImplementationGuide/fhir.ig.experiment.01.xml ==
+INFORMATION: ImplementationGuide/fhir.ig.experiment.01: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+== /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/Patient/patient-example-01.xml ==
+INFORMATION: Patient/patient-example-01: Patient: Validate resource against profile https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base
+ERROR: Patient/patient-example-01: Patient: Profile https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base, Element 'Patient.gender': minimum required = 1, but only found 0
+== /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-meta-1.xml ==
+INFORMATION: StructureDefinition/structuredefinition-meta-1: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+WARNING: StructureDefinition.where(url = 'https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1'): The Implementation Guide contains no examples for this profile
+== /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/Patient-base.xml ==
+INFORMATION: StructureDefinition/Patient-base: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition

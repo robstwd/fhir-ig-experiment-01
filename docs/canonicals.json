@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fhir.ig.experiment.01",
+    "type": "ImplementationGuide",
+    "url": "https://about.me/robeastwood/fhir/ig/ImplementationGuide/fhir.ig.experiment.01",
+    "version": "0.0.1",
+    "name": "FHIRIGExperiment01"
+  },
+  {
+    "id": "Patient-base",
+    "type": "StructureDefinition",
+    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base",
+    "version": "0.0.1",
+    "name": "PatientBase"
+  },
+  {
+    "id": "structuredefinition-meta-1",
+    "type": "StructureDefinition",
+    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1",
+    "version": "0.0.1",
+    "name": "StructureDefinitionMeta"
+  }
+]

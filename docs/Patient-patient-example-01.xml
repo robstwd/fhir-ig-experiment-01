@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="patient-example-01"/>
+  <meta>
+    <profile value="https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>id</b>: patient-example-01</p><p><b>meta</b>: </p><p><b>name</b>: Jack Smith , John Jacob Jingleheimer Smith (OFFICIAL), John Jacob Jingleheimer Smith (OFFICIAL)</p><p><b>birthDate</b>: 1955-05-30</p></div>
+  </text>
+  <name>
+    <use value="usual"/>
+    <family value="Smith"/>
+    <given value="Jack"/>
+  </name>
+  <name>
+    <use value="official"/>
+    <family value="Smith"/>
+    <given value="John"/>
+    <given value="Jacob"/>
+    <given value="Jingleheimer"/>
+    <period>
+      <end value="2001-01-01"/>
+    </period>
+  </name>
+  <name>
+    <use value="official"/>
+    <family value="Smith"/>
+    <given value="John"/>
+    <given value="Jacob"/>
+    <given value="Jingleheimer"/>
+    <period>
+      <start value="2001-01-01"/>
+    </period>
+  </name>
+<!-- 
+  <gender value="male"/>
+ -->
+  <birthDate value="1955-05-30"/>
+</Patient>
