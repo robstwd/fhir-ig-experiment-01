@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: patient-example-01</p><p><b>meta</b>: </p><p><b>name</b>: Jack Smith , John Jacob Jingleheimer Smith (OFFICIAL), John Jacob Jingleheimer Smith (OFFICIAL)</p><p><b>birthDate</b>: 1955-05-30</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: patient-example-01</p><p><b>meta</b>: </p><p><b>name</b>: Jack Smith , John Jacob Jingleheimer Smith (OFFICIAL), John Jacob Jingleheimer Smith (OFFICIAL)</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1955-05-30</p></div>"
   },
   "name": [
     {
@@ -43,5 +43,6 @@
       }
     }
   ],
+  "gender": "male",
   "birthDate": "1955-05-30"
 }

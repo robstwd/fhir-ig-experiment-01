@@ -17,7 +17,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: patient-example-01</p><p><b>meta</b>: </p><p><b>name</b>: Jack Smith , John Jacob Jingleheimer Smith (OFFICIAL), John Jacob Jingleheimer Smith (OFFICIAL)</p><p><b>birthDate</b>: 1955-05-30</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: patient-example-01</p><p><b>meta</b>: </p><p><b>name</b>: Jack Smith , John Jacob Jingleheimer Smith (OFFICIAL), John Jacob Jingleheimer Smith (OFFICIAL)</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1955-05-30</p></div>"
   ];
   fhir:Patient.name [
      fhir:index 0;
@@ -62,6 +62,7 @@
        fhir:Period.start [ fhir:value "2001-01-01"^^xsd:date ]
      ]
   ];
+  fhir:Patient.gender [ fhir:value "male"];
   fhir:Patient.birthDate [ fhir:value "1955-05-30"^^xsd:date] .
 
 # - ontology header ------------------------------------------------------------
