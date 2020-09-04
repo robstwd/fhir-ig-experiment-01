@@ -61,7 +61,15 @@ jobs:
     - name: Validate all Patient resources against the 4.0.1 spec
       run: java -jar validator.jar -version 4.0.1 input/resources/Patient/*.xml
       
+    # create ./docs folder for publishing to GitHub pages
+    - name: Move to output to publish subdirectory
+      run: |
+          mkdir ./publish
+          mv ./output ./publish/docs
+
     # deploy outputs to ./docs folder for publishing to GitHub pages
-    # TODO
-    - name: Deploy outputs to GitHub pages
-      run: echo TODO
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./publish
