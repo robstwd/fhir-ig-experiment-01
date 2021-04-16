@@ -8,4 +8,4 @@ An experimental, externally-template-driven implementation guide being used as a
 ## Experimenting with
 1. GitHub actions
 1. Cucumber feature testing
-1. Deploying IG Publisher outputs to GH pages via Github action
+1. Deploying IG Publisher outputs to GH pages via Github action 
