@@ -11,7 +11,7 @@
   "title": "FHIR Implentation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2020-09-09T10:20:24+00:00",
+  "date": "2021-04-16T11:35:32+00:00",
   "contact": [
     {
       "telecom": [
@@ -333,10 +333,6 @@
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "StructureDefinition:resource"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "StructureDefinition-Patient-base.html"
           }
         ],
         "reference": {
@@ -350,10 +346,6 @@
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "StructureDefinition:resource"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "StructureDefinition-structuredefinition-meta-1.html"
           }
         ],
         "reference": {
@@ -367,10 +359,6 @@
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "Patient"
-          },
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "Patient-patient-example-01.html"
           }
         ],
         "reference": {
@@ -457,6 +445,10 @@
       {
         "code": "path-resource",
         "value": "input/history"
+      },
+      {
+        "code": "path-resource",
+        "value": "fsh-generated/resources"
       },
       {
         "code": "path-pages",

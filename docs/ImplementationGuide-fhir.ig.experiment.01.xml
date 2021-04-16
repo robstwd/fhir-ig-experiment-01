@@ -12,7 +12,7 @@
   <title value="FHIR Implentation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2020-09-09T10:20:24+00:00"/>
+  <date value="2021-04-16T11:35:32+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -210,9 +210,6 @@
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-Patient-base.html"/>
-      </extension>
       <reference>
         <reference value="StructureDefinition/Patient-base"/>
       </reference>
@@ -223,9 +220,6 @@
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-structuredefinition-meta-1.html"/>
-      </extension>
       <reference>
         <reference value="StructureDefinition/structuredefinition-meta-1"/>
       </reference>
@@ -235,9 +229,6 @@
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Patient-patient-example-01.html"/>
       </extension>
       <reference>
         <reference value="Patient/patient-example-01"/>
@@ -319,6 +310,10 @@
     <parameter>
       <code value="path-resource"/>
       <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
     </parameter>
     <parameter>
       <code value="path-pages"/>
