@@ -21,7 +21,6 @@ Then('{string} has cardinality {string}') do |element_name, cardinality|
 end
 
 Then('{string} has its default cardinality') do |element_name|
-  # pending # Write code here that turns the phrase above into concrete actions
   expect(@profile).to have_element_with_default_cardinality(element_name)
 end
 
@@ -30,7 +29,5 @@ Then('{string} has an invariant {string}') do |element_name, invariant|
 end
 
 Then('{string} is bound to {string} as {string}') do |element_name, valueset, strength|
-  # pending # Write code here that turns the phrase above into concrete actions
   expect(@profile).to have_element_with_binding(element_name, valueset, strength)
-
 end
