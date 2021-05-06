@@ -5,7 +5,7 @@
 
 Given(/^the profile "(.*?)" exists$/) do |profile|
   @profile = profile
-  expect(profile).to be_included_in_ig
+  expect(@profile).to be_included_in_ig
 end
 
 Then('it has been derived from {string}') do |string|
