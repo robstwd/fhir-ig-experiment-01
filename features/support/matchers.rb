@@ -16,6 +16,7 @@ class NodePresentMustSupportNotSetError < StandardError; end
 class NodePresentMustSupportFalseError < StandardError; end
 class ConstraintNotPresentError < StandardError; end
 class BindingNotPresentError < StandardError; end
+class FileNotPresentError < StandardError; end
 
 module MatcherHelpers
   def get_profile_id(profile_name)
@@ -27,7 +28,16 @@ module MatcherHelpers
   end
 
   def get_filename(profile_id)
-    return "#{Dir.pwd}/output/StructureDefinition-#{profile_id}.xml"
+    begin
+      file = "#{Dir.pwd}/output/StructureDefinition-#{profile_id}.xml"
+      if File.exist?(file) then
+        return file
+      else
+        raise(FileNotPresentError)
+      end
+    rescue FileNotPresentError
+      puts "file '../output/StructureDefinition-#{profile_id}.xml' not found"
+    end
   end
 
   def get_nokogiri_doc(file)
