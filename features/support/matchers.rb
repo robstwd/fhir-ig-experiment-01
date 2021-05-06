@@ -95,8 +95,11 @@ RSpec::Matchers.define :be_included_in_ig do
   end
 
   failure_message do |source|
+    "\n" \
     "VALIDATION FAILURE:\n" \
-    "The profile '#{@profile_name}' does not exist\n"
+    "The profile '#{@profile_name}' does not exist in the generated output directory\n" \
+    "Expecting file: '../output/StructureDefinition-#{@profile_id}.html'\n" \
+    "\n"
   end
 
 end
@@ -127,10 +130,12 @@ RSpec::Matchers.define :be_derived_from do |primary_resource|
   end
 
   failure_message do |source|
+    "\n" \
     "VALIDATION FAILURE:\n" \
     "The profile '#{@profile_name}' has the incorrect baseDefinition value.\n" \
     " - expected:           <#{@expected_baseDefinition}>\n" \
-    " - instead found:      <#{@actual_baseDefinition}>\n"
+    " - instead found:      <#{@actual_baseDefinition}>\n" \
+    "\n"
   end
 
 end
