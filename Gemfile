@@ -9,4 +9,5 @@ group :development do
   gem 'libnotify'
   gem 'cucumber'
   gem 'syntax'
+  gem 'tty-command'
 end

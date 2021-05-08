@@ -43,6 +43,7 @@ GEM
       cucumber-messages (~> 13.0, >= 13.0.1)
     diff-lcs (1.4.4)
     ffi (1.13.1)
+    ffi (1.13.1-x64-mingw32)
     formatador (0.2.5)
     guard (2.16.2)
       formatador (>= 0.2.4)
@@ -78,9 +79,13 @@ GEM
     nokogiri (1.11.0)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    nokogiri (1.11.0-x64-mingw32)
+      racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -112,12 +117,16 @@ GEM
       ffi (>= 1.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
+    tty-color (0.6.0)
+    tty-command (0.10.1)
+      pastel (~> 0.8)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   cucumber
@@ -128,6 +137,7 @@ DEPENDENCIES
   nokogiri
   rspec
   syntax
+  tty-command
 
 BUNDLED WITH
    2.1.4
