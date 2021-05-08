@@ -31,16 +31,8 @@ module MatcherHelpers
   end
 
   def get_filename(profile_id)
-    begin
       file = "#{Dir.pwd}/output/StructureDefinition-#{profile_id}.xml"
-      if File.exist?(file) then
-        return file
-      else
-        raise(FileNotPresentError)
-      end
-    rescue FileNotPresentError
-      puts "file '../output/StructureDefinition-#{profile_id}.xml' not found"
-    end
+      return file
   end
 
   def get_nokogiri_doc(file)
@@ -131,25 +123,46 @@ RSpec::Matchers.define :be_derived_from do |primary_resource|
   include MatcherHelpers
 
   match do |source|
-    # profile under test
-    @profile_name = source
-    @profile_id = get_profile_id(@profile_name)
-    # puts @profile_name, @profile_id
+    
+    begin
 
-    # primary resource that is expected
-    @primary_resource = primary_resource
-    @expected_baseDefinition = get_resource_url(@primary_resource)
-    # puts @primary_resource, @expected_baseDefinition
+      # profile under test
+      @profile_name = source
+      @profile_id = get_profile_id(@profile_name)
+      # puts @profile_name, @profile_id
 
-    # find the actual baseDefinition value in the profile
-    @actual_baseDefinition = get_baseDefinition(@profile_id)
-    #~ puts @actual_baseDefinition
+      # primary resource that is expected
+      @primary_resource = primary_resource
+      @expected_baseDefinition = get_resource_url(@primary_resource)
+      # puts @primary_resource, @expected_baseDefinition
 
-    @error_msg = "The profile '#{@profile_name}' has the incorrect baseDefinition value.\n" \
+      # get profile file path and name
+      profile_filename = get_filename(@profile_id)
+
+      # if profile exists then
+      if File.exist?(profile_filename)
+        puts "profile exists"
+
+        # find the actual baseDefinition value in the profile
+        @actual_baseDefinition = get_baseDefinition(@profile_id)
+
+        @error_msg = "The profile '#{@profile_name}' has the incorrect baseDefinition value.\n" \
                  " - expected:        <#{@expected_baseDefinition}>\n" \
                  " - instead found:   <#{@actual_baseDefinition}>"
 
-    expect(@actual_baseDefinition).to eq(@expected_baseDefinition)
+        expect(@actual_baseDefinition).to eq(@expected_baseDefinition)
+
+      # when the profile file does not exist
+      else
+        puts "profile does not exist"
+        raise(FileNotPresentError)
+      end
+
+    rescue FileNotPresentError
+      @error_msg = "The generated profile StructureDefinition xml file does not exist\n" \
+                 " Expecting file: '../output/StructureDefinition-#{@profile_id}.xml'"
+      false
+    end
 
   end
 
