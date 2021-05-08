@@ -14,10 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - name: Set up Ruby 2.7
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: 2.7.x
+        bundler-cache: true
     
     - name: Setup JVM
       uses: actions/setup-java@v1
@@ -32,11 +33,6 @@ jobs:
     
     - name: Build with FHIR IG Publisher
       run: java -jar org.hl7.fhir.publisher.jar -ig ig.ini
-    
-    - name: Install bundler and install gems, for cucumber tests
-      run: |
-        gem install bundler
-        bundle install --jobs 4
     
     - name: Run cucumber tests
       run: bundle exec cucumber --color
