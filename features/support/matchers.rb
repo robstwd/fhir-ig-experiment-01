@@ -11,6 +11,9 @@ RESOURCES = {
   "R4 Patient resource" => "http://hl7.org/fhir/StructureDefinition/Patient"
   }
 
+FAILURE_MESSAGE_START = "\n VALIDATION FAILURE:\n "
+FAILURE_MESSAGE_END   = "\n\n"
+
 class NodeNotPresentError < StandardError; end
 class NodePresentMustSupportNotSetError < StandardError; end
 class NodePresentMustSupportFalseError < StandardError; end
@@ -89,6 +92,12 @@ module MatcherHelpers
     return "#{min}..#{max}"
   end
 
+  def print_failure_message(error_msg)
+    "#{FAILURE_MESSAGE_START}" \
+    "#{error_msg}" \
+    "#{FAILURE_MESSAGE_END}"
+  end
+
 end
 
 
@@ -101,15 +110,16 @@ RSpec::Matchers.define :be_included_in_ig do
     @profile_name = source
     @profile_id = get_profile_id(@profile_name)
     @file = "#{Dir.pwd}/output/StructureDefinition-#{@profile_id}.html"
+    
+    @error_msg = "The profile '#{@profile_name}' does not exist in the generated output directory\n" \
+                 " Expecting file: '../output/StructureDefinition-#{@profile_id}.html'"
+
     expect(File.exist?(@file)).to be_truthy
+
   end
 
   failure_message do |source|
-    "\n" \
-    "VALIDATION FAILURE:\n" \
-    "The profile '#{@profile_name}' does not exist in the generated output directory\n" \
-    "Expecting file: '../output/StructureDefinition-#{@profile_id}.html'\n" \
-    "\n"
+    print_failure_message(@error_msg)
   end
 
 end
@@ -124,28 +134,27 @@ RSpec::Matchers.define :be_derived_from do |primary_resource|
     # profile under test
     @profile_name = source
     @profile_id = get_profile_id(@profile_name)
-    #~ puts @profile_name, @profile_id
+    # puts @profile_name, @profile_id
 
     # primary resource that is expected
     @primary_resource = primary_resource
     @expected_baseDefinition = get_resource_url(@primary_resource)
-    #~ puts @primary_resource, @expected_baseDefinition
+    # puts @primary_resource, @expected_baseDefinition
 
     # find the actual baseDefinition value in the profile
     @actual_baseDefinition = get_baseDefinition(@profile_id)
     #~ puts @actual_baseDefinition
+
+    @error_msg = "The profile '#{@profile_name}' has the incorrect baseDefinition value.\n" \
+                 " - expected:        <#{@expected_baseDefinition}>\n" \
+                 " - instead found:   <#{@actual_baseDefinition}>"
 
     expect(@actual_baseDefinition).to eq(@expected_baseDefinition)
 
   end
 
   failure_message do |source|
-    "\n" \
-    "VALIDATION FAILURE:\n" \
-    "The profile '#{@profile_name}' has the incorrect baseDefinition value.\n" \
-    " - expected:           <#{@expected_baseDefinition}>\n" \
-    " - instead found:      <#{@actual_baseDefinition}>\n" \
-    "\n"
+    print_failure_message(@error_msg)
   end
 
 end
@@ -209,9 +218,7 @@ RSpec::Matchers.define :have_must_support_set_to_true_for_element do |element_na
   end
 
   failure_message do |source|
-
-    "VALIDATION FAILURE:\n #{@error_msg}"
-
+    print_failure_message(@error_msg)
   end
 
 end
@@ -250,17 +257,16 @@ RSpec::Matchers.define :have_element_with_cardinality do |element_name, cardinal
         # get actual_cardinality
         @actual_cardinality = "#{@actual_min_value}..#{@actual_max_value}"
 
+        @error_msg = "The profile '#{@profile_name}' has the incorrect cardinality for element: #{@element_name} \n" \
+                     " - expected:           '#{@expected_cardinality}'\n" \
+                     " - instead found:      '#{@actual_cardinality}'\n"
+
         expect(@actual_cardinality).to eq(@expected_cardinality)
 
   end
 
   failure_message do |source|
-
-    "VALIDATION FAILURE:\n #{@error_msg}" \
-    "The profile '#{@profile_name}' has the incorrect cardinality for element: #{@element_name} \n" \
-    " - expected:           '#{@expected_cardinality}'\n" \
-    " - instead found:      '#{@actual_cardinality}'\n"
-
+    print_failure_message(@error_msg)
   end
 
 end
