@@ -380,6 +380,16 @@ RSpec::Matchers.define :have_element_with_invariant do |element_name, invariant|
 
           @actual_invariant_combined = "#{@invariant_actual_key};#{@invariant_actual_severity};#{@invariant_actual_human}"
 
+          @error_msg = "The profile '#{@profile_name}' has the incorrect constraint for element: #{@element_name} \n\n" \
+                       " Expected ...\n" \
+                       "  - key: #{@invariant_expected_key}\n" \
+                       "  - severity: #{@invariant_expected_severity}\n" \
+                       "  - human: #{@invariant_expected_human}\n\n" \
+                       " Instead found ...\n" \
+                       "  - key: #{@invariant_actual_key}\n" \
+                       "  - severity: #{@invariant_actual_severity}\n" \
+                       "  - human: #{@invariant_actual_human}"
+
           expect(@actual_invariant_combined).to eq(@invariant_expected_combined)
 
         end
@@ -387,11 +397,11 @@ RSpec::Matchers.define :have_element_with_invariant do |element_name, invariant|
       end
 
     rescue NodeNotPresentError
-      @error_msg = "Element #{@element_name} not present\n"
+      @error_msg = "Element #{@element_name} not present"
       false
 
     rescue ConstraintNotPresentError
-      @error_msg = "Element #{@element_name} is present, but there is no constraint present with key '#{@invariant_expected_key}'\n"
+      @error_msg = "Element #{@element_name} is present, but there is no constraint present with key '#{@invariant_expected_key}'"
       false
 
     end
@@ -399,18 +409,7 @@ RSpec::Matchers.define :have_element_with_invariant do |element_name, invariant|
   end
 
   failure_message do |source|
-
-      "VALIDATION FAILURE:\n #{@error_msg} " \
-      "The profile '#{@profile_name}' has the incorrect constraint for element: #{@element_name} \n" \
-      "Expected ...\n" \
-      " - key: #{@invariant_expected_key}\n" \
-      " - severity: #{@invariant_expected_severity}\n" \
-      " - human: #{@invariant_expected_human}\n" \
-      "Instead found ...\n" \
-      " - key: #{@invariant_actual_key}\n" \
-      " - severity: #{@invariant_actual_severity}\n" \
-      " - human: #{@invariant_actual_human}\n"
-
+    print_failure_message(@error_msg)
   end
 
 end
@@ -467,6 +466,14 @@ RSpec::Matchers.define :have_element_with_binding do |element_name, valueset, st
 
           @actual_binding_combined = "#{@actual_valueset};#{@actual_strength}"
 
+          @error_msg = "The profile '#{@profile_name}' has the incorrect binding for element: #{@element_name} \n" \
+                       " Expected ...\n" \
+                       "  - valueset: #{@expected_valueset}\n" \
+                       "  - strength: #{@expected_strength}\n" \
+                       " Instead found ...\n" \
+                       "  - valueset: #{@actual_valueset}\n" \
+                       "  - strength: #{@actual_strength}"
+
           expect(@actual_binding_combined).to eq(@expected_binding_combined)
 
         end
@@ -474,11 +481,11 @@ RSpec::Matchers.define :have_element_with_binding do |element_name, valueset, st
       end
 
     rescue NodeNotPresentError
-      @error_msg = "Element #{@element_name} not present\n"
+      @error_msg = "Element #{@element_name} not present"
       false
 
     rescue BindingNotPresentError
-      @error_msg = "Element #{@element_name} is present, but there is no constraint on binding\n"
+      @error_msg = "Element #{@element_name} is present, but there is no constraint on binding"
       false
 
     end
@@ -486,54 +493,7 @@ RSpec::Matchers.define :have_element_with_binding do |element_name, valueset, st
   end
 
   failure_message do |source|
-
-      "VALIDATION FAILURE:\n #{@error_msg} " \
-      "The profile '#{@profile_name}' has the incorrect binding for element: #{@element_name} \n" \
-      "Expected ...\n" \
-      " - valueset: #{@expected_valueset}\n" \
-      " - strength: #{@expected_strength}\n" \
-      "Instead found ...\n" \
-      " - valueset: #{@actual_valueset}\n" \
-      " - strength: #{@actual_strength}\n" \
-
-  end
-
-end
-
-
-
-# ==================================================================================
-
-# 11 matcher for checking the directory name to the TemplateVersion value (ie "17")
-RSpec::Matchers.define :have_subversionNum_matching_root_directory do |dir_name, namespace="default"|
-# -----------
-#   This tests if the value in the TemplateVersion element aligns to the root directory name of the template package
-# eg directory name = "1.2.36.1.2001.1006.1.16615.17 (1000)" and
-#          <TemplateVersion>1000</TemplateVersion>
-#                           ^^^^
-# passes when TemplateVersion node is present and its innertext is aligned to the directory name of the template package
-# usage: expect(xml).to have_subversionNum_matching_root_directory(dir_name)
-# reports failure when TemplateVersion node is not present or present with innertext not aligned to the directory name of the template package
-# negation: expect(xml).to_not have_subversionNum_matching_root_directory(dir_name) (no foreseeable usage)
-# tested by features/custom_matchers/11-custom_matcher_for_template_package_directory_name_versionNum.feature (passing)
-# (note as the only element this applies to is the mandatory TemplateVersion node, then there is no requirement to cater for optionality)
-# failure messages tested by features/failure_messages/11-failure_msg_version_number_directory_name.feature
-
-  include MatcherHelpers
-
-  match do |source|
-    element                   = "/templatePackageMetadata/TemplateVersion"         # set the element name to TemplateVersion
-    @tempateVersion_innertext = get_innertext(source,element,namespace)            # get the innertext of the TemplateVersion element and remove whitespace at either end
-    @dir_name_subversionNum   = extract_subversion_number(dir_name)                # extract the subversion number from the directory name, supplied via arguement
-
-    expect(@tempateVersion_innertext).to eql(@dir_name_subversionNum)              # compare the TemplateVersion innertext to the directory name
-
-  end
-
-  failure_message do |source|
-    "VALIDATION FAILURE:\n" \
-    "The TemplateVersion innertext value:   <#{@tempateVersion_innertext}>\n" \
-    "failed to match the sub-version number <#{@dir_name_subversionNum}> in the directory name.\n"
+    print_failure_message(@error_msg)
   end
 
 end
