@@ -184,15 +184,15 @@ RSpec::Matchers.define :have_must_support_set_to_true_for_element do |element_na
         # profile under test
         @profile_name = source
         @profile_id = get_profile_id(@profile_name)
-        #~ puts @profile_name, @profile_id
+        # puts @profile_name, @profile_id
 
         # element
         @element_name = element_name
-        #~ puts @element_name
+        # puts @element_name
 
         # nodeset
         nodeset = get_nodeset(@element_name)
-        #~ puts nodeset.length, nodeset.empty?
+        # puts nodeset.length, nodeset.empty?
 
         # check first if element is actually present
         if nodeset.empty?
@@ -272,7 +272,7 @@ RSpec::Matchers.define :have_element_with_cardinality do |element_name, cardinal
 
         @error_msg = "The profile '#{@profile_name}' has the incorrect cardinality for element: #{@element_name} \n" \
                      " - expected:           '#{@expected_cardinality}'\n" \
-                     " - instead found:      '#{@actual_cardinality}'\n"
+                     " - instead found:      '#{@actual_cardinality}'"
 
         expect(@actual_cardinality).to eq(@expected_cardinality)
 
@@ -305,17 +305,16 @@ RSpec::Matchers.define :have_element_with_default_cardinality do |element_name|
     @profile_cardinality = get_profile_cardinality(@element_name)
     @default_cardinality = get_default_cardinality(@element_name)
 
+    @error_msg = "The profile '#{@profile_name}' has the incorrect cardinality for element: #{@element_name} \n" \
+                 " - expected the default cardinality: '#{@default_cardinality}'\n" \
+                 " - instead found:                    '#{@profile_cardinality}'\n"
+
     expect(@profile_cardinality).to eq(@default_cardinality)
 
   end
 
   failure_message do |source|
-
-    "VALIDATION FAILURE:\n #{@error_msg}" \
-    "The profile '#{@profile_name}' has the incorrect cardinality for element: #{@element_name} \n" \
-    " - expected the default cardinality: '#{@default_cardinality}'\n" \
-    " - instead found:                    '#{@profile_cardinality}'\n"
-
+    print_failure_message(@error_msg)
   end
 
 end
