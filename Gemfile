@@ -10,5 +10,4 @@ group :development do
   gem 'cucumber'
   gem 'syntax'
   gem 'tty-command'
-  gem 'jekyll'
 end
