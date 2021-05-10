@@ -94,7 +94,7 @@ end
 
 
 # This matcher determines if the named profile (as html or xml, or any available filetype) is found in the output folder of the IG
-RSpec::Matchers.define :be_included_in_ig_as do |file_type|
+RSpec::Matchers.define :have_generated_filetype do |file_type|
 
   include MatcherHelpers
 
