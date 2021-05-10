@@ -5,7 +5,8 @@ Feature: Patient Base profile
     In order to offer appropriate structures
 
 Background: Profile exists
-    Given the profile "Patient Base" exists
+    Given the generated "html" file of profile "Patient Base" exists
+    And the generated "xml" file of profile "Patient Base" exists
 
 Scenario: Patient Base profile derivation
     Then it has been derived from "R4 Patient resource"

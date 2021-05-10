@@ -1,11 +1,8 @@
-# require 'webdrivers/chromedriver'
-# require 'selenium-webdriver'
-
 @profile=""
 
-Given(/^the profile "(.*?)" exists$/) do |profile|
+Given('the generated {string} file of profile {string} exists') do |file_type, profile|
   @profile = profile
-  expect(@profile).to be_included_in_ig
+  expect(@profile).to be_included_in_ig_as(file_type)
 end
 
 Then('it has been derived from {string}') do |string|

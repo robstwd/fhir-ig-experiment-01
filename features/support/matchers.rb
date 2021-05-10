@@ -93,18 +93,19 @@ module MatcherHelpers
 end
 
 
-# This matcher determines if the named profile (as html) is found in the output folder of the IG
-RSpec::Matchers.define :be_included_in_ig do
+# This matcher determines if the named profile (as html or xml, or any available filetype) is found in the output folder of the IG
+RSpec::Matchers.define :be_included_in_ig_as do |file_type|
 
   include MatcherHelpers
 
   match do |source|
     @profile_name = source
     @profile_id = get_profile_id(@profile_name)
-    @file = "#{Dir.pwd}/output/StructureDefinition-#{@profile_id}.html"
+    @file_type = file_type
+    @file = "#{Dir.pwd}/output/StructureDefinition-#{@profile_id}.#{@file_type}"
     
     @error_msg = "The profile '#{@profile_name}' does not exist in the generated output directory\n" \
-                 " Expecting file: '../output/StructureDefinition-#{@profile_id}.html'"
+                 " Expecting file: '../output/StructureDefinition-#{@profile_id}.#{@file_type}'"
 
     expect(File.exist?(@file)).to be_truthy
 
@@ -141,7 +142,7 @@ RSpec::Matchers.define :be_derived_from do |primary_resource|
 
       # if profile exists then
       if File.exist?(profile_filename)
-        puts "profile exists"
+        #puts "profile exists"
 
         # find the actual baseDefinition value in the profile
         @actual_baseDefinition = get_baseDefinition(@profile_id)
