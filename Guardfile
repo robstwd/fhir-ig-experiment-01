@@ -2,7 +2,8 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-directories %w(spec input).select{|d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist")}
+directories %w(input features spec) \
+  .select{|d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist")}
 
 ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move
@@ -14,6 +15,38 @@ directories %w(spec input).select{|d| Dir.exist?(d) ? d : UI.warning("Directory 
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
+# notifications
+notification :notifu, time: 10, nosound: true, xp: true
+ 
+# clear the screen before every action
+clearing :on
+
+cucumber_options = {
+  # Below are examples overriding defaults
+
+  # cmd: 'bin/cucumber',
+  # cmd_additional_args: '--profile guard',
+
+  # all_after_pass: false,
+  # all_on_start: false,
+  # keep_failed: false,
+  # feature_sets: ['features/frontend', 'features/experimental'],
+
+  # run_all: { cmd_additional_args: '--profile guard_all' },
+  # focus_on: { 'wip' }, # @wip
+  # notification: :false
+
+}
+
+# guard "cucumber", cucumber_options do
+#   watch(%r{^features/.+\.feature$})
+#   watch(%r{^features/support/.+$}) { "features" }
+
+#   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) do |m|
+#     Dir[File.join("**/#{m[1]}.feature")][0] || "features"
+#   end
+# end
+
 # Note: The cmd option is now required due to the increasing number of ways
 #       rspec may be run, below are examples of the most common uses.
 #  * bundler: 'bundle exec rspec'
@@ -22,13 +55,6 @@ directories %w(spec input).select{|d| Dir.exist?(d) ? d : UI.warning("Directory 
 #                          installed the spring binstubs per the docs)
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
-
-# to turn system notifications off
-#notification :off
-notification :libnotify, timeout: 10, transient: false, append: false, urgency: :critical
- 
-# clear the screen before every action
-clearing :on
 
 guard :rspec, cmd: "bundle exec rspec" do
   require "guard/rspec/dsl"
@@ -73,37 +99,16 @@ guard :rspec, cmd: "bundle exec rspec" do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
     Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
   end
-  
-  #FHIR IG changes
+
+  watch(%r{^input/(.+)\.xml$}) { rspec.spec_dir }
+
+  watch(%r{^spec/general/(.+)\_spec.rb}) { "spec" }
+
+  # FHIR IG changes
   watch(%r{^input/resources/StructureDefinition/(.+)\.xml$})   { "spec" }
   watch(%r{^input/resources/ImplementationGuide/(.+)\.xml$})   { "spec" }
   
   # report all file changes
-  watch(/.*/) { |m| puts "FILE CHANGED: #{m[0]} changed" }
-    
-end
+  # watch(/.*/) { |m| puts "FILE CHANGED: #{m[0]} changed" }
 
-cucumber_options = {
-  # Below are examples overriding defaults
-
-  # cmd: 'bin/cucumber',
-  # cmd_additional_args: '--profile guard',
-
-  # all_after_pass: false,
-  # all_on_start: false,
-  # keep_failed: false,
-  # feature_sets: ['features/frontend', 'features/experimental'],
-
-  # run_all: { cmd_additional_args: '--profile guard_all' },
-  # focus_on: { 'wip' }, # @wip
-  # notification: false
-}
-
-guard "cucumber", cucumber_options do
-  watch(%r{^features/.+\.feature$})
-  watch(%r{^features/support/.+$}) { "features" }
-
-  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) do |m|
-    Dir[File.join("**/#{m[1]}.feature")][0] || "features"
-  end
 end
