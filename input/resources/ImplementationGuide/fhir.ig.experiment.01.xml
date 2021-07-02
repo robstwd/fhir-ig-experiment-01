@@ -5,7 +5,7 @@
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.0.1"/>
   <name value="FHIRIGExperiment01"/>
-  <title value="FHIR Implentation Guide Experiment 01"/>
+  <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
   <contact>
