@@ -8,10 +8,10 @@
   "url": "https://about.me/robeastwood/fhir/ig/ImplementationGuide/fhir.ig.experiment.01",
   "version": "0.0.1",
   "name": "FHIRIGExperiment01",
-  "title": "FHIR Implentation Guide Experiment 01",
+  "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-02T11:20:44+00:00",
+  "date": "2021-07-02T11:23:27+00:00",
   "contact": [
     {
       "telecom": [
