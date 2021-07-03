@@ -46,7 +46,7 @@ Scenario: Patient Base profile constraints on Patient.birthDate
 Scenario: Patient Base profile constraints on Patient.address
     Then "Patient.address" has must support set to true
     And "Patient.address" has its default cardinality
-    And "Patient.address" has an invariant "pat-cnt-2or3-char;warning;The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2."
+    And "Patient.address" has an invariant "pat-cnt-2or3-char::warning::The content of the country element (if present) SHALL be selected EITHER from ValueSet ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2 OR MAY be selected from ISO Country Alpha-3 Value Set http://hl7.org/fhir/ValueSet/iso3166-1-3, IF the country is not specified in value Set ISO Country Alpha-2 http://hl7.org/fhir/ValueSet/iso3166-1-2."
 
 Scenario: Patient Base profile constraints on Patient.contact
     Then "Patient.contact" has must support set to true
