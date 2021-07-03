@@ -11,7 +11,17 @@
         "title": "Patient Base"
       }
     ],
+    "CodeSystem": [
+      {
+        "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",
+        "title": "HL7 AU CodeSystem Base"
+      }
+    ],
     "StructureDefinition": [
+      {
+        "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1",
+        "title": "HL7 AU StructureDefinition Base"
+      },
       {
         "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1",
         "title": "StructureDefinition Meta"
@@ -33,6 +43,9 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
       "StructureDefinition.snapshot.element"

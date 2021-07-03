@@ -11,7 +11,7 @@
   "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-03T04:22:53+00:00",
+  "date": "2021-07-03T11:53:00+00:00",
   "contact": [
     {
       "telecom": [
@@ -367,6 +367,32 @@
         "name": "Simple patient example",
         "description": "A simple example showing how examples are defined and referenced",
         "exampleCanonical": "https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/structuredefinition-hl7au-csd-1"
+        },
+        "name": "HL7 AU CodeSystem Base",
+        "description": "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
+        },
+        "name": "HL7 AU StructureDefinition Base",
+        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
       }
     ],
     "page": {
