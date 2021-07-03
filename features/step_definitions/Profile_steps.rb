@@ -28,3 +28,23 @@ end
 Then('{string} is bound to {string} as {string}') do |element_name, valueset, strength|
   expect(@profile).to have_element_with_binding(element_name, valueset, strength)
 end
+
+Then('{string} has fixedString {string}') do |element_name, string|
+  expect(@profile).to have_element_with_fixedString(element_name, string)
+end
+
+Then('{string} has fixedCode {string}') do |element_name, code|
+  expect(@profile).to have_element_with_fixedCode(element_name, code)
+end
+
+Then('{string} has fixedUri {string}') do |element_name, uri|
+  expect(@profile).to have_element_with_fixedUri(element_name, uri)
+end
+
+Given('{string} has fixedBoolean {string}') do |element_name, boolean|
+  expect(@profile).to have_element_with_fixedBoolean(element_name, boolean)
+end
+
+Given('{string} has fixedCanonical {string}') do |element_name, canonical|
+  expect(@profile).to have_element_with_fixedCanonical(element_name, canonical)
+end

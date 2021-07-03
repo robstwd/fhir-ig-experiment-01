@@ -4,11 +4,14 @@ PROFILES = {
   "Patient Base"            => "Patient-base",
   "Patient Specific"        => "Patient-specific",
   "Patient Mandatory Name"  => "Patient-mandatoryname",
-  "Patient with Mandatory Identifier"  => "patient-ident-1"
+  "Patient with Mandatory Identifier"  => "patient-ident-1",
+  "HL7 AU StructureDefinition Base"         => "structuredefinition-hl7au-sdf-1",
+  "HL7 AU CodeSystem Base"         => "structuredefinition-hl7au-csd-1"
   }
 
 RESOURCES = {
-  "R4 Patient resource" => "http://hl7.org/fhir/StructureDefinition/Patient"
+  "R4 Patient resource" => "http://hl7.org/fhir/StructureDefinition/Patient",
+  "R4 StructureDefinition resource" => "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
   }
 
 FAILURE_MESSAGE_START = "\n VALIDATION FAILURE:\n "
@@ -20,6 +23,11 @@ class NodePresentMustSupportFalseError < StandardError; end
 class ConstraintNotPresentError < StandardError; end
 class BindingNotPresentError < StandardError; end
 class FileNotPresentError < StandardError; end
+class NodePresentFixedStringNotSetError < StandardError; end
+class NodePresentFixedCodeNotSetError < StandardError; end
+class NodePresentFixedUriNotSetError < StandardError; end
+class NodePresentFixedBooleanNotSetError < StandardError; end
+class NodePresentFixedCanonicalNotSetError < StandardError; end
 
 module MatcherHelpers
   def get_profile_id(profile_name)
@@ -248,19 +256,19 @@ RSpec::Matchers.define :have_element_with_cardinality do |element_name, cardinal
         # profile under test
         @profile_name = source
         @profile_id = get_profile_id(@profile_name)
-        #~ puts @profile_name, @profile_id
+        # Kernel.puts @profile_name, @profile_id
 
         # element
         @element_name = element_name
-        #~ puts @element_name
+        # Kernel.puts @element_name
 
         # cardinality
         @expected_cardinality = cardinality
-        #~ puts @expected_cardinality
+        # Kernel.puts @expected_cardinality
 
         # nodeset
         nodeset = get_nodeset_from_snapshot(@element_name)
-        #~ puts nodeset.length, nodeset.empty?
+        # Kernel.puts nodeset.length, nodeset.empty?
 
         # get min value
         @actual_min_value = nodeset.xpath("min/@value").to_s
@@ -339,11 +347,11 @@ RSpec::Matchers.define :have_element_with_invariant do |element_name, invariant|
 
     # invariant - expected
     @invariant_expected_combined = invariant
-    @invariant_expected_parts = @invariant_expected_combined.split(";")
+    @invariant_expected_parts = @invariant_expected_combined.split("::")
     @invariant_expected_key = @invariant_expected_parts[0]
     @invariant_expected_severity = @invariant_expected_parts[1]
     @invariant_expected_human = @invariant_expected_parts[2]
-    # puts @invariant_expected_key, @invariant_expected_severity, @invariant_expected_human
+    # Kernel.puts @invariant_expected_key, @invariant_expected_severity, @invariant_expected_human
 
     # get the nodeset for the element under test
     nodeset_element = get_nodeset(@element_name)
@@ -377,9 +385,9 @@ RSpec::Matchers.define :have_element_with_invariant do |element_name, invariant|
           @invariant_actual_severity = nodeset_constraint.at_xpath("severity/@value").to_s
           @invariant_actual_human = nodeset_constraint.at_xpath("human/@value").to_s
           @invariant_actual_expression = nodeset_constraint.at_xpath("expression/@value").to_s
-          # puts @invariant_actual_key, @invariant_actual_severity, @invariant_actual_human, @invariant_actual_expression
+          # Kernel.puts @invariant_actual_key, @invariant_actual_severity, @invariant_actual_human, @invariant_actual_expression
 
-          @actual_invariant_combined = "#{@invariant_actual_key};#{@invariant_actual_severity};#{@invariant_actual_human}"
+          @actual_invariant_combined = "#{@invariant_actual_key}::#{@invariant_actual_severity}::#{@invariant_actual_human}"
 
           @error_msg = "The profile '#{@profile_name}' has the incorrect constraint for element: #{@element_name} \n\n" \
                        " Expected ...\n" \
@@ -489,6 +497,340 @@ RSpec::Matchers.define :have_element_with_binding do |element_name, valueset, st
       @error_msg = "Element #{@element_name} is present, but there is no constraint on binding"
       false
 
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+# This matcher determines if a given element has a specific fixedString value
+RSpec::Matchers.define :have_element_with_fixedString do |element_name, string|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # profile under test
+      @profile_name = source
+      @profile_id = get_profile_id(@profile_name)
+      # Kernel.puts @profile_name, @profile_id
+
+      # element
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # fixedString
+      @expected_fixedString = string
+      # Kernel.puts @expected_fixedString
+
+      # nodeset
+      nodeset = get_nodeset_from_snapshot(@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+
+      # check first if element is actually present
+      if nodeset.empty?
+        raise(NodeNotPresentError)
+      else
+        # then check if fixedString element is then present
+        if nodeset.xpath("fixedString").empty?
+        raise(NodePresentFixedStringNotSetError)
+
+        else
+          # get fixedString value
+          @actual_fixedString = nodeset.xpath("fixedString/@value").to_s
+          # Kernel.puts @actual_fixedString
+
+          @error_msg = "The profile '#{@profile_name}' has the incorrect fixedString value for element: #{@element_name} \n" \
+          " - expected:           '#{@expected_fixedString}'\n" \
+          " - instead found:      '#{@actual_fixedString}'"
+
+          expect(@actual_fixedString).to eq(@expected_fixedString)
+
+        end
+      end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
+      false
+
+    rescue NodePresentFixedStringNotSetError
+      @error_msg = "Element '#{@element_name}' is present but a fixedString has not been set"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a given element has a specific fixedCode value
+RSpec::Matchers.define :have_element_with_fixedCode do |element_name, code|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # profile under test
+      @profile_name = source
+      @profile_id = get_profile_id(@profile_name)
+      # Kernel.puts @profile_name, @profile_id
+
+      # element
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # fixedCode
+      @expected_fixedCode = code
+      # Kernel.puts @expected_fixedCode
+
+      # nodeset
+      nodeset = get_nodeset_from_snapshot(@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+
+      # check first if element is actually present
+      if nodeset.empty?
+        raise(NodeNotPresentError)
+      else
+        # then check if fixedCode element is then present
+        if nodeset.xpath("fixedCode").empty?
+        raise(NodePresentFixedCodeNotSetError)
+
+        else
+          # get fixedCode value
+          @actual_fixedCode = nodeset.xpath("fixedCode/@value").to_s
+          # Kernel.puts @actual_fixedCode
+
+          @error_msg = "The profile '#{@profile_name}' has the incorrect fixedCode value for element: #{@element_name} \n" \
+          " - expected:           '#{@expected_fixedCode}'\n" \
+          " - instead found:      '#{@actual_fixedCode}'"
+
+          expect(@actual_fixedCode).to eq(@expected_fixedCode)
+
+        end
+      end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
+      false
+
+    rescue NodePresentFixedCodeNotSetError
+      @error_msg = "Element '#{@element_name}' is present but a fixedCode has not been set"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a given element has a specific fixedUri value
+RSpec::Matchers.define :have_element_with_fixedUri do |element_name, uri|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # profile under test
+      @profile_name = source
+      @profile_id = get_profile_id(@profile_name)
+      # Kernel.puts @profile_name, @profile_id
+
+      # element
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # fixedUri
+      @expected_fixedUri = uri
+      # Kernel.puts @expected_fixedUri
+
+      # nodeset
+      nodeset = get_nodeset_from_snapshot(@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+
+      # check first if element is actually present
+      if nodeset.empty?
+        raise(NodeNotPresentError)
+      else
+        # then check if fixedUri element is then present
+        if nodeset.xpath("fixedUri").empty?
+        raise(NodePresentFixedUriNotSetError)
+
+        else
+          # get fixedUri value
+          @actual_fixedUri = nodeset.xpath("fixedUri/@value").to_s
+          # Kernel.puts @actual_fixedUri
+
+          @error_msg = "The profile '#{@profile_name}' has the incorrect fixedUri value for element: #{@element_name} \n" \
+          " - expected:           '#{@expected_fixedUri}'\n" \
+          " - instead found:      '#{@actual_fixedUri}'"
+
+          expect(@actual_fixedUri).to eq(@expected_fixedUri)
+
+        end
+      end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
+      false
+
+    rescue NodePresentFixedUriNotSetError
+      @error_msg = "Element '#{@element_name}' is present but a fixedUri has not been set"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a given element has a specific fixedBoolean value
+RSpec::Matchers.define :have_element_with_fixedBoolean do |element_name, boolean|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # profile under test
+      @profile_name = source
+      @profile_id = get_profile_id(@profile_name)
+      # Kernel.puts @profile_name, @profile_id
+
+      # element
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # fixedBoolean
+      @expected_fixedBoolean = boolean
+      # Kernel.puts @expected_fixedBoolean
+
+      # nodeset
+      nodeset = get_nodeset_from_snapshot(@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+
+      # check first if element is actually present
+      if nodeset.empty?
+        raise(NodeNotPresentError)
+      else
+        # then check if fixedBoolean element is then present
+        if nodeset.xpath("fixedBoolean").empty?
+        raise(NodePresentFixedBooleanNotSetError)
+
+        else
+          # get fixedBoolean value
+          @actual_fixedBoolean = nodeset.xpath("fixedBoolean/@value").to_s
+          # Kernel.puts @actual_fixedBoolean
+
+          @error_msg = "The profile '#{@profile_name}' has the incorrect fixedBoolean value for element: #{@element_name} \n" \
+          " - expected:           '#{@expected_fixedBoolean}'\n" \
+          " - instead found:      '#{@actual_fixedBoolean}'"
+
+          expect(@actual_fixedBoolean).to eq(@expected_fixedBoolean)
+
+        end
+      end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
+      false
+
+    rescue NodePresentFixedUriNotSetError
+      @error_msg = "Element '#{@element_name}' is present but a fixedBoolean has not been set"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a given element has a specific fixedCanonical value
+RSpec::Matchers.define :have_element_with_fixedCanonical do |element_name, canonical|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # profile under test
+      @profile_name = source
+      @profile_id = get_profile_id(@profile_name)
+      # Kernel.puts @profile_name, @profile_id
+
+      # element
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # fixedCanonical
+      @expected_fixedCanonical = canonical
+      # Kernel.puts @expected_fixedCanonical
+
+      # nodeset
+      nodeset = get_nodeset_from_snapshot(@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+
+      # check first if element is actually present
+      if nodeset.empty?
+        raise(NodeNotPresentError)
+      else
+        # then check if fixedCanonical element is then present
+        if nodeset.xpath("fixedCanonical").empty?
+        raise(NodePresentFixedCanonicalNotSetError)
+
+        else
+          # get fixedCanonical value
+          @actual_fixedCanonical = nodeset.xpath("fixedCanonical/@value").to_s
+          # Kernel.puts @actual_fixedCanonical
+
+          @error_msg = "The profile '#{@profile_name}' has the incorrect fixedCanonical value for element: #{@element_name} \n" \
+          " - expected:           '#{@expected_fixedCanonical}'\n" \
+          " - instead found:      '#{@actual_fixedCanonical}'"
+
+          expect(@actual_fixedCanonical).to eq(@expected_fixedCanonical)
+
+        end
+      end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
+      false
+
+    rescue NodePresentFixedCanonicalNotSetError
+      @error_msg = "Element '#{@element_name}' is present but a fixedCanonical has not been set"
+      false
+      
     end
 
   end
