@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="structuredefinition-hl7au-csd-1"/>
+  <url value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"/>
+  <version value="0.0.1"/>
+  <name value="HL7AUCodeSystemBase"/>
+  <title value="HL7 AU CodeSystem Base"/>
+  <status value="draft"/>
+  <experimental value="true" />
+  <description value="The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="CodeSystem"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="CodeSystem">
+      <path value="CodeSystem"/>
+      <constraint>
+        <key value="hl7au-csd-base-01"/>
+        <severity value="error"/>
+        <human value="The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"/>
+        <expression value="version.matches('^[0-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"/>
+      </constraint>
+    </element>
+    <element id="CodeSystem.id">
+      <path value="CodeSystem.id"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.meta">
+      <path value="CodeSystem.meta"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.meta.versionId">
+      <path value="CodeSystem.meta.versionId"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.meta.lastUpdated">
+      <path value="CodeSystem.meta.lastUpdated"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.meta.source">
+      <path value="CodeSystem.meta.source"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.meta.profile">
+      <path value="CodeSystem.meta.profile"/>
+      <min value="1"/>
+      <max value="1"/>
+      <fixedCanonical value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+    </element>
+    <element id="CodeSystem.meta.security">
+      <path value="CodeSystem.meta.security"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.meta.tag">
+      <path value="CodeSystem.meta.tag"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.implicitRules">
+      <path value="CodeSystem.implicitRules"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.language">
+      <path value="CodeSystem.language"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.contained">
+      <path value="CodeSystem.contained"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.url">
+      <path value="CodeSystem.url"/>
+      <constraint>
+        <key value="hl7au-csd-base-02"/>
+        <severity value="error"/>
+        <human value="The url starts with 'http://terminology.hl7.org.au/CodeSystem/'"/>
+        <expression value="startsWith('http://terminology.hl7.org.au/CodeSystem/')"/>
+      </constraint>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.identifier">
+      <path value="CodeSystem.identifier"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="CodeSystem.identifier.use">
+      <path value="CodeSystem.identifier.use"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.identifier.type">
+      <path value="CodeSystem.identifier.type"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.identifier.system">
+      <path value="CodeSystem.identifier.system"/>
+      <min value="1"/>
+      <fixedUri value="urn:ietf:rfc:3986"/>
+    </element>
+    <element id="CodeSystem.identifier.value">
+      <path value="CodeSystem.identifier.value"/>
+      <constraint>
+        <key value="hl7au-csd-base-02"/>
+        <severity value="error"/>
+        <human value="The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'"/>
+        <expression value="startsWith('urn:oid:2.16.840.1.113883.2.3.4.')"/>
+      </constraint>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.identifier.period">
+      <path value="CodeSystem.identifier.period"/>
+      <min value="0"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.identifier.assigner">
+      <path value="CodeSystem.identifier.assigner"/>
+      <min value="0"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.version">
+      <path value="CodeSystem.version"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.name">
+      <path value="CodeSystem.name"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.title">
+      <path value="CodeSystem.title"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.experimental">
+      <path value="CodeSystem.experimental"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.date">
+      <path value="CodeSystem.date"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.publisher">
+      <path value="CodeSystem.publisher"/>
+      <constraint>
+        <key value="hl7au-csd-base-03"/>
+        <severity value="error"/>
+        <human value="The publisher starts with 'Health Level Seven Australia'"/>
+        <expression value="startsWith('Health Level Seven Australia')"/>
+      </constraint>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.contact">
+      <path value="CodeSystem.contact"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="CodeSystem.contact.name">
+      <path value="CodeSystem.contact.name"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.contact.telecom">
+      <path value="CodeSystem.contact.telecom"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="CodeSystem.contact.telecom.system">
+      <path value="CodeSystem.contact.telecom.system"/>
+      <min value="1"/>
+      <fixedCode value="url"/>
+    </element>
+    <element id="CodeSystem.contact.telecom.value">
+      <path value="CodeSystem.contact.telecom.value"/>
+      <min value="1"/>
+      <fixedString value="http://hl7.com.au"/>
+    </element>
+    <element id="CodeSystem.contact.telecom.use">
+      <path value="CodeSystem.contact.telecom.use"/>
+      <min value="1"/>
+      <fixedCode value="work"/>
+    </element>
+    <element id="CodeSystem.contact.telecom.rank">
+      <path value="CodeSystem.contact.telecom.rank"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.contact.telecom.period">
+      <path value="CodeSystem.contact.telecom.period"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.description">
+      <path value="CodeSystem.description"/>
+      <min value="1"/>
+    </element>
+    <element id="CodeSystem.useContext">
+      <path value="CodeSystem.useContext"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.jurisdiction">
+      <path value="CodeSystem.jurisdiction"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.coding">
+      <path value="CodeSystem.jurisdiction.coding"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.coding.system">
+      <path value="CodeSystem.jurisdiction.coding.system"/>
+      <min value="1"/>
+      <fixedUri value="urn:iso:std:iso:3166"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.coding.version">
+      <path value="CodeSystem.jurisdiction.coding.version"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.coding.code">
+      <path value="CodeSystem.jurisdiction.coding.code"/>
+      <min value="1"/>
+      <fixedCode value="AU"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.coding.display">
+      <path value="CodeSystem.jurisdiction.coding.display"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.coding.userSelected">
+      <path value="CodeSystem.jurisdiction.coding.userSelected"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.jurisdiction.text">
+      <path value="CodeSystem.jurisdiction.text"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.purpose">
+      <path value="CodeSystem.purpose"/>
+      <max value="0"/>
+    </element>
+    <element id="CodeSystem.copyright">
+      <path value="CodeSystem.copyright"/>
+      <constraint>
+        <key value="hl7au-csd-base-04"/>
+        <severity value="error"/>
+        <human value="The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"/>
+        <expression value="startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"/>
+      </constraint>
+      <min value="1"/>
+    </element>
+  </differential>
+</StructureDefinition>
