@@ -42,13 +42,13 @@
     </element>
     <element id="StructureDefinition.url">
       <path value="StructureDefinition.url"/>
+      <min value="1"/>
       <constraint>
         <key value="hl7au-sdf-base-02"/>
         <severity value="error"/>
         <human value="The url starts with 'http://hl7.org.au/fhir/StructureDefinition/'"/>
         <expression value="startsWith('http://hl7.org.au/fhir/StructureDefinition/'"/>
       </constraint>
-      <min value="1"/>
     </element>
     <element id="StructureDefinition.identifier">
       <path value="StructureDefinition.identifier"/>
@@ -76,13 +76,13 @@
     </element>
     <element id="StructureDefinition.publisher">
       <path value="StructureDefinition.publisher"/>
+      <min value="1"/>
       <constraint>
         <key value="hl7au-sdf-base-03"/>
         <severity value="error"/>
         <human value="The publisher starts with 'Health Level Seven Australia'"/>
         <expression value="startsWith('Health Level Seven Australia')"/>
       </constraint>
-      <min value="1"/>
     </element>
     <element id="StructureDefinition.contact">
       <path value="StructureDefinition.contact"/>
@@ -171,13 +171,13 @@
     </element>
     <element id="StructureDefinition.copyright">
       <path value="StructureDefinition.copyright"/>
+      <min value="1"/>
       <constraint>
         <key value="hl7au-sdf-base-04"/>
         <severity value="error"/>
         <human value="The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"/>
         <expression value="startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"/>
       </constraint>
-      <min value="1"/>
     </element>
     <element id="StructureDefinition.keyword">
       <path value="StructureDefinition.keyword"/>
