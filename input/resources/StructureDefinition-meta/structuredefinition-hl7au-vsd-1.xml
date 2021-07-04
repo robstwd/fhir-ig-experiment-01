@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="structuredefinition-hl7au-vsd-1"/>
+  <url value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"/>
+  <version value="0.0.1"/>
+  <name value="HL7AUValueSetBase"/>
+  <title value="HL7 AU ValueSet Base"/>
+  <status value="draft"/>
+  <experimental value="true" />
+  <description value="The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="ValueSet"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="ValueSet">
+      <path value="ValueSet"/>
+      <constraint>
+        <key value="hl7au-vsd-base-01"/>
+        <severity value="error"/>
+        <human value="The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"/>
+        <expression value="version.matches('^[0-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.id">
+      <path value="ValueSet.id"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.meta">
+      <path value="ValueSet.meta"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.meta.versionId">
+      <path value="ValueSet.meta.versionId"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.meta.lastUpdated">
+      <path value="ValueSet.meta.lastUpdated"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.meta.source">
+      <path value="ValueSet.meta.source"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.meta.profile">
+      <path value="ValueSet.meta.profile"/>
+      <min value="1"/>
+      <max value="1"/>
+      <fixedCanonical value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+    </element>
+    <element id="ValueSet.meta.security">
+      <path value="ValueSet.meta.security"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.meta.tag">
+      <path value="ValueSet.meta.tag"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.implicitRules">
+      <path value="ValueSet.implicitRules"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.language">
+      <path value="ValueSet.language"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.contained">
+      <path value="ValueSet.contained"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.url">
+      <path value="ValueSet.url"/>
+      <min value="1"/>
+      <constraint>
+        <key value="hl7au-vsd-base-02"/>
+        <severity value="error"/>
+        <human value="The url starts with 'http://terminology.hl7.org.au/ValueSet/'"/>
+        <expression value="startsWith('http://terminology.hl7.org.au/ValueSet/')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.identifier">
+      <path value="ValueSet.identifier"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="ValueSet.identifier.use">
+      <path value="ValueSet.identifier.use"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.identifier.type">
+      <path value="ValueSet.identifier.type"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.identifier.system">
+      <path value="ValueSet.identifier.system"/>
+      <min value="1"/>
+      <fixedUri value="urn:ietf:rfc:3986"/>
+    </element>
+    <element id="ValueSet.identifier.value">
+      <path value="ValueSet.identifier.value"/>
+      <min value="1"/>
+      <constraint>
+        <key value="hl7au-vsd-base-02"/>
+        <severity value="error"/>
+        <human value="The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'"/>
+        <expression value="startsWith('urn:oid:2.16.840.1.113883.2.3.4.')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.identifier.period">
+      <path value="ValueSet.identifier.period"/>
+      <min value="0"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.identifier.assigner">
+      <path value="ValueSet.identifier.assigner"/>
+      <min value="0"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.version">
+      <path value="ValueSet.version"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.name">
+      <path value="ValueSet.name"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.title">
+      <path value="ValueSet.title"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.experimental">
+      <path value="ValueSet.experimental"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.date">
+      <path value="ValueSet.date"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.publisher">
+      <path value="ValueSet.publisher"/>
+      <min value="1"/>
+      <constraint>
+        <key value="hl7au-vsd-base-03"/>
+        <severity value="error"/>
+        <human value="The publisher starts with 'Health Level Seven Australia'"/>
+        <expression value="startsWith('Health Level Seven Australia')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.contact">
+      <path value="ValueSet.contact"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="ValueSet.contact.name">
+      <path value="ValueSet.contact.name"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.contact.telecom">
+      <path value="ValueSet.contact.telecom"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="ValueSet.contact.telecom.system">
+      <path value="ValueSet.contact.telecom.system"/>
+      <min value="1"/>
+      <fixedCode value="url"/>
+    </element>
+    <element id="ValueSet.contact.telecom.value">
+      <path value="ValueSet.contact.telecom.value"/>
+      <min value="1"/>
+      <fixedString value="http://hl7.com.au"/>
+    </element>
+    <element id="ValueSet.contact.telecom.use">
+      <path value="ValueSet.contact.telecom.use"/>
+      <min value="1"/>
+      <fixedCode value="work"/>
+    </element>
+    <element id="ValueSet.contact.telecom.rank">
+      <path value="ValueSet.contact.telecom.rank"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.contact.telecom.period">
+      <path value="ValueSet.contact.telecom.period"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.description">
+      <path value="ValueSet.description"/>
+      <min value="1"/>
+    </element>
+    <element id="ValueSet.useContext">
+      <path value="ValueSet.useContext"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.jurisdiction">
+      <path value="ValueSet.jurisdiction"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="ValueSet.jurisdiction.coding">
+      <path value="ValueSet.jurisdiction.coding"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="ValueSet.jurisdiction.coding.system">
+      <path value="ValueSet.jurisdiction.coding.system"/>
+      <min value="1"/>
+      <fixedUri value="urn:iso:std:iso:3166"/>
+    </element>
+    <element id="ValueSet.jurisdiction.coding.version">
+      <path value="ValueSet.jurisdiction.coding.version"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.jurisdiction.coding.code">
+      <path value="ValueSet.jurisdiction.coding.code"/>
+      <min value="1"/>
+      <fixedCode value="AU"/>
+    </element>
+    <element id="ValueSet.jurisdiction.coding.display">
+      <path value="ValueSet.jurisdiction.coding.display"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.jurisdiction.coding.userSelected">
+      <path value="ValueSet.jurisdiction.coding.userSelected"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.jurisdiction.text">
+      <path value="ValueSet.jurisdiction.text"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.purpose">
+      <path value="ValueSet.purpose"/>
+      <max value="0"/>
+    </element>
+    <element id="ValueSet.copyright">
+      <path value="ValueSet.copyright"/>
+      <min value="1"/>
+      <constraint>
+        <key value="hl7au-vsd-base-04"/>
+        <severity value="error"/>
+        <human value="The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"/>
+        <expression value="startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"/>
+      </constraint>
+    </element>
+  </differential>
+</StructureDefinition>

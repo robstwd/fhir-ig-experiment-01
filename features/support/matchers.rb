@@ -6,7 +6,8 @@ PROFILES = {
   "Patient Mandatory Name"  => "Patient-mandatoryname",
   "Patient with Mandatory Identifier"  => "patient-ident-1",
   "HL7 AU StructureDefinition Base"         => "structuredefinition-hl7au-sdf-1",
-  "HL7 AU CodeSystem Base"         => "structuredefinition-hl7au-csd-1"
+  "HL7 AU CodeSystem Base"         => "structuredefinition-hl7au-csd-1",
+  "HL7 AU ValueSet Base"         => "structuredefinition-hl7au-vsd-1"
   }
 
 RESOURCES = {
