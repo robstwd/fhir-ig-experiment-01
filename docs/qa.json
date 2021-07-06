@@ -3,9 +3,9 @@
   "name": "FHIRIGExperiment01",
   "package-id": "fhir.ig.experiment.01",
   "ig-ver": "0.0.1",
-  "date": "Sat, 03 Jul, 2021 11:53:00 +0000",
-  "errs": 0,
-  "warnings": 3,
+  "date": "Tue, 06 Jul, 2021 10:10:35 +0000",
+  "errs": 4,
+  "warnings": 4,
   "hints": 0,
   "version": "4.0.1",
   "tool": "4.6.0 (3)"

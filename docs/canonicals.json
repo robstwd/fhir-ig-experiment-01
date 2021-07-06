@@ -28,6 +28,13 @@
     "name": "HL7AUStructureDefinitionBase"
   },
   {
+    "id": "structuredefinition-hl7au-vsd-1",
+    "type": "StructureDefinition",
+    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1",
+    "version": "0.0.1",
+    "name": "HL7AUValueSetBase"
+  },
+  {
     "id": "structuredefinition-meta-1",
     "type": "StructureDefinition",
     "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1",

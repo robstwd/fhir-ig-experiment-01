@@ -12,7 +12,7 @@
   <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-03T11:53:00+00:00"/>
+  <date value="2021-07-06T10:10:35+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -246,6 +246,16 @@
       </reference>
       <name value="HL7 AU CodeSystem Base"/>
       <description value="The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/structuredefinition-hl7au-vsd-1"/>
+      </reference>
+      <name value="HL7 AU ValueSet Base"/>
+      <description value="The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

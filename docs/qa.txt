@@ -1,25 +1,32 @@
 ﻿FHIRIGExperiment01 : Validation Results
 =========================================
 
-err = 0, warn = 3, info = 0
+err = 4, warn = 4, info = 0
 IG Publisher Version: 1.1.76
-Generated Sat Jul 03 11:53:14 UTC 2021. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
+Generated Tue Jul 06 10:10:53 UTC 2021. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
 
- Build Errors : 0 / 0 / 0
+ Build Errors : 4 / 0 / 0
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/ImplementationGuide/fhir.ig.experiment.01 : 0 / 0 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/Patient/patient-example-01 : 0 / 0 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-csd-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-sdf-1 : 0 / 1 / 1
+ /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-vsd-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-meta-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/Patient-base : 0 / 0 / 1
 </table>
 == n/a ==
+ERROR: ImplementationGuide.definition.parameter[25].value: Supressed messages file has errors with no reason (WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1: The Implementation Guide contains no examples for this profile)
+ERROR: ImplementationGuide.definition.parameter[25].value: Supressed messages file has errors with no reason (WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1: The Implementation Guide contains no examples for this profile)
+ERROR: ImplementationGuide.definition.parameter[25].value: Supressed messages file has errors with no reason (WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1: The Implementation Guide contains no examples for this profile)
+ERROR: ImplementationGuide.definition.parameter[25].value: Supressed messages file has errors with no reason (WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1: The Implementation Guide contains no examples for this profile)
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/ImplementationGuide/fhir.ig.experiment.01.xml ==
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/Patient/patient-example-01.xml ==
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-csd-1.xml ==
 WARNING: StructureDefinition.where(url = 'https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1'): The Implementation Guide contains no examples for this profile
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-sdf-1.xml ==
 WARNING: StructureDefinition.where(url = 'https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1'): The Implementation Guide contains no examples for this profile
+== /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-vsd-1.xml ==
+WARNING: StructureDefinition.where(url = 'https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1'): The Implementation Guide contains no examples for this profile
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-meta-1.xml ==
 WARNING: StructureDefinition.where(url = 'https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1'): The Implementation Guide contains no examples for this profile
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/Patient-base.xml ==
