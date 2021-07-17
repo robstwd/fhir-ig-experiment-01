@@ -61,7 +61,7 @@ Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.identifier.sy
         
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.identifier.value
     Then "CodeSystem.identifier.value" has cardinality "1..1"
-    And "CodeSystem.identifier.value" has an invariant "hl7au-csd-base-02::error::The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'"
+    And "CodeSystem.identifier.value" has an invariant "hl7au-csd-base-03::error::The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'"
     
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.identifier.period
     Then "CodeSystem.identifier.period" has cardinality "0..0"
@@ -71,6 +71,7 @@ Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.identifier.as
 
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.version
     Then "CodeSystem.version" has cardinality "1..1"
+    And "CodeSystem.version" has an invariant "hl7au-csd-base-01::error::The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"
     
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.name
     Then "CodeSystem.name" has cardinality "1..1"
@@ -86,7 +87,7 @@ Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.date
     
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.publisher
     Then "CodeSystem.publisher" has cardinality "1..1"
-    And "CodeSystem.publisher" has an invariant "hl7au-csd-base-03::error::The publisher starts with 'Health Level Seven Australia'"
+    And "CodeSystem.publisher" has an invariant "hl7au-csd-base-04::error::The publisher starts with 'Health Level Seven Australia'"
     
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.contact
     Then "CodeSystem.contact" has cardinality "1..1"
@@ -152,5 +153,5 @@ Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.purpose
 
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.copyright
     Then "CodeSystem.copyright" has cardinality "1..1"
-    And "CodeSystem.copyright" has an invariant "hl7au-csd-base-04::error::The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"
+    And "CodeSystem.copyright" has an invariant "hl7au-csd-base-05::error::The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"
 

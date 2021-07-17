@@ -17,12 +17,6 @@
   <differential>
     <element id="CodeSystem">
       <path value="CodeSystem"/>
-      <constraint>
-        <key value="hl7au-csd-base-01"/>
-        <severity value="error"/>
-        <human value="The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"/>
-        <expression value="version.matches('^[0-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"/>
-      </constraint>
     </element>
     <element id="CodeSystem.id">
       <path value="CodeSystem.id"/>
@@ -102,7 +96,7 @@
       <path value="CodeSystem.identifier.value"/>
       <min value="1"/>
       <constraint>
-        <key value="hl7au-csd-base-02"/>
+        <key value="hl7au-csd-base-03"/>
         <severity value="error"/>
         <human value="The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'"/>
         <expression value="startsWith('urn:oid:2.16.840.1.113883.2.3.4.')"/>
@@ -121,6 +115,12 @@
     <element id="CodeSystem.version">
       <path value="CodeSystem.version"/>
       <min value="1"/>
+      <constraint>
+        <key value="hl7au-csd-base-01"/>
+        <severity value="error"/>
+        <human value="The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"/>
+        <expression value="matches('^[0-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"/>
+      </constraint>
     </element>
     <element id="CodeSystem.name">
       <path value="CodeSystem.name"/>
@@ -142,7 +142,7 @@
       <path value="CodeSystem.publisher"/>
       <min value="1"/>
       <constraint>
-        <key value="hl7au-csd-base-03"/>
+        <key value="hl7au-csd-base-04"/>
         <severity value="error"/>
         <human value="The publisher starts with 'Health Level Seven Australia'"/>
         <expression value="startsWith('Health Level Seven Australia')"/>
@@ -237,7 +237,7 @@
       <path value="CodeSystem.copyright"/>
       <min value="1"/>
       <constraint>
-        <key value="hl7au-csd-base-04"/>
+        <key value="hl7au-csd-base-05"/>
         <severity value="error"/>
         <human value="The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"/>
         <expression value="startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"/>
