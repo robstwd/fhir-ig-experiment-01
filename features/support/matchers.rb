@@ -73,6 +73,18 @@ module MatcherHelpers
     return doc.xpath(xpath)
   end
 
+  # this method retuns a nodeset from a test file 
+  # arguments 
+  #   - testfile under examination (relative location ie 'test/CodeSystem/codesystem-hl7au-csd-base-02-fail-01.xml')
+  #   - the element under examination, in full FHIR Resource.element notation ie 'CodeSystem.url'
+  #     (the FHIR notation ios converted into xpath for Nokogiri)
+  def get_nodeset_testfile(testfile,element)
+    doc = get_nokogiri_doc(testfile)
+    element_xpath = "/#{element.gsub('.','/')}"
+    # Kernel.puts doc.xpath(element_xpath)
+    return doc.xpath(element_xpath)
+  end
+
   def get_profile_cardinality(element_name)
     file = get_filename(@profile_id)
     doc = get_nokogiri_doc(file)
@@ -830,6 +842,62 @@ RSpec::Matchers.define :have_element_with_fixedCanonical do |element_name, canon
 
     rescue NodePresentFixedCanonicalNotSetError
       @error_msg = "Element '#{@element_name}' is present but a fixedCanonical has not been set"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a given element in a test file has a specific value
+RSpec::Matchers.define :have_element_with_value do |element_name, value|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # file under test
+      @testfile_name = source
+      # Kernel.puts @testfile_name
+
+      # element being examined
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # expected value
+      @expected_value = value
+      # Kernel.puts @expected_value
+
+      # get xml value in nodeset
+      nodeset = get_nodeset_testfile(@testfile_name,@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?, nodeset.class
+
+      # check first if element is actually present
+      if nodeset.empty?
+        raise(NodeNotPresentError)
+      else
+
+          # get the value
+          @actual_value = nodeset.xpath("@value").to_s
+          # Kernel.puts @actual_value
+
+          @error_msg = "The test file '#{@testfile_name}' has the incorrect value for element: #{@element_name} \n" \
+          " - expected:           '#{@expected_value}'\n" \
+          " - instead found:      '#{@actual_value}'"
+
+          expect(@actual_value).to eq(@expected_value)
+      end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
       false
       
     end
