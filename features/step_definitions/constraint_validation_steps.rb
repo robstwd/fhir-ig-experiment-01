@@ -13,11 +13,18 @@ When('I run the validator command on the instance {string}') do |testfile|
 
   cmd = TTY::Command.new(printer: :null)
 
+  # determine if the feature is being run on Windows or on Linux
+  if Gem::Platform.local.os == "mingw32"
+    validator_command = "java -jar C\:\\Users\\rob\\Documents\\PC_stuff\\software\\FHIR\\validator\\validator_cli.jar -version 4.0.1 #{testfile} -ig fhir.ig.experiment.01#dev -profile https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1 -tx n/a"
+  else
+    validator_command = "java -jar validator.jar -version 4.0.1 #{testfile} -ig fhir.ig.experiment.01#dev -profile https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1 -tx n/a"
+  end
+
   begin
     # TODO 1 - profile as variable
     # TODO 2 - deconstruct command string for readability
     # TODO 3 - enable command to run on Windows PC as well as in GitHub actions (ubuntu)
-    @output, @err = cmd.run("java -jar C\:\\Users\\rob\\Documents\\PC_stuff\\software\\FHIR\\validator\\validator_cli.jar -version 4.0.1 #{testfile} -ig fhir.ig.experiment.01#dev -profile https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1 -tx n/a")
+    @output, @err = cmd.run(validator_command)
   
   rescue TTY::Command::ExitError => e
     # Kernel.puts e.to_s
