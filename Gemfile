@@ -12,4 +12,5 @@ group :development do
   gem 'tty-command'
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   gem 'rb-notifu'
+  gem 'aruba'
 end
