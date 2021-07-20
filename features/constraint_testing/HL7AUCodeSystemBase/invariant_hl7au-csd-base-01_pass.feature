@@ -2,7 +2,7 @@ Feature: expected passes for HL7 AU CodeSystem Base Invariant 'hl7au-csd-base-01
 
  - Context: CodeSystem.version
  - Human: The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1
- - Expression: matches('^[0-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')
+ - Expression: matches('^[1-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')
 
 As a verifier of HL7AU content
 I want invariant 'hl7au-csd-base-01' to pass when expected to
