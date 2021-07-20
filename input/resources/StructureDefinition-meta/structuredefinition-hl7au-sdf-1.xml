@@ -47,7 +47,7 @@
         <key value="hl7au-sdf-base-02"/>
         <severity value="error"/>
         <human value="The url starts with 'http://hl7.org.au/fhir/StructureDefinition/'"/>
-        <expression value="startsWith('http://hl7.org.au/fhir/StructureDefinition/'"/>
+        <expression value="startsWith('http://hl7.org.au/fhir/StructureDefinition/')"/>
       </constraint>
     </element>
     <element id="StructureDefinition.identifier">
