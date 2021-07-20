@@ -1,6 +1,3 @@
 == Suppressed Messages ==
 
-WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1: The Implementation Guide contains no examples for this profile
-WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1: The Implementation Guide contains no examples for this profile
-WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1: The Implementation Guide contains no examples for this profile
-WARNING: https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1: The Implementation Guide contains no examples for this profile
+The Implementation Guide contains no examples for this profile
