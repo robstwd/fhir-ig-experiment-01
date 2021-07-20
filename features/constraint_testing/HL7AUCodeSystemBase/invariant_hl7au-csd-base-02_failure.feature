@@ -30,18 +30,18 @@ Scenario: URL has 'https' instead of 'http'
     And its element "CodeSystem.url" has value "https://terminology.hl7.org.au/CodeSystem/hl7au-csd-base-02-fail-03"
     When I run the validator command on the instance "test/CodeSystem/codesystem-hl7au-csd-base-02-fail-03.xml"
     Then the command should "fail" with "*FAILURE*: 1 errors"
-    And the command should "fail" with "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
+    And the command should "fail" with output message "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
 
 Scenario: URL has wrong case of 'codesystem'
     Given a test file named "test/CodeSystem/codesystem-hl7au-csd-base-02-fail-04.xml" exists
     And its element "CodeSystem.url" has value "https://terminology.hl7.org.au/codesystem/hl7au-csd-base-02-fail-04"
     When I run the validator command on the instance "test/CodeSystem/codesystem-hl7au-csd-base-02-fail-04.xml"
     Then the command should "fail" with "*FAILURE*: 1 errors"
-    And the command should "fail" with "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
+    And the command should "fail" with output message "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
     
 Scenario: URL is for international not Australia (ie not '.au')
     Given a test file named "test/CodeSystem/codesystem-hl7au-csd-base-02-fail-05.xml" exists
     And its element "CodeSystem.url" has value "https://terminology.hl7.org/CodeSystem/hl7au-csd-base-02-fail-05"
     When I run the validator command on the instance "test/CodeSystem/codesystem-hl7au-csd-base-02-fail-05.xml"
     Then the command should "fail" with "*FAILURE*: 1 errors"
-    And the command should "fail" with "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
+    And the command should "fail" with output message "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
