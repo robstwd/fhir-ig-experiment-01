@@ -118,7 +118,7 @@
       <constraint>
         <key value="hl7au-csd-base-01"/>
         <severity value="error"/>
-        <human value="The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"/>
+        <human value="The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1"/>
         <expression value="matches('^[0-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"/>
       </constraint>
     </element>

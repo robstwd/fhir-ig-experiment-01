@@ -1,7 +1,8 @@
 Feature: expected failures for HL7 AU CodeSystem Base Invariant 'hl7au-csd-base-02'
 
-Human: The url starts with 'http://terminology.hl7.org.au/CodeSystem/'
-Expression: startsWith('http://terminology.hl7.org.au/CodeSystem/')
+ - Context: CodeSystem.url
+ - Human: The url starts with 'http://terminology.hl7.org.au/CodeSystem/'
+ - Expression: startsWith('http://terminology.hl7.org.au/CodeSystem/')
 
 As a verifier of HL7AU content
 I want invariant 'hl7au-csd-base-02' to fail when expected to

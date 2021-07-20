@@ -71,7 +71,7 @@ Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.identifier.as
 
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.version
     Then "CodeSystem.version" has cardinality "1..1"
-    And "CodeSystem.version" has an invariant "hl7au-csd-base-01::error::The version number is in semantic versioning format ('n.n.n'), with the major verion number at least 1"
+    And "CodeSystem.version" has an invariant "hl7au-csd-base-01::error::The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1"
     
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.name
     Then "CodeSystem.name" has cardinality "1..1"
