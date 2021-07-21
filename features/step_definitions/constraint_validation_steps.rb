@@ -13,8 +13,6 @@ When('I run the validator command on the instance {string} against profile {stri
 
   cmd = TTY::Command.new(printer: :null)
 
-  profile_url = "https://about.me/robeastwood/fhir/ig/StructureDefinition/#{profile_id}"
-
   # determine if the feature is being run on Windows or on Linux
   # on Windows 
   if Gem::Platform.local.os == "mingw32"
@@ -23,7 +21,13 @@ When('I run the validator command on the instance {string} against profile {stri
     path_to_validator = "validator.jar"
   end
 
-  validator_command = "java -jar #{path_to_validator} -version 4.0.1 #{testfile} -ig fhir.ig.experiment.01#dev -profile #{profile_url} -tx n/a"
+  ig = "fhir.ig.experiment.01#dev"
+
+  profile_url = "https://about.me/robeastwood/fhir/ig/StructureDefinition/#{profile_id}"
+
+  term_server = "https://r4.ontoserver.csiro.au/fhir"
+
+  validator_command = "java -jar #{path_to_validator} -version 4.0.1 #{testfile} -ig #{ig} -profile #{profile_url} -tx #{term_server}"
 
   begin
     @output, @err = cmd.run(validator_command)
