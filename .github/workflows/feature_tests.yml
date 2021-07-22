@@ -20,7 +20,7 @@ jobs:
         ruby-version: 2.7.3
         bundler-cache: true
 
-    - run: bundle config unset deployment
+    - run: bundle config --local deployment false
     
     - name: Setup JVM
       uses: actions/setup-java@v1
