@@ -25,9 +25,11 @@ When('I run the validator command on this testfile against profile {string}') do
 
   profile_url = "https://about.me/robeastwood/fhir/ig/StructureDefinition/#{profile_id}"
 
-  term_server = "https://r4.ontoserver.csiro.au/fhir"
+  # term_server = "https://r4.ontoserver.csiro.au/fhir"
+  # term_server = "n/a"
+  # -tx #{term_server}
 
-  validator_command = "java -jar #{path_to_validator} -version 4.0.1 #{@testfile} -ig #{ig} -profile #{profile_url} -tx #{term_server}"
+  validator_command = "java -jar #{path_to_validator} -version 4.0.1 #{@testfile} -ig #{ig} -profile #{profile_url}"
 
   begin
     @output, @err = cmd.run(validator_command)
