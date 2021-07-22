@@ -1,0 +1,55 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+	<id value="hl7au-vsd-base-01-pass-02"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+	</meta>
+	<url value="http://terminology.hl7.org.au/ValueSet/hl7au-vsd-base-01-pass-02"/>
+	<identifier> 
+		<system value="urn:ietf:rfc:3986"/> 
+		<value value="urn:oid:2.16.840.1.113883.2.3.4.2.4.22"/> 
+	</identifier> 
+	<version value="1.0.5"/>
+	<name value="DVAEntitlement"/>
+	<title value="DVA Entitlement"/>
+	<status value="draft"/>
+	<experimental value="true"/>
+	<date value="2021-07-08"/>
+	<publisher value="Health Level Seven Australia (Patient Administration WG)"/>
+	<contact>
+		<telecom>
+		  <system value="url" />
+		  <value value="http://hl7.com.au" />
+		  <use value="work" />
+		</telecom>
+	</contact>
+	<description value="Entitlement types that may be associated with an individual's Department of Veterans’ Affairs (DVA) File Number on a DVA issued health card in an Australian context."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="AU"/>
+		</coding>
+	</jurisdiction>
+	<copyright value="HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved."/>
+	<compose>
+		<include>
+			<system value="http://loinc.org"/>
+			<version value="2.36"/>
+			<concept>
+				<code value="14647-2"/>
+				<display value="Cholesterol [Moles/Volume]"/>
+			</concept>
+			<concept>
+				<code value="2093-3"/>
+				<display value="Cholesterol [Mass/Volume]"/>
+			</concept>
+			<concept>
+				<code value="35200-5"/>
+				<display value="Cholesterol [Mass Or Moles/Volume]"/>
+			</concept>
+			<concept>
+				<code value="9342-7"/>
+				<display value="Cholesterol [Percentile]"/>
+			</concept>
+		</include>
+	</compose> 
+</ValueSet>

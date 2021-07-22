@@ -71,6 +71,7 @@ Scenario: HL7 AU ValueSet Base profile constraints on ValueSet.identifier.assign
 
 Scenario: HL7 AU ValueSet Base profile constraints on ValueSet.version
     Then "ValueSet.version" has cardinality "1..1"
+    And "ValueSet.version" has an invariant "hl7au-vsd-base-01::error::The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1"
     
 Scenario: HL7 AU ValueSet Base profile constraints on ValueSet.name
     Then "ValueSet.name" has cardinality "1..1"
