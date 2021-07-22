@@ -39,10 +39,18 @@ Scenario: version is '2.1.01'
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
-    
+
 Scenario: version is '1.1.1-alpha'
     Given a test file named "test-cases/CodeSystem/codesystem-hl7au-csd-base-01-fail-05.xml" exists
     And its element "CodeSystem.version" has value "1.1.1-alpha"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    
+Scenario: version is '4.06.10'
+    Given a test file named "test-cases/CodeSystem/codesystem-hl7au-csd-base-01-fail-06.xml" exists
+    And its element "CodeSystem.version" has value "4.06.10"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+   
