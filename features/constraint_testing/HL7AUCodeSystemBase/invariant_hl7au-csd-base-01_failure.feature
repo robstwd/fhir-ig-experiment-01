@@ -1,4 +1,4 @@
-Feature: HL7 AU CodeSystem Base profile: expected failures for HL7 AU CodeSystem Base Invariant 'hl7au-csd-base-01'
+Feature: HL7 AU CodeSystem Base profile: expected failures for invariant 'hl7au-csd-base-01'
 
  - Context: CodeSystem.version
  - Human: The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1

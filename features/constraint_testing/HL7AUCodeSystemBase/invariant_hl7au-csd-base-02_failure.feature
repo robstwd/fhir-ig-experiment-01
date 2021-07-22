@@ -1,4 +1,4 @@
-Feature: HL7 AU CodeSystem Base profile: expected failures for HL7 AU CodeSystem Base Invariant 'hl7au-csd-base-02'
+Feature: HL7 AU CodeSystem Base profile: expected failures for invariant 'hl7au-csd-base-02'
 
  - Context: CodeSystem.url
  - Human: The url starts with 'http://terminology.hl7.org.au/CodeSystem/'
