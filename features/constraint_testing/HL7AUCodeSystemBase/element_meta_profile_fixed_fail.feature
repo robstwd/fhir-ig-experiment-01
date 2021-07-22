@@ -14,20 +14,20 @@ Background: Profile exists
 Scenario: CodeSystem.meta.profile value is completely wrong
     Given a test file named "test/CodeSystem/codesystem-meta-profile-fixed-fail-01.xml" exists
     And its element "CodeSystem.meta.profile" has value "http://example.org/fhir/StructureDefinition/examplecodesystem"
-    When I run the validator command on the instance "test/CodeSystem/codesystem-meta-profile-fixed-fail-01.xml" against profile "structuredefinition-hl7au-csd-1"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message " must be 'http://hl7.org/fhir/StructureDefinition/shareablecodesystem'"
 
 Scenario: CodeSystem.meta.profile value has the wrong case
     Given a test file named "test/CodeSystem/codesystem-meta-profile-fixed-fail-02.xml" exists
     And its element "CodeSystem.meta.profile" has value "http://hl7.org/fhir/structuresefinition/ShareableCodeSystem"
-    When I run the validator command on the instance "test/CodeSystem/codesystem-meta-profile-fixed-fail-02.xml" against profile "structuredefinition-hl7au-csd-1"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message " must be 'http://hl7.org/fhir/StructureDefinition/shareablecodesystem'"
 
 Scenario: CodeSystem.meta.profile url has 'https' instead of 'http'
     Given a test file named "test/CodeSystem/codesystem-meta-profile-fixed-fail-03.xml" exists
     And its element "CodeSystem.meta.profile" has value "https://hl7.org/fhir/StructureDefinition/shareablecodesystem"
-    When I run the validator command on the instance "test/CodeSystem/codesystem-meta-profile-fixed-fail-03.xml" against profile "structuredefinition-hl7au-csd-1"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message " must be 'http://hl7.org/fhir/StructureDefinition/shareablecodesystem'"

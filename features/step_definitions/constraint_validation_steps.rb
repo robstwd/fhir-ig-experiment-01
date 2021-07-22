@@ -9,7 +9,7 @@ Given('its element {string} has value {string}') do |element, value|
 end
 
 # command run finally works
-When('I run the validator command on the instance {string} against profile {string}') do |testfile, profile_id|
+When('I run the validator command on this testfile against profile {string}') do |profile_id|
 
   cmd = TTY::Command.new(printer: :null)
 
@@ -27,7 +27,7 @@ When('I run the validator command on the instance {string} against profile {stri
 
   term_server = "https://r4.ontoserver.csiro.au/fhir"
 
-  validator_command = "java -jar #{path_to_validator} -version 4.0.1 #{testfile} -ig #{ig} -profile #{profile_url} -tx #{term_server}"
+  validator_command = "java -jar #{path_to_validator} -version 4.0.1 #{@testfile} -ig #{ig} -profile #{profile_url} -tx #{term_server}"
 
   begin
     @output, @err = cmd.run(validator_command)
