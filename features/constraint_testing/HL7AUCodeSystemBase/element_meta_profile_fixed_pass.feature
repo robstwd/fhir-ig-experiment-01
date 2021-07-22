@@ -1,4 +1,4 @@
-Feature: expected passes for element meta.profile fixed value
+Feature: HL7 AU CodeSystem Base profile: expected passes for element meta.profile fixed value
 
  - Context: CodeSystem.meta.profile
  - fixedValue = http://hl7.org/fhir/StructureDefinition/shareablecodesystem
