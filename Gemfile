@@ -13,4 +13,5 @@ group :development do
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   gem 'rb-notifu'
   gem 'aruba'
+  gem 'jekyll'
 end
