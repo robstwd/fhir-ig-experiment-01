@@ -5,7 +5,7 @@ Feature: HL7 AU CodeSystem Base profile: expected failures for HL7 AU CodeSystem
  - Expression: matches('^[1-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')
 
 As a verifier of HL7AU content
-I want invariant 'hl7au-csd-base-01' to pass when expected to
+I want invariant 'hl7au-csd-base-01' to fail when expected to
 In order to be assured of quality
 
 Background: Profile exists
