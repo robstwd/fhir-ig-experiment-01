@@ -18,9 +18,9 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7.3
-        bundler-cache: true
 
-    - run: bundle config --local deployment false
+    - name: install gems
+      run: bundle install
     
     - name: Setup JVM
       uses: actions/setup-java@v1
@@ -29,12 +29,9 @@ jobs:
     
     - name: Download FHIR IG Publisher
       run: wget -q https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -O org.hl7.fhir.publisher.jar
-
-    - name: Install Jekyll
-      run: gem install jekyll --no-document
     
     - name: Build with FHIR IG Publisher
       run: java -jar org.hl7.fhir.publisher.jar -ig ig.ini
     
     - name: Run cucumber tests
-      run: bundle exec cucumber --color
+      run: bundle exec cucumber --color --quiet
