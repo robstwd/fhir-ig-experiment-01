@@ -57,7 +57,7 @@
   <title value="HL7 AU CodeSystem Base"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2021-07-22T10:49:37+00:00"/>
+  <date value="2021-07-22T11:17:39+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -1124,7 +1124,7 @@
         <key value="hl7au-csd-base-01"/>
         <severity value="error"/>
         <human value="The version number is in semantic versioning format (&#39;n.n.n&#39;), with the major version number at least 1"/>
-        <expression value="matches(&#39;^[1-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$&#39;)"/>
+        <expression value="matches(&#39;^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$&#39;)"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
@@ -3890,7 +3890,7 @@
         <key value="hl7au-csd-base-01"/>
         <severity value="error"/>
         <human value="The version number is in semantic versioning format (&#39;n.n.n&#39;), with the major version number at least 1"/>
-        <expression value="matches(&#39;^[1-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$&#39;)"/>
+        <expression value="matches(&#39;^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$&#39;)"/>
       </constraint>
     </element>
     <element id="CodeSystem.name">

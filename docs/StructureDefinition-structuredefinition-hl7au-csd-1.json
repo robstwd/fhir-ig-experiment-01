@@ -11,7 +11,7 @@
   "title": "HL7 AU CodeSystem Base",
   "status": "draft",
   "experimental": true,
-  "date": "2021-07-22T10:49:37+00:00",
+  "date": "2021-07-22T11:17:39+00:00",
   "contact": [
     {
       "telecom": [
@@ -1312,7 +1312,7 @@
             "key": "hl7au-csd-base-01",
             "severity": "error",
             "human": "The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1",
-            "expression": "matches('^[1-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"
+            "expression": "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')"
           }
         ],
         "isModifier": false,
@@ -4722,7 +4722,7 @@
             "key": "hl7au-csd-base-01",
             "severity": "error",
             "human": "The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1",
-            "expression": "matches('^[1-9]{1,2}[.][0-9]{1,2}[.][0-9]{1,2}$')"
+            "expression": "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')"
           }
         ]
       },
