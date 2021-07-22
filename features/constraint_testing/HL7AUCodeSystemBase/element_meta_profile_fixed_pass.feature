@@ -13,7 +13,7 @@ Background: Profile exists
 
 # all other variations, such as multiple profile values, will trigger different errors
 Scenario: CodeSystem.meta.profile value is "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
-    Given a test file named "test/CodeSystem/codesystem-meta-profile-fixed-pass-01.xml" exists
+    Given a test file named "test-cases/CodeSystem/codesystem-meta-profile-fixed-pass-01.xml" exists
     And its element "CodeSystem.meta.profile" has value "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "succeed" with output message "Success: 0 errors"

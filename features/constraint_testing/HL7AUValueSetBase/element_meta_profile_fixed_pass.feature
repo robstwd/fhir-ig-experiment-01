@@ -13,7 +13,7 @@ Background: Profile exists
 
 # all other variations, such as multiple profile values, will trigger different errors
 Scenario: ValueSet.meta.profile value is "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-    Given a test file named "test/ValueSet/valueset-meta-profile-fixed-pass-01.xml" exists
+    Given a test file named "test-cases/ValueSet/valueset-meta-profile-fixed-pass-01.xml" exists
     And its element "ValueSet.meta.profile" has value "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-vsd-1"
     Then the command should "succeed" with output message "Success: 0 errors"
