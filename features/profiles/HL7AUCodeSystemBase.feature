@@ -8,6 +8,9 @@ Background: Profile exists
     Given the generated "html" file of profile "HL7 AU CodeSystem Base" exists
     And the generated "xml" file of profile "HL7 AU CodeSystem Base" exists
 
+Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem
+    Then "CodeSystem" has an invariant "hl7au-csd-base-05::error::The url must end with the id value"
+
 Scenario: HL7 AU CodeSystem Base profile constraints on CodeSystem.id
     Then "CodeSystem.id" has cardinality "1..1"
 
