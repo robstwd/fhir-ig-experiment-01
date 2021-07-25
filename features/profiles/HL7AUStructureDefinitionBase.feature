@@ -11,6 +11,9 @@ Background: Profile exists
 Scenario: HL7 AU StructureDefinition Base profile derivation
     Then it has been derived from "R4 StructureDefinition resource"
 
+Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition
+    Then "StructureDefinition" has an invariant "hl7au-sdf-base-05::error::The url must end with the id value"
+
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.id
     Then "StructureDefinition.id" has cardinality "1..1"
 
