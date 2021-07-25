@@ -17,6 +17,12 @@
   <differential>
     <element id="ValueSet">
       <path value="ValueSet"/>
+      <constraint>
+        <key value="hl7au-vsd-base-05"/>
+        <severity value="error"/>
+        <human value="The url must end with the id value"/>
+        <expression value="url.replace('http://terminology.hl7.org.au/ValueSet/','') = id"/>
+      </constraint>
     </element>
     <element id="ValueSet.id">
       <path value="ValueSet.id"/>
