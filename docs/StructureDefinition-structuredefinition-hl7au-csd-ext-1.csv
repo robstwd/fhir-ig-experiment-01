@@ -98,10 +98,10 @@ hl7au-csd-base-01:The version number is in semantic versioning format ('n.n.n'),
 "CodeSystem.name","","","",1,1,"","","Y","string {[]} {[]}
 ","Name for this code system (computer friendly)","A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.","The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.","Support human navigation and code generation.","","","","","","","",,,,,"",,,,"CodeSystem.name",0,1,"inv-0
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+hl7au-csd-ext-02:The name must end with 'AU' {endsWith('AU')}"
 "CodeSystem.title","","","",1,1,"","","Y","string {[]} {[]}
 ","Name for this code system (human friendly)","A short, descriptive, user-friendly title for the code system.","This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.","","","","","","","","",,,,,"",,,,"CodeSystem.title",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Definition.title"
+hl7au-csd-ext-03:The title must end with ' AU' {endsWith(' AU')}","Definition.title"
 "CodeSystem.status","","","",1,1,"","Y","Y","code {[]} {[]}
 ","draft | active | retired | unknown","The date (and optionally time) when the code system resource was created or revised.","Allows filtering of code systems that are appropriate for use versus not.","","","","","","","","",,"required","The lifecycle status of an artifact.","http://hl7.org/fhir/ValueSet/publication-status|4.0.1","",,,,"CodeSystem.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Definition.status","FiveWs.status"
@@ -157,7 +157,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "CodeSystem.description","","Scope
 Purpose","",1,1,"","","","markdown {[]} {[]}
 ","Natural language description of the code system","A free text natural language description of the code system from a consumer's perspective.","This description can be used to capture details such as why the code system was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the code system as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the code system is presumed to be the predominant language in the place the code system was created).","","","","","","","","",,,,,"",,,,"CodeSystem.description",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A","Definition.description"
+hl7au-csd-ext-04:The description must start with 'Extended concept codes for ' {startsWith('Extended concept codes for ')}hl7au-csd-ext-05:The description must end with ' for use in an Australian context.' {endsWith(' for use in an Australian context.')}","N/A","Definition.description"
 "CodeSystem.useContext","","","",0,0,"","","Y","UsageContext {[]} {[]}
 ","The context that the content is intended to support","The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate code system instances.","When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.","Assist in searching for appropriate content.","","","","","","","",,,,,"",,,,"CodeSystem.useContext",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Definition.useContext"
