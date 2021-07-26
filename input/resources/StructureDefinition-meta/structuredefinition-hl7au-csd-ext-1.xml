@@ -7,7 +7,7 @@
   <title value="HL7 AU CodeSystem AU Extended"/>
   <status value="draft"/>
   <experimental value="true" />
-  <description value="The purpose of this profile is to enforce metadata and structure conventions for CodeSystems, that have been extended for use in Australia."/>
+  <description value="The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia."/>
   <fhirVersion value="4.0.1"/>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -27,21 +27,38 @@
         <expression value="startsWith('au-')"/>
       </constraint>
     </element>
-    <element id="CodeSystem.url">
-      <path value="CodeSystem.url"/>
-      <min value="1"/>
-      <constraint>
-        <key value="hl7au-csd-base-02"/>
-        <severity value="error"/>
-        <human value="The url starts with 'http://terminology.hl7.org.au/CodeSystem/'"/>
-        <expression value="startsWith('http://terminology.hl7.org.au/CodeSystem/')"/>
-      </constraint>
-    </element>
     <element id="CodeSystem.name">
       <path value="CodeSystem.name"/>
+      <constraint>
+        <key value="hl7au-csd-ext-02"/>
+        <severity value="error"/>
+        <human value="The name must end with 'AU'"/>
+        <expression value="endsWith('AU')"/>
+      </constraint>
     </element>
     <element id="CodeSystem.title">
       <path value="CodeSystem.title"/>
+      <constraint>
+        <key value="hl7au-csd-ext-03"/>
+        <severity value="error"/>
+        <human value="The title must end with ' AU'"/>
+        <expression value="endsWith(' AU')"/>
+      </constraint>
+    </element>
+    <element id="CodeSystem.description">
+      <path value="CodeSystem.description"/>
+      <constraint>
+        <key value="hl7au-csd-ext-04"/>
+        <severity value="error"/>
+        <human value="The description must start with 'Extended concept codes for '"/>
+        <expression value="startsWith('Extended concept codes for ')"/>
+      </constraint>
+      <constraint>
+        <key value="hl7au-csd-ext-05"/>
+        <severity value="error"/>
+        <human value="The description must end with ' for use in an Australian context.'"/>
+        <expression value="endsWith(' for use in an Australian context.')"/>
+      </constraint>
     </element>
   </differential>
 </StructureDefinition>
