@@ -7,12 +7,15 @@ PROFILES = {
   "Patient with Mandatory Identifier"  => "patient-ident-1",
   "HL7 AU StructureDefinition Base"         => "structuredefinition-hl7au-sdf-1",
   "HL7 AU CodeSystem Base"         => "structuredefinition-hl7au-csd-1",
-  "HL7 AU ValueSet Base"         => "structuredefinition-hl7au-vsd-1"
+  "HL7 AU CodeSystem AU Extended"  => "structuredefinition-hl7au-csd-ext-1",
+  "HL7 AU ValueSet Base"           => "structuredefinition-hl7au-vsd-1",
+  "HL7 AU ValueSet AU Extended"    => "structuredefinition-hl7au-vsd-ext-1"
   }
 
 RESOURCES = {
   "R4 Patient resource" => "http://hl7.org/fhir/StructureDefinition/Patient",
-  "R4 StructureDefinition resource" => "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
+  "R4 StructureDefinition resource" => "http://hl7.org/fhir/StructureDefinition/StructureDefinition",
+  "HL7 AU CodeSystem AU Extended"   => "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
   }
 
 FAILURE_MESSAGE_START = "\n VALIDATION FAILURE:\n "
