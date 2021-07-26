@@ -15,6 +15,10 @@
       {
         "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",
         "title": "HL7 AU CodeSystem Base"
+      },
+      {
+        "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-ext-1",
+        "title": "HL7 AU CodeSystem AU Extended"
       }
     ],
     "StructureDefinition": [

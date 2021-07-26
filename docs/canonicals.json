@@ -21,6 +21,13 @@
     "name": "HL7AUCodeSystemBase"
   },
   {
+    "id": "structuredefinition-hl7au-csd-ext-1",
+    "type": "StructureDefinition",
+    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-ext-1",
+    "version": "0.0.1",
+    "name": "HL7AUCodeSystemAUExtended"
+  },
+  {
     "id": "structuredefinition-hl7au-sdf-1",
     "type": "StructureDefinition",
     "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1",
