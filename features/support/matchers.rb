@@ -915,7 +915,7 @@ end
 
 
 # This matcher determines if the FHIR validator output contains the correct content
-# arguement: status = the expected result as pass or fail
+# argument: status = the expected result as pass or fail
 # output_string: = the expected text to find in the output
 # source: the actual output message
 RSpec::Matchers.define :include_correct_content do |status, output_string| # element_name, value
@@ -936,8 +936,16 @@ RSpec::Matchers.define :include_correct_content do |status, output_string| # ele
     @expected_output_string = output_string
     # Kernel.puts @expected_output_string
 
-    @error_msg = "The validator command was expected to #{@expected_status} containing message: #{@expected_output_string} \n" \
-          "  However, it did not #{@expected_status}"
+    if @expected_status = "succeed" 
+
+      @error_msg = "The validator command was expected to #{@expected_status} containing message: #{@expected_output_string} \n" \
+          " Instead it failed with the message: #{/(\*FAILURE\*:(.*)\z)/.match(@actual_output).to_s} \n" \
+          "#{@actual_output}"
+
+    elsif @expected_status = "fail" 
+      @error_msg = "The validator command was expected to #{@expected_status} containing message: #{@expected_output_string} \n" \
+          " Instead it passed."
+    end
 
     expect(@actual_output).to include(@expected_output_string)
 
