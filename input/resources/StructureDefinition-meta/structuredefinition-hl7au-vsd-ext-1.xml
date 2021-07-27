@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="structuredefinition-hl7au-vsd-ext-1"/>
+  <url value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-ext-1"/>
+  <version value="0.0.1"/>
+  <name value="HL7AUValueSetAUExtended"/>
+  <title value="HL7 AU ValueSet AU Extended"/>
+  <status value="draft"/>
+  <experimental value="true" />
+  <description value="The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="ValueSet"/>
+  <baseDefinition value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="ValueSet.id">
+      <path value="ValueSet.id"/>
+      <constraint>
+        <key value="hl7au-vsd-ext-01"/>
+        <severity value="error"/>
+        <human value="The id must start with 'au-'"/>
+        <expression value="startsWith('au-')"/>
+      </constraint>
+      <constraint>
+        <key value="hl7au-vsd-ext-02"/>
+        <severity value="error"/>
+        <human value="The id must end with '-extended'"/>
+        <expression value="endsWith('-extended')"/>
+      </constraint>
+    </element>     
+    <element id="ValueSet.url">
+      <path value="ValueSet.url"/>
+      <constraint>
+        <key value="hl7au-vsd-ext-03"/>
+        <severity value="error"/>
+        <human value="The url must end with '-extended'"/>
+        <expression value="endsWith('-extended')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.name">
+      <path value="ValueSet.name"/>
+      <constraint>
+        <key value="hl7au-vsd-ext-04"/>
+        <severity value="error"/>
+        <human value="The name must end with 'AUExtended'"/>
+        <expression value="endsWith('AUExtended')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.title">
+      <path value="ValueSet.title"/>
+      <constraint>
+        <key value="hl7au-vsd-ext-05"/>
+        <severity value="error"/>
+        <human value="The title must end with ' - AU Extended'"/>
+        <expression value="endsWith(' - AU Extended')"/>
+      </constraint>
+    </element>
+    <element id="ValueSet.description">
+      <path value="ValueSet.description"/>
+      <constraint>
+        <key value="hl7au-vsd-ext-06"/>
+        <severity value="error"/>
+        <human value="The description must end with ' extended for use in an Australian context.'"/>
+        <expression value="endsWith(' extended for use in an Australian context.')"/>
+      </constraint>
+    </element>
+  </differential>
+</StructureDefinition>

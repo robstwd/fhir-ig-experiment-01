@@ -16,7 +16,8 @@ PROFILES = {
 RESOURCES = {
   "R4 Patient resource"             => "http://hl7.org/fhir/StructureDefinition/Patient",
   "R4 StructureDefinition resource" => "http://hl7.org/fhir/StructureDefinition/StructureDefinition",
-  "HL7 AU CodeSystem Base"          => "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
+  "HL7 AU CodeSystem Base"          => "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",
+  "HL7 AU ValueSet Base"            => "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"
   }
 
 FAILURE_MESSAGE_START = "\n VALIDATION FAILURE:\n "
