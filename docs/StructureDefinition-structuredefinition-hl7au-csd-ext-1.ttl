@@ -18,7 +18,7 @@
   fhir:StructureDefinition.title [ fhir:value "HL7 AU CodeSystem AU Extended"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.experimental [ fhir:value "true"^^xsd:boolean];
-  fhir:StructureDefinition.date [ fhir:value "2021-07-27T10:53:21+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-07-27T11:16:45+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
