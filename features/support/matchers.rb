@@ -12,10 +12,11 @@ PROFILES = {
   "HL7 AU ValueSet AU Extended"    => "structuredefinition-hl7au-vsd-ext-1"
   }
 
+# array of resources/profiles that are the basis of derivation
 RESOURCES = {
-  "R4 Patient resource" => "http://hl7.org/fhir/StructureDefinition/Patient",
+  "R4 Patient resource"             => "http://hl7.org/fhir/StructureDefinition/Patient",
   "R4 StructureDefinition resource" => "http://hl7.org/fhir/StructureDefinition/StructureDefinition",
-  "HL7 AU CodeSystem AU Extended"   => "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
+  "HL7 AU CodeSystem Base"          => "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
   }
 
 FAILURE_MESSAGE_START = "\n VALIDATION FAILURE:\n "

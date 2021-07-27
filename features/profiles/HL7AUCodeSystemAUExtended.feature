@@ -9,7 +9,7 @@ Background: Profile exists
     And the generated "xml" file of profile "HL7 AU CodeSystem AU Extended" exists
 
 Scenario: HL7 AU CodeSystem AU Extended profile derivation
-    Then it has been derived from "HL7 AU CodeSystem AU Extended"
+    Then it has been derived from "HL7 AU CodeSystem Base"
 
 Scenario: HL7 AU CodeSystem AU Extended profile constraints on CodeSystem.id
     Then "CodeSystem.id" has an invariant "hl7au-csd-ext-01::error::The id must start with 'au-'"
