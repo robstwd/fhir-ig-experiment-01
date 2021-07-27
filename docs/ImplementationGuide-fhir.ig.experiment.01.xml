@@ -12,7 +12,7 @@
   <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-27T21:32:42+00:00"/>
+  <date value="2021-07-27T22:00:13+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -266,6 +266,16 @@
       </reference>
       <name value="HL7 AU StructureDefinition Base"/>
       <description value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/structuredefinition-hl7au-vsd-ext-1"/>
+      </reference>
+      <name value="HL7 AU ValueSet AU Extended"/>
+      <description value="The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

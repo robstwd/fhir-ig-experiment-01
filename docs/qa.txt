@@ -3,7 +3,7 @@
 
 err = 1, warn = 0, info = 0
 IG Publisher Version: 1.1.77
-Generated Tue Jul 27 21:33:02 UTC 2021. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
+Generated Tue Jul 27 22:00:31 UTC 2021. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
 
  Build Errors : 1 / 0 / 0
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/ImplementationGuide/fhir.ig.experiment.01 : 0 / 0 / 1
@@ -12,6 +12,7 @@ Generated Tue Jul 27 21:33:02 UTC 2021. FHIR version 4.0.1 for fhir.ig.experimen
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-csd-ext-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-sdf-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-vsd-1 : 0 / 1 / 1
+ /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-vsd-ext-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-meta-1 : 0 / 1 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/Patient-base : 0 / 0 / 1
 </table>
@@ -23,5 +24,6 @@ ERROR: ImplementationGuide.definition.parameter[25].value: Supressed messages fi
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-csd-ext-1.xml ==
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-sdf-1.xml ==
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-vsd-1.xml ==
+== /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-hl7au-vsd-ext-1.xml ==
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition-meta/structuredefinition-meta-1.xml ==
 == /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/Patient-base.xml ==

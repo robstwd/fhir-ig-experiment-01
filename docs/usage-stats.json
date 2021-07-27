@@ -31,6 +31,10 @@
       {
         "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1",
         "title": "HL7 AU ValueSet Base"
+      },
+      {
+        "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-ext-1",
+        "title": "HL7 AU ValueSet AU Extended"
       }
     ]
   },
