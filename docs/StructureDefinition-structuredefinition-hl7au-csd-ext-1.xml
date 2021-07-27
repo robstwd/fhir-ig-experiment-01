@@ -16,7 +16,7 @@
   <title value="HL7 AU CodeSystem AU Extended"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2021-07-27T09:40:43+00:00"/>
+  <date value="2021-07-27T10:53:21+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -132,8 +132,8 @@
       </constraint>
       <constraint>
         <key value="hl7au-csd-base-05"/>
-        <severity value="error"/>
-        <human value="The url must end with the id value"/>
+        <severity value="warning"/>
+        <human value="The url should end with the id value, unless it is an AU extended CodeSystem"/>
         <expression value="url.replace(&#39;http://terminology.hl7.org.au/CodeSystem/&#39;,&#39;&#39;) = id"/>
         <source value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"/>
       </constraint>

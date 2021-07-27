@@ -192,7 +192,7 @@
  <tr><td>Version:</td><td>0.0.1</td></tr>
  <tr><td>Name:</td><td>HL7AUCodeSystemAUExtended</td></tr>
  <tr><td>Title:</td><td>HL7 AU CodeSystem AU Extended</td></tr>
- <tr><td>Status:</td><td>Draft as of 2021-07-27T09:40:43+00:00</td></tr>
+ <tr><td>Status:</td><td>Draft as of 2021-07-27T10:53:21+00:00</td></tr>
  <tr><td>Definition:</td><td><p>The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia.</p>
 </td></tr>
  <tr><td>Source Resource:</td><td><a href="StructureDefinition-structuredefinition-hl7au-csd-ext-1.profile.xml.html">XML</a> / <a href="StructureDefinition-structuredefinition-hl7au-csd-ext-1.profile.json.html">JSON</a> / <a href="StructureDefinition-structuredefinition-hl7au-csd-ext-1.profile.ttl.html">Turtle</a></td></tr>
@@ -824,7 +824,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <tr><td>dom-4</td><td>CodeSystem</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
 <tr><td>dom-5</td><td>CodeSystem</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
 <tr><td>dom-6</td><td>CodeSystem</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>hl7au-csd-base-05</td><td>CodeSystem</td><td>The url must end with the id value<br/>: url.replace('http://terminology.hl7.org.au/CodeSystem/','') = id</td><td></td></tr>
+<tr><td>hl7au-csd-base-05</td><td>CodeSystem</td><td>The url should end with the id value, unless it is an AU extended CodeSystem<br/>: url.replace('http://terminology.hl7.org.au/CodeSystem/','') = id</td><td></td></tr>
 <tr><td>hl7au-csd-ext-01</td><td>CodeSystem.id</td><td>The id must start with 'au-'<br/>: startsWith('au-')</td><td></td></tr>
 <tr><td>ele-1</td><td>CodeSystem.meta</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ele-1</td><td>CodeSystem.meta.extension</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
@@ -981,7 +981,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 27, 2021 09:40+0000">2021-07-27</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 27, 2021 10:53+0000">2021-07-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
