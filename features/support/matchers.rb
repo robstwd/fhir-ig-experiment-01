@@ -114,6 +114,15 @@ module MatcherHelpers
     "#{FAILURE_MESSAGE_END}"
   end
 
+  # this method captures the error message summary line of the FHIR validator, if present (ie when a failure actually occurs)
+  # eg "*FAILURE*: 1 errors, 0 warnings, 0 notes"
+  # this returns a MatchData object (https://ruby-doc.org/core-2.6.8/MatchData.html)
+  # the argument is the FHIR validator output as a string
+  def get_validator_error_summary(validator_output)
+    text_to_match = %r{(\*FAILURE\*:(.*))}
+    return text_to_match.match(validator_output)     
+  end
+
 end
 
 
@@ -936,14 +945,31 @@ RSpec::Matchers.define :include_correct_content do |status, output_string| # ele
     @expected_output_string = output_string
     # Kernel.puts @expected_output_string
 
-    if @expected_status = "succeed" 
+    # prepare first line of the failure message, which is identical for the failure and success scenarios
+    @error_msg_first_line = "The validator command was expected to #{@expected_status} containing message: #{@expected_output_string} \n"
 
-      @error_msg = "The validator command was expected to #{@expected_status} containing message: #{@expected_output_string} \n" \
-          " Instead it failed with the message: #{/(\*FAILURE\*:(.*)\z)/.match(@actual_output).to_s} \n" \
-          "#{@actual_output}"
+    # when the validator is expected to succeed
+    if @expected_status == "succeed" 
 
-    elsif @expected_status = "fail" 
-      @error_msg = "The validator command was expected to #{@expected_status} containing message: #{@expected_output_string} \n" \
+      # capture the error message summary line, if one exists
+      @error_summary = get_validator_error_summary(@actual_output)
+
+      # check that there actually is an error line and if not, do nothing
+      if not @error_summary.nil?
+
+        # error message gets constructed of
+        # 1) pre-prepared first line
+        # 2) the single line of the error summary (MatchData.to_s)
+        # 3) and a full output of the validator errors (MatchData.post_match with chomp to remove the extra empty line)
+        @error_msg = "#{@error_msg_first_line}" \
+            " Instead it failed with the message: #{@error_summary.to_s} \n" \
+            "#{@error_summary.post_match.chomp}"
+      end
+
+    # however if the validator is expected to fail but instead it succeeds
+    # output this instead
+    elsif @expected_status == "fail" 
+      @error_msg = "#{@error_msg_first_line}" \
           " Instead it passed."
     end
 
