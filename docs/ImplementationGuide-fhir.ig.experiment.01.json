@@ -11,7 +11,7 @@
   "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-26T09:50:12+00:00",
+  "date": "2021-07-27T09:40:43+00:00",
   "contact": [
     {
       "telecom": [
@@ -376,10 +376,10 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-csd-1"
+          "reference": "StructureDefinition/structuredefinition-hl7au-vsd-1"
         },
-        "name": "HL7 AU CodeSystem Base",
-        "description": "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
+        "name": "HL7 AU ValueSet Base",
+        "description": "The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"
       },
       {
         "extension": [
@@ -402,10 +402,10 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-vsd-1"
+          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
         },
-        "name": "HL7 AU ValueSet Base",
-        "description": "The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"
+        "name": "HL7 AU StructureDefinition Base",
+        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
       },
       {
         "extension": [
@@ -415,10 +415,10 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
+          "reference": "StructureDefinition/structuredefinition-hl7au-csd-1"
         },
-        "name": "HL7 AU StructureDefinition Base",
-        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
+        "name": "HL7 AU CodeSystem Base",
+        "description": "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
       }
     ],
     "page": {
