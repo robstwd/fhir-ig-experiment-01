@@ -19,8 +19,8 @@
       <path value="CodeSystem"/>
       <constraint>
         <key value="hl7au-csd-base-05"/>
-        <severity value="error"/>
-        <human value="The url must end with the id value"/>
+        <severity value="warning"/>
+        <human value="The url should end with the id value, unless it is an AU extended CodeSystem"/>
         <expression value="url.replace('http://terminology.hl7.org.au/CodeSystem/','') = id"/>
       </constraint>
     </element>
