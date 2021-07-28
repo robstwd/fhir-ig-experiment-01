@@ -9,7 +9,7 @@ Background: Profile exists
     And the generated "xml" file of profile "HL7 AU ValueSet Base" exists
 
 Scenario: HL7 AU ValueSet Base profile constraints on ValueSet
-    Then "ValueSet" has an invariant "hl7au-vsd-base-05::error::The url must end with the id value"
+    Then "ValueSet" has an invariant "hl7au-vsd-base-05::warning::The url should end with the id value, unless it is an AU extended ValueSet"
 
 Scenario: HL7 AU ValueSet Base profile constraints on ValueSet.id
     Then "ValueSet.id" has cardinality "1..1"
