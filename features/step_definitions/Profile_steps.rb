@@ -5,8 +5,8 @@ Given('the generated {string} file of profile {string} exists') do |file_type, p
   expect(@profile).to have_generated_filetype(file_type)
 end
 
-Then('it has been derived from {string}') do |string|
-  expect(@profile).to be_derived_from(string)
+Then('it has been derived from {string}') do |resource|
+  expect(@profile).to be_derived_from(resource)
 end
 
 Then('{string} has must support set to true') do |element_name|
