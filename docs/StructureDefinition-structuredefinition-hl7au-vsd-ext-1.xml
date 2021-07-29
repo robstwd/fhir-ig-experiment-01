@@ -17,7 +17,7 @@
   <title value="HL7 AU ValueSet AU Extended"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2021-07-27T22:00:13+00:00"/>
+  <date value="2021-07-29T02:08:10+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -125,8 +125,8 @@
       </constraint>
       <constraint>
         <key value="hl7au-vsd-base-05"/>
-        <severity value="error"/>
-        <human value="The url must end with the id value"/>
+        <severity value="warning"/>
+        <human value="The url should end with the id value, unless it is an AU extended ValueSet"/>
         <expression value="url.replace(&#39;http://terminology.hl7.org.au/ValueSet/&#39;,&#39;&#39;) = id"/>
         <source value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"/>
       </constraint>

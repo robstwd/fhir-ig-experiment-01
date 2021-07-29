@@ -18,7 +18,7 @@
   fhir:StructureDefinition.title [ fhir:value "HL7 AU ValueSet AU Extended"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.experimental [ fhir:value "true"^^xsd:boolean];
-  fhir:StructureDefinition.date [ fhir:value "2021-07-27T22:00:13+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2021-07-29T02:08:10+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
@@ -158,8 +158,8 @@
        ], [
          fhir:index 6;
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-vsd-base-05" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "The url must end with the id value" ];
+         fhir:ElementDefinition.constraint.severity [ fhir:value "warning" ];
+         fhir:ElementDefinition.constraint.human [ fhir:value "The url should end with the id value, unless it is an AU extended ValueSet" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "url.replace('http://terminology.hl7.org.au/ValueSet/','') = id" ];
          fhir:ElementDefinition.constraint.source [
            fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1";
