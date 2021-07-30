@@ -984,3 +984,44 @@ RSpec::Matchers.define :include_correct_content do |status, output_string| # ele
   end
 
 end
+
+
+# This matcher determines if a given element is present in a test file
+RSpec::Matchers.define :have_element do |element_name|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # file under test
+      @testfile_name = source
+      # Kernel.puts @testfile_name
+
+      # element being examined
+      @element_name = element_name
+      # Kernel.puts @element_name
+
+      # get xml value in nodeset
+      nodeset = get_nodeset_testfile(@testfile_name,@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+
+      @error_msg = "Expecting the test file '#{@testfile_name}' to not include #{@element_name} \n" \
+          " Instead found it present."
+
+      expect(nodeset.empty?).to be_truthy
+
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end

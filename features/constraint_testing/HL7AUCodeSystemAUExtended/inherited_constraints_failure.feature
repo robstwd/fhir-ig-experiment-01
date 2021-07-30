@@ -85,3 +85,17 @@ Scenario: contact.telecom.use fixed value: is not 'work'
     And the command should "fail" with output message "Error @ CodeSystem.contact[0].telecom[0].use"
     And the command should "fail" with output message "must be 'work'"
 
+Scenario: language as 0..0 is present
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-10.xml" exists
+    And its element "CodeSystem.language" has value "en-AU"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "CodeSystem.language: max allowed = 0, but found 1"
+
+Scenario: date as 1..1 is not present
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-11.xml" exists
+    And element "CodeSystem.date" is not present
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "CodeSystem.date: minimum required = 1, but only found 0"
+

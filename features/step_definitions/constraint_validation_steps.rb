@@ -46,3 +46,6 @@ Then('the command should {string} with output message {string}') do |status, out
   expect(@output).to include_correct_content(status, output_string)
 end
 
+Given('element {string} is not present') do |element_name|
+  expect(@testfile).to have_element(element_name)
+end
