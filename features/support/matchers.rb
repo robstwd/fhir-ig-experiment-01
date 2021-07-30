@@ -1010,7 +1010,7 @@ RSpec::Matchers.define :have_element do |element_name|
       @error_msg = "Expecting the test file '#{@testfile_name}' to not include #{@element_name} \n" \
           " Instead found it present."
 
-      expect(nodeset.empty?).to be_truthy
+      expect(nodeset.empty?).not_to be_truthy
 
     rescue NodeNotPresentError
       @error_msg = "Element '#{@element_name}' not present"

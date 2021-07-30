@@ -47,5 +47,5 @@ Then('the command should {string} with output message {string}') do |status, out
 end
 
 Given('element {string} is not present') do |element_name|
-  expect(@testfile).to have_element(element_name)
+  expect(@testfile).not_to have_element(element_name)
 end
