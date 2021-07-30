@@ -44,3 +44,44 @@ Scenario: hl7au-csd-base-04: The publisher DOES NOT start with 'Health Level Sev
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Error @ CodeSystem.publisher"
     And the command should "fail" with output message "Rule 'The publisher starts with 'Health Level Seven Australia''"
+
+Scenario: meta.profile fixed value: is not 'http://hl7.org/fhir/StructureDefinition/shareablecodesystem'
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-05.xml" exists
+    And its element "CodeSystem.meta.profile" has value "http://hl7.org/fhir/structuredefinition/ShareableCodeSystem"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "Error @ CodeSystem.meta.profile"
+    And the command should "fail" with output message "must be 'http://hl7.org/fhir/StructureDefinition/shareablecodesystem'"
+
+Scenario: identifier.system fixed value: is not 'urn:ietf:rfc:3986'
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-06.xml" exists
+    And its element "CodeSystem.identifier.system" has value "urn:ietf:rfc:1234"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "Error @ CodeSystem.identifier[0].system"
+    And the command should "fail" with output message "must be 'urn:ietf:rfc:3986'"
+
+Scenario: contact.telecom.system fixed value: is not 'url'
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-07.xml" exists
+    And its element "CodeSystem.contact.telecom.system" has value "phone"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "Error @ CodeSystem.contact[0].telecom[0].system"
+    And the command should "fail" with output message "must be 'url'"
+
+Scenario: contact.telecom.value fixed value: is not 'http://hl7.com.au'
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-08.xml" exists
+    And its element "CodeSystem.contact.telecom.value" has value "http://hl7.org.au"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "Error @ CodeSystem.contact[0].telecom[0].value"
+    And the command should "fail" with output message "must be 'http://hl7.com.au'"
+
+Scenario: contact.telecom.use fixed value: is not 'work'
+    Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-09.xml" exists
+    And its element "CodeSystem.contact.telecom.use" has value "mobile"
+    When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
+    Then the command should "fail" with output message "*FAILURE*: 1 errors"
+    And the command should "fail" with output message "Error @ CodeSystem.contact[0].telecom[0].use"
+    And the command should "fail" with output message "must be 'work'"
+
