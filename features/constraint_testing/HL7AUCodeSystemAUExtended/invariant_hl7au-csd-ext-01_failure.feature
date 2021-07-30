@@ -1,4 +1,4 @@
-Feature: HL7 AU CodeSystem AU Extended profile: expected passes for invariant 'hl7au-csd-ext-01'
+Feature: HL7 AU CodeSystem AU Extended profile: expected failures for invariant 'hl7au-csd-ext-01'
 
  - Context: CodeSystem.id
  - Human: The id must start with 'au-'
