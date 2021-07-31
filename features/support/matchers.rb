@@ -1,15 +1,15 @@
 NAMESPACE = { "n" => "http://hl7.org/fhir" }
 
 PROFILES = {
-  "Patient Base"            => "Patient-base",
-  "Patient Specific"        => "Patient-specific",
-  "Patient Mandatory Name"  => "Patient-mandatoryname",
+  "Patient Base"                       => "Patient-base",
+  "Patient Specific"                   => "Patient-specific",
+  "Patient Mandatory Name"             => "Patient-mandatoryname",
   "Patient with Mandatory Identifier"  => "patient-ident-1",
-  "HL7 AU StructureDefinition Base"         => "structuredefinition-hl7au-sdf-1",
-  "HL7 AU CodeSystem Base"         => "structuredefinition-hl7au-csd-1",
-  "HL7 AU CodeSystem AU Extended"  => "structuredefinition-hl7au-csd-ext-1",
-  "HL7 AU ValueSet Base"           => "structuredefinition-hl7au-vsd-1",
-  "HL7 AU ValueSet AU Extended"    => "structuredefinition-hl7au-vsd-ext-1"
+  "HL7 AU StructureDefinition Base"    => "structuredefinition-hl7au-sdf-1",
+  "HL7 AU CodeSystem Base"             => "structuredefinition-hl7au-csd-1",
+  "HL7 AU CodeSystem AU Extended"      => "structuredefinition-hl7au-csd-ext-1",
+  "HL7 AU ValueSet Base"               => "structuredefinition-hl7au-vsd-1",
+  "HL7 AU ValueSet AU Extended"        => "structuredefinition-hl7au-vsd-ext-1"
   }
 
 # array of resources/profiles that are the basis of derivation
