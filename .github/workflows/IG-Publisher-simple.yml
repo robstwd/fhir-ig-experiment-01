@@ -1,0 +1,36 @@
+name: Run IG Publisher and Validator
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1.0
+    
+    - name: Setup JVM
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    
+    - name: Download FHIR IG Publisher
+      run: wget -q https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -O publisher.jar
+    
+    - name: Install Jekyll
+      run: gem install jekyll --no-document
+    
+    - name: Build with FHIR IG Publisher
+      run: java -jar publisher.jar -ig ig.ini
+
