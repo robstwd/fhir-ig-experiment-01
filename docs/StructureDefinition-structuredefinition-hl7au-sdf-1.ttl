@@ -18,7 +18,7 @@
   fhir:StructureDefinition.title [ fhir:value "HL7 AU StructureDefinition Base"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.experimental [ fhir:value "true"^^xsd:boolean];
-  fhir:StructureDefinition.date [ fhir:value "2021-07-31T12:00:01+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-02-05T05:44:00+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
@@ -3352,7 +3352,7 @@
        fhir:ElementDefinition.path [ fhir:value "StructureDefinition.derivation" ];
        fhir:ElementDefinition.short [ fhir:value "specialization | constraint - How relates to base definition" ];
        fhir:ElementDefinition.definition [ fhir:value "How the type relates to the baseDefinition." ];
-       fhir:ElementDefinition.comment [ fhir:value "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](http://hl7.org/fhir/R4/profiling.html#resources))." ];
+       fhir:ElementDefinition.comment [ fhir:value "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources))." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [

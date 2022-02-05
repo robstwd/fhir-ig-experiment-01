@@ -57,7 +57,7 @@
   <title value="HL7 AU CodeSystem Base"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2021-07-31T12:00:01+00:00"/>
+  <date value="2022-02-05T05:44:00+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -2391,8 +2391,8 @@
       <constraint>
         <key value="hl7au-csd-base-05"/>
         <severity value="error"/>
-        <human value="The copyright starts with &#39;HL7 Australia&#xA9; 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;"/>
-        <expression value="startsWith(&#39;HL7 Australia&#xA9; 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;)"/>
+        <human value="The copyright starts with &#39;HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;"/>
+        <expression value="startsWith(&#39;HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;)"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -3037,7 +3037,7 @@
     <element id="CodeSystem.property.uri">
       <path value="CodeSystem.property.uri"/>
       <short value="Formal identifier for the property"/>
-      <definition value="Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system."/>
+      <definition value="Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -4022,8 +4022,8 @@
       <constraint>
         <key value="hl7au-csd-base-05"/>
         <severity value="error"/>
-        <human value="The copyright starts with &#39;HL7 Australia&#xA9; 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;"/>
-        <expression value="startsWith(&#39;HL7 Australia&#xA9; 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;)"/>
+        <human value="The copyright starts with &#39;HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;"/>
+        <expression value="startsWith(&#39;HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.&#39;)"/>
       </constraint>
     </element>
   </differential>

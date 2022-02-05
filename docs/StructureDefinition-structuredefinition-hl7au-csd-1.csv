@@ -278,7 +278,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Identifies the property on the concepts, and when referred to in operations","A code that is used to identify the property. The code is used internally (in CodeSystem.concept.property.code) and also externally, such as in property filters.","","","","","","","","","",,,,,"",,,,"CodeSystem.property.code",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "CodeSystem.property.uri","","","",0,1,"","","Y","uri {[]} {[]}
-","Formal identifier for the property","Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system.","","","","","","","","","",,,,,"",,,,"CodeSystem.property.uri",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Formal identifier for the property","Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.","","","","","","","","","",,,,,"",,,,"CodeSystem.property.uri",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "CodeSystem.property.description","","","",0,1,"","","Y","string {[]} {[]}
 ","Why the property is defined, and/or what it conveys","A description of the property- why it is defined, and how its value might be used.","","","","","","","","","",,,,,"",,,,"CodeSystem.property.description",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

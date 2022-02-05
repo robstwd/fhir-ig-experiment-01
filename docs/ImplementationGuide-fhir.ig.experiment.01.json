@@ -11,7 +11,7 @@
   "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-31T12:00:01+00:00",
+  "date": "2022-02-05T05:44:00+00:00",
   "contact": [
     {
       "telecom": [
@@ -376,6 +376,19 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
+        },
+        "name": "HL7 AU StructureDefinition Base",
+        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/structuredefinition-hl7au-vsd-1"
         },
         "name": "HL7 AU ValueSet Base",
@@ -393,19 +406,6 @@
         },
         "name": "HL7 AU CodeSystem AU Extended",
         "description": "The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
-        },
-        "name": "HL7 AU StructureDefinition Base",
-        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
       },
       {
         "extension": [
