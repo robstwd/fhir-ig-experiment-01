@@ -27,12 +27,12 @@
   
   <definition>
     
-    <!-- <resource>
+    <resource>
       <reference>
-        <reference value="StructureDefinition/structuredefinition-meta-1"/>
+        <reference value="StructureDefinition/structuredefinition-hl7au-sdf-1"/>
       </reference>
       <description value="This StructureDefinition profile enforces conventions for profiles, in metadata and structure"/>
-    </resource> -->
+    </resource>
     
     <!-- PAGES -->
     <page>
