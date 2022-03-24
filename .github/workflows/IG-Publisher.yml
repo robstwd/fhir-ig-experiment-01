@@ -44,7 +44,7 @@ jobs:
     
     # validate the meta StructureDefinition resource, against core FHIRVersion 4.0.1
     - name: Validate meta StructureDefinition resource, against core FHIRVersion 4.0.1
-      run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition-meta/*.xml
+      run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition/*.xml
     
     # validate StructureDefinition resources, against core FHIRVersion 4.0.1
     - name: Validate StructureDefinition resources, against core FHIRVersion 4.0.1
@@ -53,15 +53,7 @@ jobs:
     # validate StructureDefinition resources, against the meta StructureDefinition profile that checks metadata and structure
     - name: Validate StructureDefinition resources, against the meta StructureDefinition profile that checks metadata and structure
       run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition/*.xml -ig fhir.ig.experiment.01#dev -profile "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1"
-    
-    # validate all Observation resources against the 4.0.1 spec
-    - name: Validate all Observation resources against the 4.0.1 spec
-      run: java -jar validator.jar -version 4.0.1 input/resources/Observation/*.xml
-    
-    # validate all Patient resources against the 4.0.1 spec
-    - name: Validate all Patient resources against the 4.0.1 spec
-      run: java -jar validator.jar -version 4.0.1 input/resources/Patient/*.xml
-      
+        
     # create ./docs folder for publishing to GitHub pages
     - name: Move to output to publish subdirectory
       run: |

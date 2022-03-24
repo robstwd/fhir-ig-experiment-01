@@ -1,4 +1,4 @@
-name: Run IG Publisher and Validator
+name: Run IG Publisher
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       with:
         ruby-version: 3.1.0
     
-    - name: Setup JVM
+    - name: Set up JVM
       uses: actions/setup-java@v2
       with:
         distribution: 'temurin'
