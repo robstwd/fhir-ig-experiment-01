@@ -42,15 +42,7 @@
       </reference>
       <description value="This StructureDefinition profile enforces conventions for profiles, in metadata and structure"/>
     </resource>
-    
-    <resource>
-      <reference>
-        <reference value="Patient/patient-example-01"/>
-      </reference>
-      <name value="Simple patient example"/>
-      <description value="A simple example showing how examples are defined and referenced"/>
-      <exampleCanonical value="https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base"/>
-    </resource>
+
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
       <nameUrl value="toc.html"/>
@@ -98,7 +90,7 @@
     </parameter>
     <parameter>
       <code value="path-resource"/>
-      <value value="input/resources/StructureDefinition-meta/"/>
+      <value value="input/resources/StructureDefinition/"/>
     </parameter>
     <!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings -->
 <!-- <parameter>
