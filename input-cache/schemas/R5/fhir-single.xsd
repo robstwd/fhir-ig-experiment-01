@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Mar 23, 2022 21:03+0000 for FHIR v4.6.0 
+  Generated on Fri, Mar 25, 2022 01:29+0000 for FHIR v4.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -12569,7 +12569,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="productCode" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code that identifies the kind of this biologically derived product (SNOMED Ctcode).</xs:documentation>
+              <xs:documentation xml:lang="en">A code that identifies the kind of this biologically derived product. Should reference a standard terminology, for example ISBT 128 Product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="parent" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -12579,27 +12579,27 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="request" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Procedure request to obtain this biologically derived product.</xs:documentation>
+              <xs:documentation xml:lang="en">Request to obtain and/or infuse this biologically derived product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+              <xs:documentation xml:lang="en">Unique instance identifiers assigned to a biologically derived product. Note: This is a business identifier, not a resource identifier.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="biologicalSource" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An identifier that supports traceability to the biological entity that is the source of biological material in the product.</xs:documentation>
+              <xs:documentation xml:lang="en">An identifier that supports traceability to the biological entity or entities that is/are the source of the biological material in the product.  Where multiple biological entities are involved, the biologicalSource should provide a link to the pooling event records where linkage to individual entities are maintained.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="processingFacility" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Processing facilities for this biologically derived product.</xs:documentation>
+              <xs:documentation xml:lang="en">Processing facilities responsible for the labeling and distribution of this biologically derived product.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="division" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Description of division.</xs:documentation>
+              <xs:documentation xml:lang="en">A unique identifier for an aliquot of a product.  Used to distinguish individual aliquots of a product carrying the same biologicalSource and productCode identifiers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="BiologicallyDerivedProductStatus">
@@ -12609,7 +12609,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="expirationDate" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Date of expiration.</xs:documentation>
+              <xs:documentation xml:lang="en">Date, and where relevant time, of expiration.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="collection" type="BiologicallyDerivedProduct.Collection" minOccurs="0" maxOccurs="1">
@@ -12670,7 +12670,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Code that specifies the property.</xs:documentation>
+              <xs:documentation xml:lang="en">Code that specifies the property. It should reference an established coding system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
@@ -40594,6 +40594,11 @@ The MedicationUsage resource was previously called MedicationStatement.</xs:docu
               <xs:documentation xml:lang="en">A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="triggeredBy" type="Observation.TriggeredBy" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies the observation(s) that triggered the performance of this observation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A larger event of which this particular Observation is a component or step.  For example,  an observation as part of a procedure.</xs:documentation>
@@ -40724,6 +40729,33 @@ The MedicationUsage resource was previously called MedicationStatement.</xs:docu
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="Observation.TriggeredBy">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Measurements and simple assertions made about a patient, device or other subject.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="observation" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to the triggering observation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="triggeredBytype">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of trigger.
+Reflex | Repeat | Re-run.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reason" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Provides the reason why this observation was performed as a result of the observation(s) referenced.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Observation.ReferenceRange">
     <xs:annotation>
       <xs:documentation xml:lang="en">Measurements and simple assertions made about a patient, device or other subject.</xs:documentation>
@@ -40810,6 +40842,36 @@ The MedicationUsage resource was previously called MedicationStatement.</xs:docu
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="triggeredBytypeEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="reflex">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reflex</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="repeat">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Repeat (per policy)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="re-run">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Re-run (per policy)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="triggeredBytype">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="triggeredBytypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
