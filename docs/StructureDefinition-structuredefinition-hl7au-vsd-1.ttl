@@ -18,7 +18,7 @@
   fhir:StructureDefinition.title [ fhir:value "HL7 AU ValueSet Base"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.experimental [ fhir:value "true"^^xsd:boolean];
-  fhir:StructureDefinition.date [ fhir:value "2022-02-05T05:44:00+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-03-25"^^xsd:date];
   fhir:StructureDefinition.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
@@ -36,6 +36,7 @@
        fhir:Coding.code [ fhir:value "AU" ]
      ]
   ];
+  fhir:StructureDefinition.copyright [ fhir:value "This is free and unencumbered software released into the public domain."];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [
      fhir:index 0;
@@ -3315,21 +3316,33 @@
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "A value set include/exclude SHALL have a value set or a system" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "valueSet.exists() or system.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:valueSet) or exists(f:system)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:valueSet) or exists(f:system)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/ValueSet";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+         ]
        ], [
          fhir:index 2;
          fhir:ElementDefinition.constraint.key [ fhir:value "vsd-2" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "A value set with concepts or filters SHALL include a system" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "(concept.exists() or filter.exists()) implies system.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(exists(f:concept) or exists(f:filter)) or exists(f:system)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(exists(f:concept) or exists(f:filter)) or exists(f:system)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/ValueSet";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+         ]
        ], [
          fhir:index 3;
          fhir:ElementDefinition.constraint.key [ fhir:value "vsd-3" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Cannot have both concept and filter" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "concept.empty() or filter.empty()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(exists(f:concept)) or not(exists(f:filter))" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(exists(f:concept)) or not(exists(f:filter))" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/ValueSet";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
@@ -5147,21 +5160,33 @@
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "SHALL have a code or a display" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "code.exists() or display.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:code) or exists(f:display)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:code) or exists(f:display)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/ValueSet";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+         ]
        ], [
          fhir:index 2;
          fhir:ElementDefinition.constraint.key [ fhir:value "vsd-9" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Must have a code if not abstract" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "code.exists() or abstract = true" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:code) or (f:abstract/@value = true())" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:code) or (f:abstract/@value = true())" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/ValueSet";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+         ]
        ], [
          fhir:index 3;
          fhir:ElementDefinition.constraint.key [ fhir:value "vsd-10" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Must have a system if a code is present" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "code.empty() or system.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:system) or not(exists(f:code))" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:system) or not(exists(f:code))" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/ValueSet";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]

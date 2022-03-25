@@ -11,7 +11,7 @@
   "title": "StructureDefinition Meta",
   "status": "draft",
   "experimental": true,
-  "date": "2022-02-05T05:44:00+00:00",
+  "date": "2022-03-25",
   "contact": [
     {
       "telecom": [
@@ -33,6 +33,7 @@
       ]
     }
   ],
+  "copyright": "This is free and unencumbered software released into the public domain.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -1415,7 +1416,8 @@
             "severity": "error",
             "human": "Must have at least a name or a uri (or both)",
             "expression": "name.exists() or uri.exists()",
-            "xpath": "exists(f:uri) or exists(f:name)"
+            "xpath": "exists(f:uri) or exists(f:name)",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "isModifier": false,
@@ -2124,7 +2126,7 @@
         "path": "StructureDefinition.derivation",
         "short": "specialization | constraint - How relates to base definition",
         "definition": "How the type relates to the baseDefinition.",
-        "comment": "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources)).",
+        "comment": "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](http://hl7.org/fhir/R4/profiling.html#resources)).",
         "min": 0,
         "max": "1",
         "base": {
@@ -2195,21 +2197,24 @@
             "severity": "error",
             "human": "Each element definition in a snapshot must have a formal definition and cardinalities",
             "expression": "element.all(definition.exists() and min.exists() and max.exists())",
-            "xpath": "count(f:element) = count(f:element[exists(f:definition) and exists(f:min) and exists(f:max)])"
+            "xpath": "count(f:element) = count(f:element[exists(f:definition) and exists(f:min) and exists(f:max)])",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           },
           {
             "key": "sdf-8",
             "severity": "error",
             "human": "All snapshot elements must start with the StructureDefinition's specified type for non-logical models, or with the same type name for logical models",
             "expression": "(%resource.kind = 'logical' or element.first().path = %resource.type) and element.tail().all(path.startsWith(%resource.snapshot.element.first().path&'.'))",
-            "xpath": "f:element[1]/f:path/@value=parent::f:StructureDefinition/f:type/@value and count(f:element[position()!=1])=count(f:element[position()!=1][starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])"
+            "xpath": "f:element[1]/f:path/@value=parent::f:StructureDefinition/f:type/@value and count(f:element[position()!=1])=count(f:element[position()!=1][starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           },
           {
             "key": "sdf-8b",
             "severity": "error",
             "human": "All snapshot elements must have a base definition",
             "expression": "element.all(base.exists())",
-            "xpath": "count(f:element) = count(f:element/f:base)"
+            "xpath": "count(f:element) = count(f:element/f:base)",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "isModifier": false,
@@ -2386,7 +2391,8 @@
             "severity": "error",
             "human": "provide either a binding reference or a description (or both)",
             "expression": "binding.empty() or binding.valueSet.exists() or binding.description.exists()",
-            "xpath": "not(exists(f:binding)) or exists(f:binding/f:valueSet) or exists(f:binding/f:description)"
+            "xpath": "not(exists(f:binding)) or exists(f:binding/f:valueSet) or exists(f:binding/f:description)",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "isModifier": false,
@@ -2433,14 +2439,16 @@
             "severity": "error",
             "human": "No slicing on the root element",
             "expression": "element.where(path.contains('.').not()).slicing.empty()",
-            "xpath": "not(f:element[1]/f:slicing)"
+            "xpath": "not(f:element[1]/f:slicing)",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           },
           {
             "key": "sdf-8a",
             "severity": "error",
             "human": "In any differential, all the elements must start with the StructureDefinition's specified type for non-logical models, or with the same type name for logical models",
             "expression": "(%resource.kind = 'logical' or element.first().path.startsWith(%resource.type)) and (element.tail().empty() or element.tail().all(path.startsWith(%resource.differential.element.first().path.replaceMatches('\\\\..*','')&'.')))",
-            "xpath": "count(f:element)=count(f:element[f:path/@value=ancestor::f:StructureDefinition/f:type/@value or starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])"
+            "xpath": "count(f:element)=count(f:element[f:path/@value=ancestor::f:StructureDefinition/f:type/@value or starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])",
+            "source": "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "isModifier": false,

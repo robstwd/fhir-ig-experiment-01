@@ -11,7 +11,7 @@
   "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2022-02-05T05:44:00+00:00",
+  "date": "2022-03-25T09:30:28+00:00",
   "contact": [
     {
       "telecom": [
@@ -336,10 +336,10 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/Patient-base"
+          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
         },
-        "name": "Patient Base",
-        "description": "Overriding description because we can"
+        "name": "HL7 AU StructureDefinition Base",
+        "description": "This StructureDefinition profile enforces conventions for profiles, in metadata and structure"
       },
       {
         "extension": [
@@ -352,33 +352,6 @@
           "reference": "StructureDefinition/structuredefinition-meta-1"
         },
         "name": "StructureDefinition Meta",
-        "description": "This StructureDefinition profile enforces conventions for profiles, in metadata and structure"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Patient"
-          }
-        ],
-        "reference": {
-          "reference": "Patient/patient-example-01"
-        },
-        "name": "Simple patient example",
-        "description": "A simple example showing how examples are defined and referenced",
-        "exampleCanonical": "https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-sdf-1"
-        },
-        "name": "HL7 AU StructureDefinition Base",
         "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
       },
       {
@@ -473,7 +446,7 @@
       },
       {
         "code": "path-resource",
-        "value": "input/resources/StructureDefinition-meta/"
+        "value": "input/resources/StructureDefinition/"
       },
       {
         "code": "path-resource",

@@ -213,7 +213,7 @@
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a>" : "StructureDefinition Meta",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a>" : "draft",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.experimental">experimental</a>" : true,
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2022-02-05T05:44:00+00:00",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2022-03-25",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
@@ -235,6 +235,7 @@
       ]
     }
   ],
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.copyright">copyright</a>" : "This is free and unencumbered software released into the public domain.",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.fhirVersion">fhirVersion</a>" : "4.0.1",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping">mapping</a>" : [
     {
@@ -1617,7 +1618,8 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Must have at least a name or a uri (or both)",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "name.exists() or uri.exists()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:uri) or exists(f:name)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:uri) or exists(f:name)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -2326,7 +2328,7 @@
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>" : "StructureDefinition.derivation",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a>" : "specialization | constraint - How relates to base definition",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "How the type relates to the baseDefinition.",
-        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources)).",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](http://hl7.org/fhir/R4/profiling.html#resources)).",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>" : {
@@ -2397,21 +2399,24 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Each element definition in a snapshot must have a formal definition and cardinalities",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "element.all(definition.exists() and min.exists() and max.exists())",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "count(f:element) = count(f:element[exists(f:definition) and exists(f:min) and exists(f:max)])"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "count(f:element) = count(f:element[exists(f:definition) and exists(f:min) and exists(f:max)])",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "sdf-8",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All snapshot elements must start with the StructureDefinition's specified type for non-logical models, or with the same type name for logical models",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "(%resource.kind = 'logical' or element.first().path = %resource.type) and element.tail().all(path.startsWith(%resource.snapshot.element.first().path&amp;'.'))",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "f:element[1]/f:path/@value=parent::f:StructureDefinition/f:type/@value and count(f:element[position()!=1])=count(f:element[position()!=1][starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "f:element[1]/f:path/@value=parent::f:StructureDefinition/f:type/@value and count(f:element[position()!=1])=count(f:element[position()!=1][starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "sdf-8b",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All snapshot elements must have a base definition",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "element.all(base.exists())",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "count(f:element) = count(f:element/f:base)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "count(f:element) = count(f:element/f:base)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -2588,7 +2593,8 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "provide either a binding reference or a description (or both)",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "binding.empty() or binding.valueSet.exists() or binding.description.exists()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:binding)) or exists(f:binding/f:valueSet) or exists(f:binding/f:description)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:binding)) or exists(f:binding/f:valueSet) or exists(f:binding/f:description)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -2635,14 +2641,16 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "No slicing on the root element",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "element.where(path.contains('.').not()).slicing.empty()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(f:element[1]/f:slicing)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(f:element[1]/f:slicing)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "sdf-8a",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "In any differential, all the elements must start with the StructureDefinition's specified type for non-logical models, or with the same type name for logical models",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "(%resource.kind = 'logical' or element.first().path.startsWith(%resource.type)) and (element.tail().empty() or element.tail().all(path.startsWith(%resource.differential.element.first().path.replaceMatches('\\\\..*','')&amp;'.')))",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "count(f:element)=count(f:element[f:path/@value=ancestor::f:StructureDefinition/f:type/@value or starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "count(f:element)=count(f:element[f:path/@value=ancestor::f:StructureDefinition/f:type/@value or starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -2983,7 +2991,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 5, 2022 05:44+0000">2022-02-05</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 25, 2022 09:30+0000">2022-03-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

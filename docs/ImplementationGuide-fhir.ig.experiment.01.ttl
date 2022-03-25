@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "FHIR Implementation Guide Experiment 01"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
   fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
-  fhir:ImplementationGuide.date [ fhir:value "2022-02-05T05:44:00+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-03-25T09:30:28+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
@@ -316,11 +316,11 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/Patient-base" ]
+         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/structuredefinition-hl7au-sdf-1" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient Base" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Overriding description because we can" ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7 AU StructureDefinition Base" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This StructureDefinition profile enforces conventions for profiles, in metadata and structure" ]
      ], [
        fhir:index 1;
        fhir:Element.extension [
@@ -333,39 +333,9 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/structuredefinition-meta-1" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "StructureDefinition Meta" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This StructureDefinition profile enforces conventions for profiles, in metadata and structure" ]
-     ], [
-       fhir:index 2;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "Patient" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://about.me/robeastwood/fhir/ig/Patient/patient-example-01>;
-         fhir:Reference.reference [ fhir:value "Patient/patient-example-01" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Simple patient example" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A simple example showing how examples are defined and referenced" ];
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base";
-         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base>
-       ]
-     ], [
-       fhir:index 3;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/structuredefinition-hl7au-sdf-1" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7 AU StructureDefinition Base" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The purpose of this profile is to enforce conventions for profiles, in metadata and structure" ]
      ], [
-       fhir:index 4;
+       fhir:index 2;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -378,7 +348,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7 AU ValueSet Base" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure" ]
      ], [
-       fhir:index 5;
+       fhir:index 3;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -391,7 +361,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7 AU CodeSystem AU Extended" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia." ]
      ], [
-       fhir:index 6;
+       fhir:index 4;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -404,7 +374,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7 AU ValueSet AU Extended" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia." ]
      ], [
-       fhir:index 7;
+       fhir:index 5;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -455,7 +425,7 @@
      ], [
        fhir:index 1;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/resources/StructureDefinition-meta/" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/resources/StructureDefinition/" ]
      ], [
        fhir:index 2;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];

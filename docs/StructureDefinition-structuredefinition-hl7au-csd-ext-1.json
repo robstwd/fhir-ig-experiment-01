@@ -11,7 +11,7 @@
   "title": "HL7 AU CodeSystem AU Extended",
   "status": "draft",
   "experimental": true,
-  "date": "2022-02-05T05:44:00+00:00",
+  "date": "2022-03-25",
   "contact": [
     {
       "telecom": [
@@ -33,6 +33,7 @@
       ]
     }
   ],
+  "copyright": "This is free and unencumbered software released into the public domain.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -827,7 +828,8 @@
             "key": "hl7au-csd-base-02",
             "severity": "error",
             "human": "The url starts with 'http://terminology.hl7.org.au/CodeSystem/'",
-            "expression": "startsWith('http://terminology.hl7.org.au/CodeSystem/')"
+            "expression": "startsWith('http://terminology.hl7.org.au/CodeSystem/')",
+            "source": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
           }
         ],
         "isModifier": false,
@@ -1184,7 +1186,8 @@
             "key": "hl7au-csd-base-03",
             "severity": "error",
             "human": "The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'",
-            "expression": "startsWith('urn:oid:2.16.840.1.113883.2.3.4.')"
+            "expression": "startsWith('urn:oid:2.16.840.1.113883.2.3.4.')",
+            "source": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
           }
         ],
         "isModifier": false,
@@ -1327,7 +1330,8 @@
             "key": "hl7au-csd-base-01",
             "severity": "error",
             "human": "The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1",
-            "expression": "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')"
+            "expression": "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')",
+            "source": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
           }
         ],
         "isModifier": false,
@@ -1602,7 +1606,8 @@
             "key": "hl7au-csd-base-04",
             "severity": "error",
             "human": "The publisher starts with 'Health Level Seven Australia'",
-            "expression": "startsWith('Health Level Seven Australia')"
+            "expression": "startsWith('Health Level Seven Australia')",
+            "source": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
           }
         ],
         "isModifier": false,
@@ -2903,7 +2908,8 @@
             "key": "hl7au-csd-base-05",
             "severity": "error",
             "human": "The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'",
-            "expression": "startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"
+            "expression": "startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')",
+            "source": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1"
           }
         ],
         "isModifier": false,
@@ -3701,7 +3707,7 @@
         "id": "CodeSystem.property.uri",
         "path": "CodeSystem.property.uri",
         "short": "Formal identifier for the property",
-        "definition": "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.",
+        "definition": "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system.",
         "min": 0,
         "max": "1",
         "base": {

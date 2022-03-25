@@ -47,8 +47,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.5"}
-    h3,h4,h5,h6{--heading-prefix:"6.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.4"}
+    h3,h4,h5,h6{--heading-prefix:"6.4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -220,7 +220,7 @@
   <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">fhir:StructureDefinition.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;HL7 AU CodeSystem AU Extended&quot;];
   <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">fhir:StructureDefinition.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;draft&quot;];
   <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.experimental">fhir:StructureDefinition.experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean];
-  <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">fhir:StructureDefinition.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2022-02-05T05:44:00+00:00&quot;^^xsd:dateTime];
+  <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">fhir:StructureDefinition.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2022-03-25&quot;^^xsd:date];
   <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">fhir:StructureDefinition.contact</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
      <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
@@ -236,6 +236,7 @@
        <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:iso:std:iso:3166&quot; ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;AU&quot; ]     ]
   ];
+  <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.copyright">fhir:StructureDefinition.copyright</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;This is free and unencumbered software released into the public domain.&quot;];
   <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.fhirVersion">fhir:StructureDefinition.fhirVersion</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;4.0.1&quot;];
   <a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping">fhir:StructureDefinition.mapping</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
@@ -954,7 +955,10 @@
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">fhir:ElementDefinition.constraint.key</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;hl7au-csd-base-02&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">fhir:ElementDefinition.constraint.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">fhir:ElementDefinition.constraint.human</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;The url starts with 'http://terminology.hl7.org.au/CodeSystem/'&quot; ];
-         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('http://terminology.hl7.org.au/CodeSystem/')&quot; ]       ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('http://terminology.hl7.org.au/CodeSystem/')&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">fhir:ElementDefinition.constraint.source</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&quot;;
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&gt;         ]       ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">fhir:ElementDefinition.isModifier</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isSummary">fhir:ElementDefinition.isSummary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
@@ -1251,7 +1255,10 @@
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">fhir:ElementDefinition.constraint.key</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;hl7au-csd-base-03&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">fhir:ElementDefinition.constraint.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">fhir:ElementDefinition.constraint.human</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'&quot; ];
-         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('urn:oid:2.16.840.1.113883.2.3.4.')&quot; ]       ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('urn:oid:2.16.840.1.113883.2.3.4.')&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">fhir:ElementDefinition.constraint.source</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&quot;;
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&gt;         ]       ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">fhir:ElementDefinition.isModifier</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isSummary">fhir:ElementDefinition.isSummary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
@@ -1370,7 +1377,10 @@
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">fhir:ElementDefinition.constraint.key</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;hl7au-csd-base-01&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">fhir:ElementDefinition.constraint.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">fhir:ElementDefinition.constraint.human</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1&quot; ];
-         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')&quot; ]       ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">fhir:ElementDefinition.constraint.source</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&quot;;
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&gt;         ]       ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">fhir:ElementDefinition.isModifier</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isSummary">fhir:ElementDefinition.isSummary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
@@ -1602,7 +1612,10 @@
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">fhir:ElementDefinition.constraint.key</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;hl7au-csd-base-04&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">fhir:ElementDefinition.constraint.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">fhir:ElementDefinition.constraint.human</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;The publisher starts with 'Health Level Seven Australia'&quot; ];
-         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('Health Level Seven Australia')&quot; ]       ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('Health Level Seven Australia')&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">fhir:ElementDefinition.constraint.source</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&quot;;
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&gt;         ]       ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">fhir:ElementDefinition.isModifier</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isSummary">fhir:ElementDefinition.isSummary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
@@ -2691,7 +2704,10 @@
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">fhir:ElementDefinition.constraint.key</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;hl7au-csd-base-05&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">fhir:ElementDefinition.constraint.severity</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;error&quot; ];
          <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">fhir:ElementDefinition.constraint.human</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'&quot; ];
-         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')&quot; ]       ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">fhir:ElementDefinition.constraint.expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">fhir:ElementDefinition.constraint.source</a> [
+           <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&quot;;
+           <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1&gt;         ]       ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">fhir:ElementDefinition.isModifier</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isSummary">fhir:ElementDefinition.isSummary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
@@ -3390,7 +3406,7 @@
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.id">fhir:Element.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;CodeSystem.property.uri&quot; ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">fhir:ElementDefinition.path</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;CodeSystem.property.uri&quot; ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">fhir:ElementDefinition.short</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Formal identifier for the property&quot; ];
-       <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">fhir:ElementDefinition.definition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">fhir:ElementDefinition.definition</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system.&quot; ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">fhir:ElementDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:value</a> &quot;0&quot;^^xsd:nonNegativeInteger ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">fhir:ElementDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
        <a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">fhir:ElementDefinition.base</a> [
@@ -4309,7 +4325,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 5, 2022 05:44+0000">2022-02-05</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 25, 2022 09:30+0000">2022-03-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

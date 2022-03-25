@@ -47,8 +47,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.6"}
-    h3,h4,h5,h6{--heading-prefix:"6.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.5"}
+    h3,h4,h5,h6{--heading-prefix:"6.5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -213,7 +213,7 @@
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a>" : "HL7 AU ValueSet AU Extended",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a>" : "draft",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.experimental">experimental</a>" : true,
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2022-02-05T05:44:00+00:00",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2022-03-25",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
@@ -235,6 +235,7 @@
       ]
     }
   ],
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.copyright">copyright</a>" : "This is free and unencumbered software released into the public domain.",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.fhirVersion">fhirVersion</a>" : "4.0.1",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping">mapping</a>" : [
     {
@@ -1395,7 +1396,8 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "hl7au-vsd-base-02",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "startsWith('urn:oid:2.16.840.1.113883.2.3.4.')"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "startsWith('urn:oid:2.16.840.1.113883.2.3.4.')",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -1538,7 +1540,8 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "hl7au-vsd-base-01",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -1817,7 +1820,8 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "hl7au-vsd-base-03",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "The publisher starts with 'Health Level Seven Australia'",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "startsWith('Health Level Seven Australia')"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "startsWith('Health Level Seven Australia')",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -3143,7 +3147,8 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "hl7au-vsd-base-04",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -3435,21 +3440,24 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "A value set include/exclude SHALL have a value set or a system",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "valueSet.exists() or system.exists()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:valueSet) or exists(f:system)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:valueSet) or exists(f:system)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "vsd-2",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "A value set with concepts or filters SHALL include a system",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "(concept.exists() or filter.exists()) implies system.exists()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:concept) or exists(f:filter)) or exists(f:system)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:concept) or exists(f:filter)) or exists(f:system)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "vsd-3",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Cannot have both concept and filter",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "concept.empty() or filter.empty()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:concept)) or not(exists(f:filter))"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:concept)) or not(exists(f:filter))",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/ValueSet"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -5165,21 +5173,24 @@
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "SHALL have a code or a display",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "code.exists() or display.exists()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:code) or exists(f:display)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:code) or exists(f:display)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "vsd-9",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Must have a code if not abstract",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "code.exists() or abstract = true",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:code) or (f:abstract/@value = true())"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:code) or (f:abstract/@value = true())",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "vsd-10",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Must have a system if a code is present",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "code.empty() or system.exists()",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:system) or not(exists(f:code))"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:system) or not(exists(f:code))",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/ValueSet"
           }
         ],
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
@@ -5695,7 +5706,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 5, 2022 05:44+0000">2022-02-05</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 25, 2022 09:30+0000">2022-03-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -5,12 +5,6 @@
   "jurisdiction": "AU",
   "extensions": [],
   "profiles": {
-    "Patient": [
-      {
-        "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base",
-        "title": "Patient Base"
-      }
-    ],
     "CodeSystem": [
       {
         "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",

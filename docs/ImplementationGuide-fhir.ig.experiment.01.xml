@@ -12,7 +12,7 @@
   <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2022-02-05T05:44:00+00:00"/>
+  <date value="2022-03-25T09:30:28+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -211,10 +211,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/Patient-base"/>
+        <reference value="StructureDefinition/structuredefinition-hl7au-sdf-1"/>
       </reference>
-      <name value="Patient Base"/>
-      <description value="Overriding description because we can"/>
+      <name value="HL7 AU StructureDefinition Base"/>
+      <description value="This StructureDefinition profile enforces conventions for profiles, in metadata and structure"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -224,27 +224,6 @@
         <reference value="StructureDefinition/structuredefinition-meta-1"/>
       </reference>
       <name value="StructureDefinition Meta"/>
-      <description value="This StructureDefinition profile enforces conventions for profiles, in metadata and structure"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/patient-example-01"/>
-      </reference>
-      <name value="Simple patient example"/>
-      <description value="A simple example showing how examples are defined and referenced"/>
-      <exampleCanonical value="https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/structuredefinition-hl7au-sdf-1"/>
-      </reference>
-      <name value="HL7 AU StructureDefinition Base"/>
       <description value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure"/>
     </resource>
     <resource>
@@ -323,7 +302,7 @@
     </parameter>
     <parameter>
       <code value="path-resource"/>
-      <value value="input/resources/StructureDefinition-meta/"/>
+      <value value="input/resources/StructureDefinition/"/>
     </parameter>
     <parameter>
       <code value="path-resource"/>

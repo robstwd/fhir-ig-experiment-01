@@ -11,7 +11,7 @@
   "title": "HL7 AU ValueSet Base",
   "status": "draft",
   "experimental": true,
-  "date": "2022-02-05T05:44:00+00:00",
+  "date": "2022-03-25",
   "contact": [
     {
       "telecom": [
@@ -33,6 +33,7 @@
       ]
     }
   ],
+  "copyright": "This is free and unencumbered software released into the public domain.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -3193,21 +3194,24 @@
             "severity": "error",
             "human": "A value set include/exclude SHALL have a value set or a system",
             "expression": "valueSet.exists() or system.exists()",
-            "xpath": "exists(f:valueSet) or exists(f:system)"
+            "xpath": "exists(f:valueSet) or exists(f:system)",
+            "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "key": "vsd-2",
             "severity": "error",
             "human": "A value set with concepts or filters SHALL include a system",
             "expression": "(concept.exists() or filter.exists()) implies system.exists()",
-            "xpath": "not(exists(f:concept) or exists(f:filter)) or exists(f:system)"
+            "xpath": "not(exists(f:concept) or exists(f:filter)) or exists(f:system)",
+            "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "key": "vsd-3",
             "severity": "error",
             "human": "Cannot have both concept and filter",
             "expression": "concept.empty() or filter.empty()",
-            "xpath": "not(exists(f:concept)) or not(exists(f:filter))"
+            "xpath": "not(exists(f:concept)) or not(exists(f:filter))",
+            "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           }
         ],
         "isModifier": false,
@@ -4923,21 +4927,24 @@
             "severity": "error",
             "human": "SHALL have a code or a display",
             "expression": "code.exists() or display.exists()",
-            "xpath": "exists(f:code) or exists(f:display)"
+            "xpath": "exists(f:code) or exists(f:display)",
+            "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "key": "vsd-9",
             "severity": "error",
             "human": "Must have a code if not abstract",
             "expression": "code.exists() or abstract = true",
-            "xpath": "exists(f:code) or (f:abstract/@value = true())"
+            "xpath": "exists(f:code) or (f:abstract/@value = true())",
+            "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
             "key": "vsd-10",
             "severity": "error",
             "human": "Must have a system if a code is present",
             "expression": "code.empty() or system.exists()",
-            "xpath": "exists(f:system) or not(exists(f:code))"
+            "xpath": "exists(f:system) or not(exists(f:code))",
+            "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           }
         ],
         "isModifier": false,

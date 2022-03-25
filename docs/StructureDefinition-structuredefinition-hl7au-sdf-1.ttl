@@ -18,7 +18,7 @@
   fhir:StructureDefinition.title [ fhir:value "HL7 AU StructureDefinition Base"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.experimental [ fhir:value "true"^^xsd:boolean];
-  fhir:StructureDefinition.date [ fhir:value "2022-02-05T05:44:00+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-03-25"^^xsd:date];
   fhir:StructureDefinition.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
@@ -36,6 +36,7 @@
        fhir:Coding.code [ fhir:value "AU" ]
      ]
   ];
+  fhir:StructureDefinition.copyright [ fhir:value "This is free and unencumbered software released into the public domain."];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [
      fhir:index 0;
@@ -2594,7 +2595,11 @@
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Must have at least a name or a uri (or both)" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "name.exists() or uri.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:uri) or exists(f:name)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:uri) or exists(f:name)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]
@@ -3352,7 +3357,7 @@
        fhir:ElementDefinition.path [ fhir:value "StructureDefinition.derivation" ];
        fhir:ElementDefinition.short [ fhir:value "specialization | constraint - How relates to base definition" ];
        fhir:ElementDefinition.definition [ fhir:value "How the type relates to the baseDefinition." ];
-       fhir:ElementDefinition.comment [ fhir:value "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources))." ];
+       fhir:ElementDefinition.comment [ fhir:value "If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](http://hl7.org/fhir/R4/profiling.html#resources))." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -3430,21 +3435,33 @@
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "Each element definition in a snapshot must have a formal definition and cardinalities" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "element.all(definition.exists() and min.exists() and max.exists())" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "count(f:element) = count(f:element[exists(f:definition) and exists(f:min) and exists(f:max)])" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "count(f:element) = count(f:element[exists(f:definition) and exists(f:min) and exists(f:max)])" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ], [
          fhir:index 2;
          fhir:ElementDefinition.constraint.key [ fhir:value "sdf-8" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "All snapshot elements must start with the StructureDefinition's specified type for non-logical models, or with the same type name for logical models" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "(%resource.kind = 'logical' or element.first().path = %resource.type) and element.tail().all(path.startsWith(%resource.snapshot.element.first().path&'.'))" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "f:element[1]/f:path/@value=parent::f:StructureDefinition/f:type/@value and count(f:element[position()!=1])=count(f:element[position()!=1][starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "f:element[1]/f:path/@value=parent::f:StructureDefinition/f:type/@value and count(f:element[position()!=1])=count(f:element[position()!=1][starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ], [
          fhir:index 3;
          fhir:ElementDefinition.constraint.key [ fhir:value "sdf-8b" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "All snapshot elements must have a base definition" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "element.all(base.exists())" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "count(f:element) = count(f:element/f:base)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "count(f:element) = count(f:element/f:base)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]
@@ -3635,7 +3652,11 @@
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "provide either a binding reference or a description (or both)" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "binding.empty() or binding.valueSet.exists() or binding.description.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(exists(f:binding)) or exists(f:binding/f:valueSet) or exists(f:binding/f:description)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(exists(f:binding)) or exists(f:binding/f:valueSet) or exists(f:binding/f:description)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ];
@@ -3683,14 +3704,22 @@
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "No slicing on the root element" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "element.where(path.contains('.').not()).slicing.empty()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(f:element[1]/f:slicing)" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "not(f:element[1]/f:slicing)" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ], [
          fhir:index 2;
          fhir:ElementDefinition.constraint.key [ fhir:value "sdf-8a" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "In any differential, all the elements must start with the StructureDefinition's specified type for non-logical models, or with the same type name for logical models" ];
          fhir:ElementDefinition.constraint.expression [ fhir:value "(%resource.kind = 'logical' or element.first().path.startsWith(%resource.type)) and (element.tail().empty() or element.tail().all(path.startsWith(%resource.differential.element.first().path.replaceMatches('\\\\..*','')&'.')))" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "count(f:element)=count(f:element[f:path/@value=ancestor::f:StructureDefinition/f:type/@value or starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])" ]
+         fhir:ElementDefinition.constraint.xpath [ fhir:value "count(f:element)=count(f:element[f:path/@value=ancestor::f:StructureDefinition/f:type/@value or starts-with(f:path/@value, concat(ancestor::f:StructureDefinition/f:type/@value, '.'))])" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/StructureDefinition";
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]

@@ -11,7 +11,7 @@
   "title": "HL7 AU CodeSystem Base",
   "status": "draft",
   "experimental": true,
-  "date": "2022-02-05T05:44:00+00:00",
+  "date": "2022-03-25",
   "contact": [
     {
       "telecom": [
@@ -33,6 +33,7 @@
       ]
     }
   ],
+  "copyright": "This is free and unencumbered software released into the public domain.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -3668,7 +3669,7 @@
         "id": "CodeSystem.property.uri",
         "path": "CodeSystem.property.uri",
         "short": "Formal identifier for the property",
-        "definition": "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.",
+        "definition": "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system.",
         "min": 0,
         "max": "1",
         "base": {

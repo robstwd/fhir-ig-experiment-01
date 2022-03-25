@@ -18,7 +18,7 @@
   fhir:StructureDefinition.title [ fhir:value "HL7 AU CodeSystem AU Extended"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.experimental [ fhir:value "true"^^xsd:boolean];
-  fhir:StructureDefinition.date [ fhir:value "2022-02-05T05:44:00+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-03-25"^^xsd:date];
   fhir:StructureDefinition.contact [
      fhir:index 0;
      fhir:ContactDetail.telecom [
@@ -36,6 +36,7 @@
        fhir:Coding.code [ fhir:value "AU" ]
      ]
   ];
+  fhir:StructureDefinition.copyright [ fhir:value "This is free and unencumbered software released into the public domain."];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
   fhir:StructureDefinition.mapping [
      fhir:index 0;
@@ -900,7 +901,11 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-csd-base-02" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The url starts with 'http://terminology.hl7.org.au/CodeSystem/'" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('http://terminology.hl7.org.au/CodeSystem/')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('http://terminology.hl7.org.au/CodeSystem/')" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1";
+           fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
@@ -1262,7 +1267,11 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-csd-base-03" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('urn:oid:2.16.840.1.113883.2.3.4.')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('urn:oid:2.16.840.1.113883.2.3.4.')" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1";
+           fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
@@ -1407,7 +1416,11 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-csd-base-01" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1";
+           fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
@@ -1687,7 +1700,11 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-csd-base-04" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The publisher starts with 'Health Level Seven Australia'" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('Health Level Seven Australia')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('Health Level Seven Australia')" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1";
+           fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
@@ -3013,7 +3030,11 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-csd-base-05" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1";
+           fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ];
@@ -3858,7 +3879,7 @@
        fhir:Element.id [ fhir:value "CodeSystem.property.uri" ];
        fhir:ElementDefinition.path [ fhir:value "CodeSystem.property.uri" ];
        fhir:ElementDefinition.short [ fhir:value "Formal identifier for the property" ];
-       fhir:ElementDefinition.definition [ fhir:value "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system." ];
+       fhir:ElementDefinition.definition [ fhir:value "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [

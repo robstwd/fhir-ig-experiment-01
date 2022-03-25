@@ -7,13 +7,6 @@
     "name": "FHIRIGExperiment01"
   },
   {
-    "id": "Patient-base",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/Patient-base",
-    "version": "0.0.1",
-    "name": "PatientBase"
-  },
-  {
     "id": "structuredefinition-hl7au-csd-1",
     "type": "StructureDefinition",
     "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",
