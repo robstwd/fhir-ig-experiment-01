@@ -23,12 +23,6 @@
         <human value="The url must end with the id value"/>
         <expression value="url.replace('http://hl7.org.au/fhir/StructureDefinition/','') = id"/>
       </constraint>
-      <constraint>
-        <key value="hl7au-sdf-base-06"/>
-        <severity value="error"/>
-        <human value="The name value matches the title value when spaces are removed"/>
-        <expression value="title.replace(' ','') = name"/>
-      </constraint>
     </element>
     <element id="StructureDefinition.id">
       <path value="StructureDefinition.id"/>
