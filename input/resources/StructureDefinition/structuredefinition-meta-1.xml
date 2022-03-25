@@ -6,8 +6,8 @@
   <name value="StructureDefinitionMeta"/>
   <title value="StructureDefinition Meta"/>
   <status value="draft"/>
-  <date value="2022-03-25" />
   <experimental value="true" />
+  <date value="2022-03-25" />
   <description value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure"/>
   <copyright value="This is free and unencumbered software released into the public domain."/>
   <fhirVersion value="4.0.1"/>

@@ -6,8 +6,8 @@
   <name value="HL7AUValueSetAUExtended"/>
   <title value="HL7 AU ValueSet AU Extended"/>
   <status value="draft"/>
-  <date value="2022-03-25" />
   <experimental value="true" />
+  <date value="2022-03-25" />
   <description value="The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."/>
   <copyright value="This is free and unencumbered software released into the public domain."/>
   <fhirVersion value="4.0.1"/>
