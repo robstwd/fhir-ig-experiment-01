@@ -2645,7 +2645,7 @@
       <path value="StructureDefinition.derivation"/>
       <short value="specialization | constraint - How relates to base definition"/>
       <definition value="How the type relates to the baseDefinition."/>
-      <comment value="If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](http://hl7.org/fhir/R4/profiling.html#resources))."/>
+      <comment value="If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources))."/>
       <min value="1"/>
       <max value="1"/>
       <base>

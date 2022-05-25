@@ -3707,7 +3707,7 @@
         "id": "CodeSystem.property.uri",
         "path": "CodeSystem.property.uri",
         "short": "Formal identifier for the property",
-        "definition": "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R4/codesystem-concept-properties.html) code system.",
+        "definition": "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.",
         "min": 0,
         "max": "1",
         "base": {

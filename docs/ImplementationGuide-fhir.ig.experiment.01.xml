@@ -12,7 +12,7 @@
   <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2022-03-25T09:30:28+00:00"/>
+  <date value="2022-05-25T22:10:13+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -29,6 +29,11 @@
   <packageId value="fhir.ig.experiment.01"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="3.1.0"/>
+  </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -221,20 +226,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/structuredefinition-meta-1"/>
+        <reference value="StructureDefinition/structuredefinition-hl7au-vsd-ext-1"/>
       </reference>
-      <name value="StructureDefinition Meta"/>
-      <description value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/structuredefinition-hl7au-vsd-1"/>
-      </reference>
-      <name value="HL7 AU ValueSet Base"/>
-      <description value="The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"/>
+      <name value="HL7 AU ValueSet AU Extended"/>
+      <description value="The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -251,20 +246,30 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/structuredefinition-hl7au-vsd-ext-1"/>
+        <reference value="StructureDefinition/structuredefinition-hl7au-csd-1"/>
       </reference>
-      <name value="HL7 AU ValueSet AU Extended"/>
-      <description value="The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."/>
+      <name value="HL7 AU CodeSystem Base"/>
+      <description value="The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/structuredefinition-hl7au-csd-1"/>
+        <reference value="StructureDefinition/structuredefinition-hl7au-vsd-1"/>
       </reference>
-      <name value="HL7 AU CodeSystem Base"/>
-      <description value="The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"/>
+      <name value="HL7 AU ValueSet Base"/>
+      <description value="The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/structuredefinition-meta-1"/>
+      </reference>
+      <name value="StructureDefinition Meta"/>
+      <description value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

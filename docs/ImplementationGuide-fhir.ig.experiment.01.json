@@ -11,7 +11,7 @@
   "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2022-03-25T09:30:28+00:00",
+  "date": "2022-05-25T22:10:13+00:00",
   "contact": [
     {
       "telecom": [
@@ -37,6 +37,14 @@
   "license": "CC0-1.0",
   "fhirVersion": [
     "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "id": "hl7tx",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "packageId": "hl7.terminology.r4",
+      "version": "3.1.0"
+    }
   ],
   "definition": {
     "extension": [
@@ -349,23 +357,10 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/structuredefinition-meta-1"
+          "reference": "StructureDefinition/structuredefinition-hl7au-vsd-ext-1"
         },
-        "name": "StructureDefinition Meta",
-        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-vsd-1"
-        },
-        "name": "HL7 AU ValueSet Base",
-        "description": "The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"
+        "name": "HL7 AU ValueSet AU Extended",
+        "description": "The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."
       },
       {
         "extension": [
@@ -388,10 +383,10 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-vsd-ext-1"
+          "reference": "StructureDefinition/structuredefinition-hl7au-csd-1"
         },
-        "name": "HL7 AU ValueSet AU Extended",
-        "description": "The purpose of this profile is to enforce metadata and structure conventions for ValueSets that have been extended for use in Australia."
+        "name": "HL7 AU CodeSystem Base",
+        "description": "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
       },
       {
         "extension": [
@@ -401,10 +396,23 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/structuredefinition-hl7au-csd-1"
+          "reference": "StructureDefinition/structuredefinition-hl7au-vsd-1"
         },
-        "name": "HL7 AU CodeSystem Base",
-        "description": "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
+        "name": "HL7 AU ValueSet Base",
+        "description": "The purpose of this profile is to enforce conventions for ValueSets, in metadata and structure"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/structuredefinition-meta-1"
+        },
+        "name": "StructureDefinition Meta",
+        "description": "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
       }
     ],
     "page": {
