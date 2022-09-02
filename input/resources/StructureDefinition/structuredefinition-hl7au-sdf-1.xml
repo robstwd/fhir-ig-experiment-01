@@ -56,16 +56,6 @@
       <path value="StructureDefinition.identifier"/>
       <max value="0"/>
     </element>
-    <element id="StructureDefinition.version">
-      <path value="StructureDefinition.version"/>
-      <min value="1"/>
-      <constraint>
-        <key value="hl7au-sdf-base-01"/>
-        <severity value="error"/>
-        <human value="The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1"/>
-        <expression value="matches('^([1-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$')"/>
-      </constraint>
-    </element>
     <element id="StructureDefinition.name">
       <path value="StructureDefinition.name"/>
       <min value="1"/>

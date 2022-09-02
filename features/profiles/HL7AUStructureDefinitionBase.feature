@@ -33,10 +33,6 @@ Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefini
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.identifier
     Then "StructureDefinition.identifier" has cardinality "0..0"
     
-Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.version
-    Then "StructureDefinition.version" has cardinality "1..1"
-    And "StructureDefinition.version" has an invariant "hl7au-sdf-base-01::error::The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1"
-    
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.name
     Then "StructureDefinition.name" has cardinality "1..1"
     
