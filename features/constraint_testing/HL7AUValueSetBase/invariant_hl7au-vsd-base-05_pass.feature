@@ -47,7 +47,7 @@ Scenario: URL value ends with id warning variation #1 - AU Extended ValueSet
     And its element "ValueSet.url" has value "http://terminology.hl7.org.au/ValueSet/v2-0203"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-vsd-1"
     Then the command should "succeed" with output message "Success: 0 errors, 1 warnings"
-    And the command should "succeed" with output message "Rule 'The url should end with the id value, unless it is an AU extended ValueSet'"
+    And the command should "succeed" with output message "Rule hl7au-vsd-base-05: 'The url should end with the id value, unless it is an AU extended ValueSet'"
 
 Scenario: URL value ends with id warning variation #2 - AU Extended ValueSet
     Given a test file named "test-cases/ValueSet/valueset-hl7au-vsd-base-05-pass-06.xml" exists
@@ -55,4 +55,4 @@ Scenario: URL value ends with id warning variation #2 - AU Extended ValueSet
     And its element "ValueSet.url" has value "http://terminology.hl7.org.au/ValueSet/v3-ActCode"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-vsd-1"
     Then the command should "succeed" with output message "Success: 0 errors, 1 warnings"
-    And the command should "succeed" with output message "Rule 'The url should end with the id value, unless it is an AU extended ValueSet'"
+    And the command should "succeed" with output message "Rule hl7au-vsd-base-05: 'The url should end with the id value, unless it is an AU extended ValueSet'"

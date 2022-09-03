@@ -18,7 +18,7 @@ Scenario: URL value mismatch to id value variation #1
     And its element "StructureDefinition.url" has value "http://hl7.org.au/fhir/StructureDefinition/hl7ausdfbase05fail01"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The url must end with the id value' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-05: 'The url must end with the id value' Failed"
 
 Scenario: URL value ends with id value variation #2 wrong case
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-05-fail-02.xml" exists
@@ -26,7 +26,7 @@ Scenario: URL value ends with id value variation #2 wrong case
     And its element "StructureDefinition.url" has value "http://hl7.org.au/fhir/StructureDefinition/HL7AU-SDF-BASE-05-FAIL-02"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The url must end with the id value' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-05: 'The url must end with the id value' Failed"
 
 Scenario: URL value ends with id value variation #3 url has no terminal arc 
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-05-fail-03.xml" exists
@@ -34,5 +34,5 @@ Scenario: URL value ends with id value variation #3 url has no terminal arc
     And its element "StructureDefinition.url" has value "http://hl7.org.au/fhir/StructureDefinition/"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The url must end with the id value' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-05: 'The url must end with the id value' Failed"
 

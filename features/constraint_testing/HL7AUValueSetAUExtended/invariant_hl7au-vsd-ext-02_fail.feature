@@ -17,19 +17,19 @@ Scenario: id is 'au-hl7au-vsd-ext-02-fail-01'
     And its element "ValueSet.id" has value "au-hl7au-vsd-ext-02-fail-01"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-vsd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The id must end with '-extended'' Failed"
+    And the command should "fail" with output message "Rule hl7au-vsd-ext-02: 'The id must end with '-extended'' Failed"
 
 Scenario: id is 'au-testing-02'
     Given a test file named "test-cases/ValueSet/valueset-hl7au-vsd-ext-02-fail-02.xml" exists
     And its element "ValueSet.id" has value "au-testing-02"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-vsd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The id must end with '-extended'' Failed"
+    And the command should "fail" with output message "Rule hl7au-vsd-ext-02: 'The id must end with '-extended'' Failed"
 
 Scenario: id is 'au-testing-03-EXTENDED'
     Given a test file named "test-cases/ValueSet/valueset-hl7au-vsd-ext-02-fail-03.xml" exists
     And its element "ValueSet.id" has value "au-testing-03-EXTENDED"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-vsd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The id must end with '-extended'' Failed"
+    And the command should "fail" with output message "Rule hl7au-vsd-ext-02: 'The id must end with '-extended'' Failed"
 

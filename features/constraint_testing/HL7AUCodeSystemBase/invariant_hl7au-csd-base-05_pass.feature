@@ -47,7 +47,7 @@ Scenario: URL value ends with id warning variation #1 - AU Extended CodeSystem
     And its element "CodeSystem.url" has value "http://terminology.hl7.org.au/CodeSystem/v2-0443"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "succeed" with output message "Success: 0 errors, 1 warnings"
-    And the command should "succeed" with output message "Rule 'The url should end with the id value, unless it is an AU extended CodeSystem'"
+    And the command should "succeed" with output message "Rule hl7au-csd-base-05: 'The url should end with the id value, unless it is an AU extended CodeSystem'"
 
 Scenario: URL value ends with id warning variation #2 - AU Extended CodeSystem
     Given a test file named "test-cases/CodeSystem/codesystem-hl7au-csd-base-05-pass-06.xml" exists
@@ -55,4 +55,4 @@ Scenario: URL value ends with id warning variation #2 - AU Extended CodeSystem
     And its element "CodeSystem.url" has value "http://terminology.hl7.org.au/CodeSystem/v3-ActCode"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-1"
     Then the command should "succeed" with output message "Success: 0 errors, 1 warnings"
-    And the command should "succeed" with output message "Rule 'The url should end with the id value, unless it is an AU extended CodeSystem'"
+    And the command should "succeed" with output message "Rule hl7au-csd-base-05: 'The url should end with the id value, unless it is an AU extended CodeSystem'"

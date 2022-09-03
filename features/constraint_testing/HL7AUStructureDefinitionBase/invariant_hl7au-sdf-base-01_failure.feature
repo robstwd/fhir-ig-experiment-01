@@ -18,40 +18,40 @@ Scenario: version is '1'
     And its element "StructureDefinition.version" has value "1"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
 
 Scenario: version is '1.1'
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-01-fail-02.xml" exists
     And its element "StructureDefinition.version" has value "1.1"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
 
 Scenario: version is '0.1.1'
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-01-fail-03.xml" exists
     And its element "StructureDefinition.version" has value "0.1.1"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
 
 Scenario: version is '2.1.01'
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-01-fail-04.xml" exists
     And its element "StructureDefinition.version" has value "2.1.01"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
 
 Scenario: version is '1.1.1-alpha'
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-01-fail-05.xml" exists
     And its element "StructureDefinition.version" has value "1.1.1-alpha"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
     
 Scenario: version is '4.06.10'
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-01-fail-06.xml" exists
     And its element "StructureDefinition.version" has value "4.06.10"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
+    And the command should "fail" with output message "Rule hl7au-sdf-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
    

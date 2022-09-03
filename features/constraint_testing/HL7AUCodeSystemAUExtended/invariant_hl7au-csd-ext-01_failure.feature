@@ -17,18 +17,18 @@ Scenario: id has no hyphen after 'au'
     And its element "CodeSystem.id" has value "auv203"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The id must start with 'au-'' Failed"
+    And the command should "fail" with output message "Rule hl7au-csd-ext-01: 'The id must start with 'au-'' Failed"
 
 Scenario: id has wrong case of 'au'
     Given a test file named "test-cases/CodeSystem/codesystem-hl7au-csd-ext-01-fail-02.xml" exists
     And its element "CodeSystem.id" has value "AU-v204-extended"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The id must start with 'au-'' Failed"
+    And the command should "fail" with output message "Rule hl7au-csd-ext-01: 'The id must start with 'au-'' Failed"
 
 Scenario: id has no 'au-' prefix
     Given a test file named "test-cases/CodeSystem/codesystem-hl7au-csd-ext-01-fail-03.xml" exists
     And its element "CodeSystem.id" has value "hl7au-csd-ext-01-fail-03"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
-    And the command should "fail" with output message "Rule 'The id must start with 'au-'' Failed"
+    And the command should "fail" with output message "Rule hl7au-csd-ext-01: 'The id must start with 'au-'' Failed"
