@@ -39,12 +39,8 @@ jobs:
     
     # due to certain ImplementationGuide parameter values, the validation is performed against 5.0.0-snapshot1
     # otherwise, against 4.0.1, the validator returns errors re the unknown parameters  
-    - name: Validate ImplementationGuide resources, against FHIRVersion 5.0.0-snapshot1
-      run: java -jar validator.jar  -version 5.0.0-snapshot1 input/resources/ImplementationGuide/*.xml
-    
-    # validate the meta StructureDefinition resource, against core FHIRVersion 4.0.1
-    - name: Validate meta StructureDefinition resource, against core FHIRVersion 4.0.1
-      run: java -jar validator.jar -version 4.0.1 input/resources/StructureDefinition/*.xml
+    - name: Validate ImplementationGuide resources, against FHIRVersion 5.0.0
+      run: java -jar validator.jar  -version 5.0.0-cibuild input/resources/ImplementationGuide/*.xml
     
     # validate StructureDefinition resources, against core FHIRVersion 4.0.1
     - name: Validate StructureDefinition resources, against core FHIRVersion 4.0.1
