@@ -13,6 +13,7 @@ Scenario: HL7 AU StructureDefinition Base profile derivation
 
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition
     Then "StructureDefinition" has an invariant "hl7au-sdf-base-05::error::The url must end with the id value"
+    Then "StructureDefinition" has an invariant "hl7au-sdf-base-06::error::The name value matches the title value when spaces are removed"
 
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.id
     Then "StructureDefinition.id" has cardinality "1..1"
@@ -35,6 +36,7 @@ Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefini
     
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.name
     Then "StructureDefinition.name" has cardinality "1..1"
+        And "StructureDefinition.name" has an invariant "hl7au-sdf-base-07::error::The name value contains no spaces"
     
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.title
     Then "StructureDefinition.title" has cardinality "1..1"
