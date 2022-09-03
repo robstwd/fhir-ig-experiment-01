@@ -19,7 +19,7 @@ Scenario: hl7au-csd-base-01: The version number is NOT in semantic versioning fo
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Error @ CodeSystem.version"
-    And the command should "fail" with output message "The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1"
+    And the command should "fail" with output message "Rule hl7au-csd-base-01: 'The version number is in semantic versioning format ('n.n.n'), with the major version number at least 1' Failed"
 
 Scenario: hl7au-csd-base-02: The url DOES NOT start with 'http://terminology.hl7.org.au/CodeSystem/'
     Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-02.xml" exists
@@ -27,7 +27,7 @@ Scenario: hl7au-csd-base-02: The url DOES NOT start with 'http://terminology.hl7
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Error @ CodeSystem.url"
-    And the command should "fail" with output message "Rule 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
+    And the command should "fail" with output message "Rule hl7au-csd-base-02: 'The url starts with 'http://terminology.hl7.org.au/CodeSystem/'' Failed"
 
 Scenario: hl7au-csd-base-03: The identifier.value DOES NOT start with 'urn:oid:2.16.840.1.113883.2.3.4.'
     Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-03.xml" exists
@@ -35,7 +35,7 @@ Scenario: hl7au-csd-base-03: The identifier.value DOES NOT start with 'urn:oid:2
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Error @ CodeSystem.identifier[0].value"
-    And the command should "fail" with output message "The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4."
+    And the command should "fail" with output message "Rule hl7au-csd-base-03: 'The identifier.value starts with 'urn:oid:2.16.840.1.113883.2.3.4.'' Failed"
 
 Scenario: hl7au-csd-base-04: The publisher DOES NOT start with 'Health Level Seven Australia'
     Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-04.xml" exists
@@ -43,7 +43,7 @@ Scenario: hl7au-csd-base-04: The publisher DOES NOT start with 'Health Level Sev
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-csd-ext-1"
     Then the command should "fail" with output message "*FAILURE*: 1 errors"
     And the command should "fail" with output message "Error @ CodeSystem.publisher"
-    And the command should "fail" with output message "Rule 'The publisher starts with 'Health Level Seven Australia''"
+    And the command should "fail" with output message "Rule hl7au-csd-base-04: 'The publisher starts with 'Health Level Seven Australia''"
 
 Scenario: meta.profile fixed value: is not 'http://hl7.org/fhir/StructureDefinition/shareablecodesystem'
     Given a test file named "test-cases/CodeSystem/codesystem-inherited-constraints-fail-05.xml" exists
