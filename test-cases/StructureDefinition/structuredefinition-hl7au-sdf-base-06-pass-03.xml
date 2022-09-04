@@ -3,7 +3,7 @@
   <id value="hl7au-sdf-base-06-pass-03"/>
   <url value="http://hl7.org.au/fhir/StructureDefinition/hl7au-sdf-base-06-pass-03"/>
   <name value="AUBaseCondition"/>
-  <title value="    AU Base Condition       "/>
+  <title value="AUBaseCondition"/>
   <status value="draft"/>
   <date value="2021-07-07"/>
   <publisher value="Health Level Seven Australia"/>

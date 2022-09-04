@@ -21,20 +21,13 @@ Scenario: name and title value variation #1
 
 Scenario: name and title value variation #2
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-06-pass-02.xml" exists
-    And its element "StructureDefinition.name" has value "AUBaseCondition"
-    And its element "StructureDefinition.title" has value "AU     Base      Condition"
+    And its element "StructureDefinition.name" has value "AUBaseConditionAUBaseConditionAUBaseConditionAUBaseConditionAUBaseCondition"
+    And its element "StructureDefinition.title" has value "AU Base Condition AU Base Condition AU Base Condition AU Base Condition AU Base Condition"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
     Then the command should "succeed" with output message "Success: 0 errors"
 
 Scenario: name and title value variation #3
     Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-06-pass-03.xml" exists
-    And its element "StructureDefinition.name" has value "AUBaseCondition"
-    And its element "StructureDefinition.title" has value "    AU Base Condition       "
-    When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
-    Then the command should "succeed" with output message "Success: 0 errors"
-
-Scenario: name and title value variation #4
-    Given a test file named "test-cases/StructureDefinition/structuredefinition-hl7au-sdf-base-06-pass-04.xml" exists
     And its element "StructureDefinition.name" has value "AUBaseCondition"
     And its element "StructureDefinition.title" has value "AUBaseCondition"
     When I run the validator command on this testfile against profile "structuredefinition-hl7au-sdf-1"
