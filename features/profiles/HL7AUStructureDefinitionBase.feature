@@ -36,10 +36,11 @@ Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefini
     
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.name
     Then "StructureDefinition.name" has cardinality "1..1"
-        And "StructureDefinition.name" has an invariant "hl7au-sdf-base-07::error::The name value contains no spaces"
+    And "StructureDefinition.name" has an invariant "hl7au-sdf-base-07::error::The name value contains no spaces"
     
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.title
     Then "StructureDefinition.title" has cardinality "1..1"
+    And "StructureDefinition.title" has an invariant "hl7au-sdf-base-08::error::The title value must contain one or more non-leading or non-trailing single spaces"
     
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.experimental
     Then "StructureDefinition.experimental" has cardinality "0..0"
