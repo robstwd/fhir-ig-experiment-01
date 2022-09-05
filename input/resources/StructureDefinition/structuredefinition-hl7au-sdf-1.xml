@@ -79,7 +79,7 @@
         <key value="hl7au-sdf-base-08"/>
         <severity value="error"/>
         <human value="The title value must contain one or more non-leading or non-trailing single spaces"/>
-        <expression value="matches('^([a-zA-Z]+ )*[a-zA-Z]+$')"/>
+        <expression value="matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')"/>
       </constraint>
     </element>
     <element id="StructureDefinition.experimental">
