@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR.IG.EXPERIMENT.01\MyIG Home Page - FHIR v4.0.1</title>
+    <title>FHIR.IG.EXPERIMENT.01\Home - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -68,42 +68,25 @@
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
+  
+  <li><a href="index.html">Home</a></li>
+  
   <li><a href="toc.html">Table of Contents</a></li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">MyIg Background<b class="caret">
-      </b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="background.html">Background</a>
-      </li>
-    </ul>
-  </li>
+
+  <li><a href="downloads.html">Downloads</a></li>
+
+  <li><a href="artifacts.html">Artifact Index</a></li>
+
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="spec.html">Detailed Specification</a>
-      </li>
+      <li><a target="_blank" href="https://hl7.org/fhir/">R4B</a></li>
+      <li><a target="_blank" href="https://build.fhir.org/">R5 ci</a></li>
     </ul>
-  </li>
-  <li><a href="artifacts.html">Artifact Index</a></li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
-      </b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
-      </li>
-      <li>
-        <a href="downloads.html">Downloads</a>
-      </li>
-    </ul>
-  </li>
+  </li>  
+
 </ul>      
 
             </div>  <!-- /.nav-collapse -->
@@ -117,7 +100,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>MyIG Home Page</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Home</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -138,37 +121,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">FHIR Implementation Guide Experiment 01 - Local Development build (v0.0.1). See the <a href="https://about.me/robeastwood/fhir/ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>MyIG Home Page</h2>
+  <h2>Home</h2>
   
-  <div xmlns="http://www.w3.org/1999/xhtml"><div class="markdown-toc"><p>Contents:</p><ul><li><a href="#intro">Introduction</a></li><li><a href="#technical">Technical Overview</a></li></ul></div>
+  <div xmlns="http://www.w3.org/1999/xhtml"><div class="markdown-toc"><p>Contents:</p><ul><li><a href="#intro">Introduction</a></li><li><a href="#profile">Profile overview</a></li><li><a href="#technical">FHIR validator use</a></li></ul></div>
   <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
-  <a name="intro">  </a>
+  
+  <a name="intro"> </a>
   <h3>Introduction</h3>
-	<p>
-    What is this IG about (in patient/non-expert friendly terms).
-  </p>
-	<a name="technical">  </a>
-	<h3>Technical Overview</h3>
-	<p>
-    Additional detail/context setting for those who have significant background in the domain.  (Try to make as understandable as you can, but
-    set important context).
-  </p>
-  <a name="walkthrough">  </a>
   <p>
-    The main sections of this IG are:
+    This implementation guide supports checking of HL7 AU profile metadata, as detailed in the wiki:
+    <ul>
+      <li>
+        <a target="_blank" href="https://github.com/hl7au/au-fhir-base/wiki/HL7-AU-Conventions:-profile-and-extension-metadata">HL7 AU Conventions: profile and extension metadata</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://github.com/hl7au/au-fhir-base/wiki#terminology-resource-conventions">Terminology resource conventions</a>
+      </li>
+    </ul>
   </p>
-  <ul>
-    <li>
-      <a href="background.html">Background</a> - provides business context for the implementation guide and information that implementers should be
-      familiar with before reading the remainder of the IG.  There could be multiple pages for this.
-    </li>
-    <li>
-      <a href="spec.html">Detailed Specification</a> - The actual stuff implementers are expected to do.  (Could be multiple pages for this.)
-    </li>
-    <li>
-      <a href="downloads.html">Downloads</a> - Allows downloading a copy of this implementation guide and other useful information
-    </li>
-  </ul>
+  
+  <a name="profile"> </a>
+  <h3>Profile overview</h3>
+  <p>
+    The available profiles in this IG are:  
+    <ul>
+      <li>
+        <a href="StructureDefinition-structuredefinition-hl7au-sdf-1.html">HL7 AU StructureDefinition Base</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-structuredefinition-hl7au-csd-1.html">HL7 AU CodeSystem Base</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-structuredefinition-hl7au-csd-ext-1.html">HL7 AU CodeSystem AU Extended</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-structuredefinition-hl7au-vsd-1.html">HL7 AU ValueSet Base</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-structuredefinition-hl7au-vsd-ext-1.html">HL7 AU ValueSet AU Extended</a>
+      </li>
+    </ul>
+  </p>
+
+  <a name="technical"> </a>
+  <h3>FHIR validator use</h3>
+  <p>
+    This command can be used to validate all HL7AU resource profiles:
+  </p>
+  <pre>
+java -jar validator.jar 
+-version 4.0.1 
+-ig https://robstwd.github.io/fhir-ig-experiment-01/package.tgz 
+-profile "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1"
+au-fhir-base/resources/au-*.xml</pre>
+
+  <p>
+    <a target="_blank" href="https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator">HL7 Using the FHIR Validator</a>:
+  </p>
+
 </div>
 </div>
         </div>  <!-- /inner-wrapper -->
@@ -192,7 +202,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Sep 4, 2022 21:01+0000">2022-09-04</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/robeastwood-agency"></a>.  Package fhir.ig.experiment.01#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 5, 2022 21:08+0000">2022-09-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

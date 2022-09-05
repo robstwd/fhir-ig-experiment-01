@@ -12,7 +12,7 @@
   <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2022-09-04T21:01:00+00:00"/>
+  <date value="2022-09-05T21:08:18+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -277,18 +277,8 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="MyIG Home Page"/>
+        <title value="Home"/>
         <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="background.html"/>
-        <title value="Background"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="spec.html"/>
-        <title value="Detailed Specification"/>
-        <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="downloads.html"/>

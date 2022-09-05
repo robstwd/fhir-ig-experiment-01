@@ -11,7 +11,7 @@
   "title": "FHIR Implementation Guide Experiment 01",
   "status": "draft",
   "experimental": false,
-  "date": "2022-09-04T21:01:00+00:00",
+  "date": "2022-09-05T21:08:18+00:00",
   "contact": [
     {
       "telecom": [
@@ -422,18 +422,8 @@
       "page": [
         {
           "nameUrl": "index.html",
-          "title": "MyIG Home Page",
+          "title": "Home",
           "generation": "html"
-        },
-        {
-          "nameUrl": "background.html",
-          "title": "Background",
-          "generation": "html"
-        },
-        {
-          "nameUrl": "spec.html",
-          "title": "Detailed Specification",
-          "generation": "markdown"
         },
         {
           "nameUrl": "downloads.html",
