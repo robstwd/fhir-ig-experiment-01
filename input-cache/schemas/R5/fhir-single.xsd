@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sun, Sep 4, 2022 10:18+0000 for FHIR v5.0.0-cibuild 
+  Generated on Mon, Sep 5, 2022 12:14+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -2351,9 +2351,9 @@
           <xs:documentation xml:lang="en">ActivityDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ArtifactAssessment">
+      <xs:enumeration value="ChargeItemDefinition">
         <xs:annotation>
-          <xs:documentation xml:lang="en">ArtifactAssessment</xs:documentation>
+          <xs:documentation xml:lang="en">ChargeItemDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="EventDefinition">
@@ -2361,14 +2361,19 @@
           <xs:documentation xml:lang="en">EventDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="EvidenceVariable">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">EvidenceVariable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="Measure">
         <xs:annotation>
           <xs:documentation xml:lang="en">Measure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MessageDefinition">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">MessageDefinition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ObservationDefinition">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">ObservationDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="OperationDefinition">
@@ -2389,6 +2394,11 @@
       <xs:enumeration value="SubscriptionTopic">
         <xs:annotation>
           <xs:documentation xml:lang="en">SubscriptionTopic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TestScript">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">TestScript</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -16070,7 +16080,6 @@
            <xs:element name="valueSignature" type="Signature"/>
            <xs:element name="valueTiming" type="Timing"/>
            <xs:element name="valueContactDetail" type="ContactDetail"/>
-           <xs:element name="valueContributor" type="Contributor"/>
            <xs:element name="valueDataRequirement" type="DataRequirement"/>
            <xs:element name="valueExpression" type="Expression"/>
            <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
@@ -17600,7 +17609,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
            <xs:element name="defaultValueSignature" type="Signature"/>
            <xs:element name="defaultValueTiming" type="Timing"/>
            <xs:element name="defaultValueContactDetail" type="ContactDetail"/>
-           <xs:element name="defaultValueContributor" type="Contributor"/>
            <xs:element name="defaultValueDataRequirement" type="DataRequirement"/>
            <xs:element name="defaultValueExpression" type="Expression"/>
            <xs:element name="defaultValueParameterDefinition" type="ParameterDefinition"/>
@@ -17670,7 +17678,6 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
            <xs:element name="fixedSignature" type="Signature"/>
            <xs:element name="fixedTiming" type="Timing"/>
            <xs:element name="fixedContactDetail" type="ContactDetail"/>
-           <xs:element name="fixedContributor" type="Contributor"/>
            <xs:element name="fixedDataRequirement" type="DataRequirement"/>
            <xs:element name="fixedExpression" type="Expression"/>
            <xs:element name="fixedParameterDefinition" type="ParameterDefinition"/>
@@ -17742,7 +17749,6 @@ If a pattern[x] is declared on a repeating element, the pattern applies to all r
            <xs:element name="patternSignature" type="Signature"/>
            <xs:element name="patternTiming" type="Timing"/>
            <xs:element name="patternContactDetail" type="ContactDetail"/>
-           <xs:element name="patternContributor" type="Contributor"/>
            <xs:element name="patternDataRequirement" type="DataRequirement"/>
            <xs:element name="patternExpression" type="Expression"/>
            <xs:element name="patternParameterDefinition" type="ParameterDefinition"/>
@@ -18047,7 +18053,6 @@ If a pattern[x] is declared on a repeating element, the pattern applies to all r
            <xs:element name="valueSignature" type="Signature"/>
            <xs:element name="valueTiming" type="Timing"/>
            <xs:element name="valueContactDetail" type="ContactDetail"/>
-           <xs:element name="valueContributor" type="Contributor"/>
            <xs:element name="valueDataRequirement" type="DataRequirement"/>
            <xs:element name="valueExpression" type="Expression"/>
            <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
@@ -20540,6 +20545,11 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">A copyright statement relating to the actor definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the actor definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="ExampleScenarioActorType">
             <xs:annotation>
               <xs:documentation xml:lang="en">Whether the actor represents a human or an appliction.</xs:documentation>
@@ -21437,6 +21447,11 @@ A coverage may only be responsible for specific types of charges, and the sequen
           <xs:element name="cancellationReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="class" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="serviceCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -22940,7 +22955,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="total" minOccurs="0" maxOccurs="1" type="unsignedInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If a set of search matches, this is the total number of entries of type 'match' across all pages in the search.  It does not include search.mode = 'include' or 'outcome' entries and it does not provide a count of the number of entries in the Bundle.</xs:documentation>
+              <xs:documentation xml:lang="en">If a set of search matches, this is the (potentially estimated) total number of entries of type 'match' across all pages in the search.  It does not include search.mode = 'include' or 'outcome' entries and it does not provide a count of the number of entries in the Bundle.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="link" type="Bundle.Link" minOccurs="0" maxOccurs="unbounded">
@@ -22958,6 +22973,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Digital Signature - base64 encoded. XML-DSig or a JWS.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="issues" minOccurs="0" maxOccurs="1" type="ResourceContainer">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Captures issues and warnings that relate to the construction of the Bundle and the content within it.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -22969,7 +22989,7 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="relation" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="relation" minOccurs="1" maxOccurs="1" type="LinkRelationTypes">
             <xs:annotation>
               <xs:documentation xml:lang="en">A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).</xs:documentation>
            </xs:annotation>
@@ -22997,11 +23017,10 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="fullUrl" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except when: 
+              <xs:documentation xml:lang="en">The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. Even when not required, fullUrl MAY be set to a urn:uuid to allow referencing entries in a transaction. The fullUrl can be an arbitrary URI and is not limited to urn:uuid, urn:oid, http, and https. The fullUrl element SHALL have a value except when: 
 * invoking a create
 * invoking or responding to an operation where the body is not a single identified resource
-* invoking or returning the results of a search or history operation
-Even when not required, fullUrl MAY be set to a urn:uuid to allow referencing entries in a transaction.</xs:documentation>
+* invoking or returning the results of a search or history operation.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="resource" minOccurs="0" maxOccurs="1" type="ResourceContainer">
@@ -23266,6 +23285,715 @@ Even when not required, fullUrl MAY be set to a urn:uuid to allow referencing en
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="LinkRelationTypesEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="about">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that is the subject of the link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="acl">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Asserts that the link target provides an access control description for the link context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="alternate">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a substitute for this context</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="amphtml">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Used to reference alternative content that uses the AMP profile of the HTML format.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="appendix">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to an appendix.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="apple-touch-icon">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to an icon for the context. Synonym for icon.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="apple-touch-startup-image">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a launch screen for the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="archives">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a collection of records, documents, or other
+      materials of historical interest.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="author">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to the context's author.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="blocked-by">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies the entity that blocks access to a resource
+      following receipt of a legal demand.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bookmark">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Gives a permanent link to use for bookmarking purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="canonical">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Designates the preferred version of a resource (the IRI and its contents).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="chapter">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a chapter in a collection of resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cite-as">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that the link target is preferred over the link context for the purpose of permanent citation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="collection">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The target IRI points to a resource which represents the collection resource for the context IRI.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="contents">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a table of contents.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="convertedFrom">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The document linked to was later converted to the
+      document that contains this link relation.  For example, an RFC can
+      have a link to the Internet-Draft that became the RFC; in that case,
+      the link relation would be &quot;convertedFrom&quot;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="copyright">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a copyright statement that applies to the
+    link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="create-form">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The target IRI points to a resource where a submission form can be obtained.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="current">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource containing the most recent
+      item(s) in a collection of resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="describedby">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource providing information about the
+      link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="describes">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The relationship A 'describes' B asserts that
+      resource A provides a description of resource B. There are no
+      constraints on the format or representation of either A or B,
+      neither are there any further constraints on either resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="disclosure">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a list of patent disclosures made with respect to 
+      material for which 'disclosure' relation is specified.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dns-prefetch">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Used to indicate an origin that will be used to fetch required 
+      resources for the link context, and that the user agent ought to resolve 
+      as early as possible.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="duplicate">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource whose available representations
+      are byte-for-byte identical with the corresponding representations of
+      the context IRI.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="edit">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that can be used to edit the
+      link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="edit-form">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The target IRI points to a resource where a submission form for
+      editing associated resource can be obtained.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="edit-media">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that can be used to edit media
+      associated with the link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="enclosure">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a related resource that is potentially
+      large and might require special handling.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="external">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that is not part of the same site as the current context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="first">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">An IRI that refers to the furthest preceding resource
+    in a series of resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="glossary">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a glossary of terms.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="help">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to context-sensitive help.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hosts">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource hosted by the server indicated by
+      the link context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hub">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a hub that enables registration for
+    notification of updates to the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="icon">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to an icon representing the link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="index">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to an index.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalAfter">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that ends before the beginning of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalBefore">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins after the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalContains">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins after the beginning of the time interval associated with the context resource, and ends before the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalDisjoint">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins after the end of the time interval associated with the context resource, or ends before the beginning of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalDuring">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalEquals">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalFinishedBy">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins after the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalFinishes">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and whose end coincides with the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalIn">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins before or is coincident with the beginning of the time interval associated with the context resource, and ends after or is coincident with the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalMeets">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval whose beginning coincides with the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalMetBy">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval whose end coincides with the beginning of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalOverlappedBy">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins before the beginning of the time interval associated with the context resource, and ends after the beginning of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalOverlaps">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval that begins before the end of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalStartedBy">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and ends before the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intervalStarts">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">refers to a resource associated with a time interval whose beginning coincides with the beginning of the time interval associated with the context resource, and ends after the end of the time interval associated with the context resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="item">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The target IRI points to a resource that is a member of the collection represented by the context IRI.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="last">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">An IRI that refers to the furthest following resource
+      in a series of resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="latest-version">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Points to a resource containing the latest (e.g.,
+      current) version of the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="license">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a license associated with this context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="linkset">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The link target of a link with the &quot;linkset&quot; relation
+      type provides a set of links, including links in which the link
+      context of the link participates.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lrdd">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to further information about the link's context,
+      expressed as a LRDD (&quot;Link-based Resource Descriptor Document&quot;)
+      resource.  See  for information about
+      processing this relation type in host-meta documents. When used
+      elsewhere, it refers to additional links and other metadata.
+      Multiple instances indicate additional LRDD resources. LRDD
+      resources MUST have an &quot;application/xrd+xml&quot; representation, and
+      MAY have others.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="manifest">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Links to a manifest file for the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mask-icon">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a mask that can be applied to the icon for the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="media-feed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a feed of personalised media recommendations relevant to the link context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="memento">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Target IRI points to a Memento, a fixed resource that will not change state anymore.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="micropub">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Links to the context's Micropub endpoint.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="modulepreload">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a module that the user agent is to preemptively fetch and store for use in the current context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="monitor">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that can be used to monitor changes in an HTTP resource.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="monitor-group">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that can be used to monitor changes in a specified group of HTTP resources.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="next">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that the link's context is a part of a series, and
+      that the next in the series is the link target.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="next-archive">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to the immediately following archive resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nofollow">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that the context’s original author or publisher does not endorse the link target.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noopener">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that any newly created top-level browsing context which results from following the link will not be an auxiliary browsing context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="noreferrer">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that no referrer information is to be leaked when following the link.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="opener">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that any newly created top-level browsing context which results from following the link will be an auxiliary browsing context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="openid2.local_id">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to an OpenID Authentication server on which the context relies for an assertion that the end user controls an Identifier.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="openid2.provider">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource which accepts OpenID Authentication protocol messages for the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="original">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Target IRI points to an Original Resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P3Pv1">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a P3P privacy policy for the context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="payment">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates a resource where payment is accepted.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pingback">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Gives the address of the pingback resource for the link context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="preconnect">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Used to indicate an origin that will be used to fetch required 
+      resources for the link context. Initiating an early connection, which 
+      includes the DNS lookup, TCP handshake, and optional TLS negotiation, 
+      allows the user agent to mask the high latency costs of establishing a 
+      connection.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="predecessor-version">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Points to a resource containing the predecessor
+      version in the version history.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="prefetch">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The prefetch link relation type is used to identify a resource 
+      that might be required by the next navigation from the link context, and 
+      that the user agent ought to fetch, such that the user agent can deliver a 
+      faster response once the resource is requested in the future.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="preload">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that should be loaded early in the 
+      processing of the link's context, without blocking rendering.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="prerender">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Used to identify a resource that might be required by the next 
+      navigation from the link context, and that the user agent ought to fetch 
+      and execute, such that the user agent can deliver a faster response once 
+      the resource is requested in the future.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="prev">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates that the link's context is a part of a series, and
+      that the previous in the series is the link target.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="preview">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that provides a preview of the link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="previous">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to the previous resource in an ordered series
+      of resources.  Synonym for &quot;prev&quot;.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="prev-archive">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to the immediately preceding archive resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="privacy-policy">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a privacy policy associated with the link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="profile">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifying that a resource representation conforms
+to a certain profile, without affecting the non-profile semantics
+of the resource representation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="publication">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Links to a publication manifest. A manifest represents 
+      structured information about a publication, such as informative metadata, 
+      a list of resources, and a default reading order.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="related">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a related resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="restconf">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies the root of RESTCONF API as configured on this HTTP server.
+      The &quot;restconf&quot; relation defines the root of the API defined in RFC8040.
+      Subsequent revisions of RESTCONF will use alternate relation values to support 
+      protocol versioning.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="replies">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a resource that is a reply to the context
+      of the link.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ruleinput">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The resource identified by the link target provides an input value to an 
+    instance of a rule, where the resource which represents the rule instance is 
+    identified by the link context.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="search">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that can be used to search through
+      the link's context and related resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="section">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a section in a collection of resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="self">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Conveys an identifier for the link's context.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="service">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Indicates a URI that can be used to retrieve a
+      service document.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="service-desc">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies service description for the context that
+      is primarily intended for consumption by machines.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="service-doc">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies service documentation for the context that
+      is primarily intended for human consumption.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="service-meta">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies general metadata for the context that is
+      primarily intended for consumption by machines.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sponsored">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that is within a context that is 
+		sponsored (such as advertising or another compensation agreement).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="start">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to the first resource in a collection of
+      resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="status">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a resource that represents the context's
+      status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stylesheet">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a stylesheet.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="subsection">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource serving as a subsection in a
+      collection of resources.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="successor-version">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Points to a resource containing the successor version
+      in the version history.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sunset">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a resource that provides information about
+      the context's retirement policy.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tag">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Gives a tag (identified by the given address) that applies to
+      the current document.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="terms-of-service">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to the terms of service associated with the link's context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="timegate">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Target IRI points to a TimeGate for an Original Resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="timemap">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Target IRI points to a TimeMap for an Original Resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="type">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource identifying the abstract semantic type of which the link's context is considered to be an instance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ugc">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a resource that is within a context that is User Generated Content.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="up">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Refers to a parent document in a hierarchy of
+      documents.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="version-history">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Points to a resource containing the version history
+      for the context.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="via">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a resource that is the source of the
+      information in the link's context.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="webmention">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies a target URI that supports the Webmention protocol.
+    This allows clients that mention a resource in some form of publishing process
+    to contact that endpoint and inform it that this resource has been mentioned.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="working-copy">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Points to a working copy for this resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="working-copy-of">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Points to the versioned resource from which this
+      working copy was obtained.
+    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LinkRelationTypes">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="LinkRelationTypesEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="CapabilityStatement" type="CapabilityStatement">
     <xs:annotation>
       <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server or Client for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
@@ -23354,6 +24082,11 @@ Even when not required, fullUrl MAY be set to a urn:uuid to allow referencing en
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="kind" minOccurs="1" maxOccurs="1" type="CapabilityStatementKind">
@@ -35443,7 +36176,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="EncounterStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">planned | in-progress | onhold | completed | cancelled | discontinued | entered-in-error | unknown.</xs:documentation>
+              <xs:documentation xml:lang="en">planned | in-progress | onhold | discharged | completed | cancelled | discontinued | entered-in-error | unknown.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusHistory" type="Encounter.StatusHistory" minOccurs="0" maxOccurs="unbounded">
@@ -35451,7 +36184,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="class" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="class" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.</xs:documentation>
            </xs:annotation>
@@ -35543,7 +36276,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="length" minOccurs="0" maxOccurs="1" type="Duration">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Quantity of time the encounter lasted. This excludes the time during leaves of absence.</xs:documentation>
+              <xs:documentation xml:lang="en">Actual quantity of time the encounter lasted. This excludes the time during leaves of absence.When missing it is the time in between the start and end values.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
@@ -35584,7 +36317,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="EncounterStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">planned | in-progress | onhold | completed | cancelled | discontinued | entered-in-error | unknown.</xs:documentation>
+              <xs:documentation xml:lang="en">planned | in-progress | onhold | discharged | completed | cancelled | discontinued | entered-in-error | unknown.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="1" maxOccurs="1" type="Period">
@@ -35742,7 +36475,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="physicalType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="form" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.</xs:documentation>
            </xs:annotation>
@@ -35806,6 +36539,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       <xs:enumeration value="onhold">
         <xs:annotation>
           <xs:documentation xml:lang="en">On Hold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="discharged">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Discharged</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="completed">
@@ -37773,6 +38511,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the example scenario and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the example scenario.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actor" type="ExampleScenario.Actor" minOccurs="0" maxOccurs="unbounded">
@@ -42337,6 +43080,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="packageId" minOccurs="1" maxOccurs="1" type="id">
             <xs:annotation>
               <xs:documentation xml:lang="en">The NPM package name for this Implementation Guide, used in the NPM package distribution, which is the primary mechanism by which FHIR based tooling manages IG dependencies. This value must be globally unique, and should be assigned with care.</xs:documentation>
@@ -42396,6 +43144,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The version of the IG that is depended on, when the correct version is required to understand the IG correctly.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reason" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A description explaining the nature of the dependency on the listed IG.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -42572,9 +43325,9 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="code" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Code that identifies parameter.</xs:documentation>
+              <xs:documentation xml:lang="en">A tool-specific code that defines the parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
@@ -45859,9 +46612,9 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Physical location.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="physicalType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="form" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Physical form of the location, e.g. building, room, vehicle, road.</xs:documentation>
+              <xs:documentation xml:lang="en">Physical form of the location, e.g. building, room, vehicle, road, virtual.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="position" type="Location.Position" minOccurs="0" maxOccurs="1">
@@ -46617,7 +47370,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Indicates whether the data submitted in an data-exchange report represents a snapshot or incremental update. A snapshot update replaces all previously submitted data for the receiver, whereas an incremental update represents only updated and/or changed data and should be applied as a differential update to the existing submitted data for the receiver.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="measure" minOccurs="1" maxOccurs="1" type="canonical">
+          <xs:element name="measure" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">A reference to the Measure that was calculated to produce this report.</xs:documentation>
            </xs:annotation>
@@ -46650,6 +47403,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="period" minOccurs="1" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">The reporting period for which the report was calculated.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="inputParameters" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a Parameters resource (typically represented using a contained resource) that represents any input parameters that were provided to the operation that generated the report.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="scoring" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -47097,16 +47855,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifiers associated with this Medication Administration that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesUri" minOccurs="0" maxOccurs="unbounded" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationAdministration.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -48217,16 +48965,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to a protocol, guideline, orderset, or other definition that is adhered to in whole or in part by this MedicationRequest.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="instantiatesUri" minOccurs="0" maxOccurs="unbounded" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -51867,6 +52605,11 @@ Reflex | Repeat | Re-run.</xs:documentation>
               <xs:documentation xml:lang="en">A copyright statement relating to the OperationDefinition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the OperationDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="affectsState" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">Whether the operation affects state. Side effects such as producing audit trail entries do not count as 'affecting  state'.</xs:documentation>
@@ -52898,7 +53641,6 @@ For resource issues, this will be a simple XPath limited to element names, repet
             <xs:element name="valueSignature" type="Signature"/>
             <xs:element name="valueTiming" type="Timing"/>
             <xs:element name="valueContactDetail" type="ContactDetail"/>
-            <xs:element name="valueContributor" type="Contributor"/>
             <xs:element name="valueDataRequirement" type="DataRequirement"/>
             <xs:element name="valueExpression" type="Expression"/>
             <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
@@ -55540,6 +56282,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
@@ -56909,7 +57656,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A copyright statement relating to the Requirements and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the Requirements.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="derivedFrom" minOccurs="0" maxOccurs="1" type="canonical">
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="derivedFrom" minOccurs="0" maxOccurs="unbounded" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">Another set of Requirements that this set of Requirements builds on and updates.</xs:documentation>
            </xs:annotation>
@@ -57881,9 +58633,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">An XPath expression that returns a set of elements for the search parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="xpathUsage" minOccurs="0" maxOccurs="1" type="XPathUsageType">
+          <xs:element name="processingMode" minOccurs="0" maxOccurs="1" type="SearchProcessingModeType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">How the search parameter relates to the set of elements returned by evaluating the xpath query.</xs:documentation>
+              <xs:documentation xml:lang="en">How the search parameter relates to the set of elements returned by evaluating the expression query.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="constraint" minOccurs="0" maxOccurs="1" type="string">
@@ -57948,36 +58700,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
            </xs:annotation>
           </xs:element>
         </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="XPathUsageTypeEnum">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="normal">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Normal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="phonetic">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Phonetic</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="other">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Other</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="XPathUsageType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="XPathUsageTypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -58128,6 +58850,36 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="SearchComparatorEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SearchProcessingModeTypeEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="normal">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Normal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="phonetic">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Phonetic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SearchProcessingModeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="SearchProcessingModeTypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -59129,7 +59881,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.  The short copyright declaration (e.g. (c) '2015+ xyz organization' should be sent in the copyrightLabel element.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="keyword" minOccurs="0" maxOccurs="unbounded" type="Coding">
@@ -59463,6 +60220,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="structure" type="StructureMap.Structure" minOccurs="0" maxOccurs="unbounded">
@@ -60412,6 +61174,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the SubscriptionTopic and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the SubscriptionTopic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -62522,7 +63289,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the &quot;request&quot; resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.</xs:documentation>
+              <xs:documentation xml:lang="en">BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ServiceRequest, MedicationRequest, CarePlan, etc. which is distinct from the &quot;request&quot; resource the task is seeking to fulfill.  This latter resource is referenced by focus.  For example, based on a CarePlan (= basedOn), a task is created to fulfill a ServiceRequest ( = focus ) to collect a specimen from a patient.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="groupIdentifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -62630,14 +63397,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Principal physical location where the this task is performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reasonCode" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A description or code indicating why this task needs to be performed.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reasonReference" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A resource reference indicating why this task needs to be performed.</xs:documentation>
+              <xs:documentation xml:lang="en">A description, code, or reference indicating why this task needs to be performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="insurance" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -62760,7 +63522,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="valueSignature" type="Signature"/>
             <xs:element name="valueTiming" type="Timing"/>
             <xs:element name="valueContactDetail" type="ContactDetail"/>
-            <xs:element name="valueContributor" type="Contributor"/>
             <xs:element name="valueDataRequirement" type="DataRequirement"/>
             <xs:element name="valueExpression" type="Expression"/>
             <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
@@ -62836,7 +63597,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="valueSignature" type="Signature"/>
             <xs:element name="valueTiming" type="Timing"/>
             <xs:element name="valueContactDetail" type="ContactDetail"/>
-            <xs:element name="valueContributor" type="Contributor"/>
             <xs:element name="valueDataRequirement" type="DataRequirement"/>
             <xs:element name="valueExpression" type="Expression"/>
             <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
@@ -63903,6 +64663,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="origin" type="TestScript.Origin" minOccurs="0" maxOccurs="unbounded">
@@ -65039,7 +65804,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="valueSignature" type="Signature"/>
             <xs:element name="valueTiming" type="Timing"/>
             <xs:element name="valueContactDetail" type="ContactDetail"/>
-            <xs:element name="valueContributor" type="Contributor"/>
             <xs:element name="valueDataRequirement" type="DataRequirement"/>
             <xs:element name="valueExpression" type="Expression"/>
             <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
@@ -65115,7 +65879,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="valueSignature" type="Signature"/>
             <xs:element name="valueTiming" type="Timing"/>
             <xs:element name="valueContactDetail" type="ContactDetail"/>
-            <xs:element name="valueContributor" type="Contributor"/>
             <xs:element name="valueDataRequirement" type="DataRequirement"/>
             <xs:element name="valueExpression" type="Expression"/>
             <xs:element name="valueParameterDefinition" type="ParameterDefinition"/>
