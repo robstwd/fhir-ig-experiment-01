@@ -956,7 +956,7 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-sdf-base-08" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The title value must contain one or more non-leading or non-trailing single spaces" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "matches('^([a-zA-Z]+ )*[a-zA-Z]+$')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')" ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
@@ -3998,7 +3998,7 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "hl7au-sdf-base-08" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "The title value must contain one or more non-leading or non-trailing single spaces" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "matches('^([a-zA-Z]+ )*[a-zA-Z]+$')" ]
+         fhir:ElementDefinition.constraint.expression [ fhir:value "matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')" ]
        ]
      ], [
        fhir:index 9;

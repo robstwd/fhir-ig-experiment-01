@@ -846,7 +846,7 @@
             "key": "hl7au-sdf-base-08",
             "severity": "error",
             "human": "The title value must contain one or more non-leading or non-trailing single spaces",
-            "expression": "matches('^([a-zA-Z]+ )*[a-zA-Z]+$')"
+            "expression": "matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')"
           }
         ],
         "isModifier": false,
@@ -3761,7 +3761,7 @@
             "key": "hl7au-sdf-base-08",
             "severity": "error",
             "human": "The title value must contain one or more non-leading or non-trailing single spaces",
-            "expression": "matches('^([a-zA-Z]+ )*[a-zA-Z]+$')"
+            "expression": "matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')"
           }
         ]
       },
