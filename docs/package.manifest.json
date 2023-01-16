@@ -1,8 +1,6 @@
 {
-  "version": "0.0.1",
-  "fhirVersion": [
-    "4.0.1"
-  ],
-  "date": "20220905215554",
-  "name": "fhir.ig.experiment.01"
+  "version" : "0.0.1",
+  "fhirVersion" : ["4.0.1"],
+  "date" : "20230116201937",
+  "name" : "fhir.ig.experiment.01"
 }

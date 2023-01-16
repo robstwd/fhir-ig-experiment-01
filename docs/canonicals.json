@@ -1,51 +1,51 @@
 [
   {
-    "id": "fhir.ig.experiment.01",
-    "type": "ImplementationGuide",
-    "url": "https://about.me/robeastwood/fhir/ig/ImplementationGuide/fhir.ig.experiment.01",
-    "version": "0.0.1",
-    "name": "FHIRIGExperiment01"
+    "id" : "fhir.ig.experiment.01",
+    "type" : "ImplementationGuide",
+    "url" : "https://about.me/robeastwood/fhir/ig/ImplementationGuide/fhir.ig.experiment.01",
+    "version" : "0.0.1",
+    "name" : "FHIRIGExperiment01"
   },
   {
-    "id": "structuredefinition-hl7au-csd-1",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",
-    "version": "0.0.1",
-    "name": "HL7AUCodeSystemBase"
+    "id" : "structuredefinition-hl7au-csd-1",
+    "type" : "StructureDefinition",
+    "url" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1",
+    "version" : "0.0.1",
+    "name" : "HL7AUCodeSystemBase"
   },
   {
-    "id": "structuredefinition-hl7au-csd-ext-1",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-ext-1",
-    "version": "0.0.1",
-    "name": "HL7AUCodeSystemAUExtended"
+    "id" : "structuredefinition-hl7au-csd-ext-1",
+    "type" : "StructureDefinition",
+    "url" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-ext-1",
+    "version" : "0.0.1",
+    "name" : "HL7AUCodeSystemAUExtended"
   },
   {
-    "id": "structuredefinition-hl7au-sdf-1",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1",
-    "version": "0.0.1",
-    "name": "HL7AUStructureDefinitionBase"
+    "id" : "structuredefinition-hl7au-sdf-1",
+    "type" : "StructureDefinition",
+    "url" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1",
+    "version" : "0.0.1",
+    "name" : "HL7AUStructureDefinitionBase"
   },
   {
-    "id": "structuredefinition-hl7au-vsd-1",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1",
-    "version": "0.0.1",
-    "name": "HL7AUValueSetBase"
+    "id" : "structuredefinition-hl7au-vsd-1",
+    "type" : "StructureDefinition",
+    "url" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-1",
+    "version" : "0.0.1",
+    "name" : "HL7AUValueSetBase"
   },
   {
-    "id": "structuredefinition-hl7au-vsd-ext-1",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-ext-1",
-    "version": "0.0.1",
-    "name": "HL7AUValueSetAUExtended"
+    "id" : "structuredefinition-hl7au-vsd-ext-1",
+    "type" : "StructureDefinition",
+    "url" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-vsd-ext-1",
+    "version" : "0.0.1",
+    "name" : "HL7AUValueSetAUExtended"
   },
   {
-    "id": "structuredefinition-meta-1",
-    "type": "StructureDefinition",
-    "url": "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1",
-    "version": "0.0.1",
-    "name": "StructureDefinitionMeta"
+    "id" : "structuredefinition-meta-1",
+    "type" : "StructureDefinition",
+    "url" : "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1",
+    "version" : "0.0.1",
+    "name" : "StructureDefinitionMeta"
   }
 ]
