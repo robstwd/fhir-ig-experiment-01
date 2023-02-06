@@ -1,6 +1,9 @@
-Github actions: 
+
 ![Run IG Publisher and Validator](https://github.com/robstwd/fhir-ig-experiment-01/workflows/Run%20IG%20Publisher%20and%20Validator/badge.svg)
+
 ![Run feature tests with cucumber](https://github.com/robstwd/fhir-ig-experiment-01/workflows/Run%20feature%20tests%20with%20cucumber/badge.svg)
+
+[![CodeQL](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/codeql.yml/badge.svg)](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/codeql.yml)
 
 # FHIR Implementation Guide Experiment 01
 An experimental, externally-template-driven implementation guide being used as a basis for various experiments
