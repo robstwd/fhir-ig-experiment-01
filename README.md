@@ -1,7 +1,7 @@
 
-![Run IG Publisher and Validator](https://github.com/robstwd/fhir-ig-experiment-01/workflows/Run%20IG%20Publisher%20and%20Validator/badge.svg)
+[![Run IG Publisher and Validator](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/IG-Publisher.yml/badge.svg)](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/IG-Publisher.yml)
 
-![Run feature tests with cucumber](https://github.com/robstwd/fhir-ig-experiment-01/workflows/Run%20feature%20tests%20with%20cucumber/badge.svg)
+[![Run feature tests with cucumber](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/feature_tests.yml/badge.svg)](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/feature_tests.yml)
 
 [![CodeQL](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/codeql.yml/badge.svg)](https://github.com/robstwd/fhir-ig-experiment-01/actions/workflows/codeql.yml)
 
