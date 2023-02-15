@@ -11,7 +11,7 @@
   "title" : "FHIR Implementation Guide Experiment 01",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2023-02-15T20:49:34+00:00",
+  "date" : "2023-02-15T21:05:30+00:00",
   "contact" : [{
     "telecom" : [{
       "system" : "url",
