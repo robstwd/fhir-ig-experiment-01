@@ -1,10 +1,6 @@
 name: Run feature tests with cucumber
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -12,20 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
-    - name: Set up Ruby 2.7.3
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7.3
+        ruby-version: 3.2.1
 
     - name: install gems
       run: bundle install
     
     - name: Setup JVM
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v3
       with:
-        java-version: '13.0.2'
+        distribution: 'temurin'
+        java-version: '17'
             
     - name: Download FHIR validator
       run: wget -q https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar -O validator.jar
