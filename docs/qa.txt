@@ -3,7 +3,7 @@
 
 err = 1, warn = 4, info = 0
 IG Publisher Version: 1.2.38
-Generated Fri Feb 24 10:18:34 UTC 2023. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
+Generated Fri Feb 24 11:28:57 UTC 2023. FHIR version 4.0.1 for fhir.ig.experiment.01#0.0.1 (canonical = https://about.me/robeastwood/fhir/ig)
  Build Errors : 1 / 4 / 0
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/ImplementationGuide/fhir.ig.experiment.01 : 0 / 0 / 1
  /home/runner/work/fhir-ig-experiment-01/fhir-ig-experiment-01/input/resources/StructureDefinition/structuredefinition-hl7au-csd-1 : 0 / 1 / 1
