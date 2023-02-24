@@ -46,7 +46,7 @@ Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefini
     Then "StructureDefinition.experimental" has cardinality "0..0"
 
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.date
-    Then "StructureDefinition.date" has cardinality "1..1"
+    Then "StructureDefinition.date" has cardinality "0..0"
     
 Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.publisher
     Then "StructureDefinition.publisher" has cardinality "1..1"

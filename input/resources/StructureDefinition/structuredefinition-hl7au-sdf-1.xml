@@ -88,7 +88,7 @@
     </element>
     <element id="StructureDefinition.date">
       <path value="StructureDefinition.date"/>
-      <min value="1"/>
+      <max value="0"/>
     </element>
     <element id="StructureDefinition.publisher">
       <path value="StructureDefinition.publisher"/>
