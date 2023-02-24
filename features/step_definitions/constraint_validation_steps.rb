@@ -15,7 +15,7 @@ When('I run the validator command on this testfile against profile {string}') do
 
   # determine if the feature is being run on Windows or on Linux
   # on Windows 
-  if Gem::Platform.local.os == "mingw32"
+  if Gem::Platform.local.os == "mingw"
     path_to_validator = "C\:\\Users\\rob\\Documents\\PC_stuff\\software\\FHIR\\validator\\validator_cli.jar"
   else
     path_to_validator = "validator.jar"
