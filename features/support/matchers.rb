@@ -125,6 +125,29 @@ module MatcherHelpers
     return text_to_match.match(validator_output)     
   end
 
+    # this method returns whether an extension is present in a test file, at a specific parent node
+  def get_extension_nodeset_present_at_node(file, extension_url, parent_node)
+    profile_id = get_profile_id(file)
+    fullpath_file = get_filename(profile_id)
+    doc = get_nokogiri_doc(fullpath_file)
+    extension_xpath = "/#{parent_node.gsub('.','/')}/extension[@url='#{extension_url}']"
+    # Kernel.puts extension_xpath
+    nodeset = doc.xpath(extension_xpath)
+    # Kernel.puts nodeset
+    return not(nodeset.empty?)
+  end
+
+  # this method returns the value of an extension's specified child element
+  def get_extension_nodeset_value_of_child(file, extension_url, child_element)
+    doc = get_nokogiri_doc(file)
+    # Kernel.puts doc
+    extension_xpath = "//extension[@url='#{extension_url}']/#{child_element.gsub('.','/')}/@value"
+    # Kernel.puts extension_xpath
+    actual_value = doc.xpath(extension_xpath).to_s
+    # Kernel.puts actual_value
+    return actual_value
+  end
+
 end
 
 
@@ -1021,6 +1044,103 @@ RSpec::Matchers.define :have_element do |element_name|
   end
 
   failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a specific extension is present within a specific node
+RSpec::Matchers.define :have_extension_in_node do |extension_url, node|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # file under test
+      @file_name = source
+      Kernel.puts @file_name
+
+      # extension being examined
+      @extension_url = extension_url
+      Kernel.puts @extension_url
+
+      # the expected node that the extension is to be a child of
+      @parent_node = node
+      Kernel.puts @parent_node
+
+      # determine if extension is present
+      extension_present = get_extension_nodeset_present_at_node(@file_name, @extension_url, @parent_node)
+      # Kernel.puts extension_present
+
+      @error_msg = "Expecting the test file '#{@file_name}' to include extension '#{@extension_url}' \n" \
+          " within node '#{@parent_node}' - instead it was absent."
+
+      expect(extension_present).to be_truthy
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+  failure_message_when_negated do |source|
+    @error_msg = "Extension #{@extension_url} was present at node '#{@parent_node}'"
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if a specific extension is present, with a given child element, and a given value
+RSpec::Matchers.define :have_extension_with_element_and_value do |extension_url, child_element, value|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+      # file under test
+      @testfile_name = source
+      # Kernel.puts @testfile_name
+
+      # extension being examined
+      @extension_url = extension_url
+      # Kernel.puts @extension_url
+
+      # expected child element
+      @child_element = child_element
+      # Kernel.puts @child_element
+
+      # expected value
+      @expected_value = value
+      # Kernel.puts @expected_value
+
+      # get actual value
+      @actual_nodeset_value = get_extension_nodeset_value_of_child(@testfile_name, @extension_url, @child_element)
+      # Kernel.puts @actual_nodeset_value
+
+      @error_msg = "Expecting the test file '#{@file_name}' to include extension '#{@extension_url}' \n" \
+          " with child element '#{@child_element}' and value '#{@expected_value}'  \n" \
+          " It does not."
+
+      expect(@actual_nodeset_value).to eq(@expected_value)
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+  failure_message_when_negated do |source|
+    @error_msg = "Extension #{@extension_url} was present"
     print_failure_message(@error_msg)
   end
 

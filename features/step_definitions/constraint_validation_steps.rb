@@ -49,3 +49,7 @@ end
 Given('element {string} is not present') do |element_name|
   expect(@testfile).not_to have_element(element_name)
 end
+
+Given('extension {string} has child element {string} with value {string}') do |extension_url, child_element, value|
+  expect(@testfile).to have_extension_with_element_and_value(extension_url, child_element, value)
+end
