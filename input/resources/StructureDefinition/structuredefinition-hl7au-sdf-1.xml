@@ -1,225 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="structuredefinition-hl7au-sdf-1"/>
-  <url value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1"/>
-  <version value="0.0.1"/>
+  <id value="structuredefinition-hl7au-sdf-1" />
+  <url
+    value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1" />
   <name value="HL7AUStructureDefinitionBase"/>
-  <title value="HL7 AU StructureDefinition Base"/>
-  <status value="draft"/>
+  <name value="HL7AUStructureDefinitionBase" />
+  <title value="HL7 AU StructureDefinition Base" />
+  <status value="draft" />
   <experimental value="true" />
   <date value="2022-03-25" />
-  <description value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure"/>
-  <copyright value="This is free and unencumbered software released into the public domain."/>
-  <fhirVersion value="4.0.1"/>
-  <kind value="resource"/>
-  <abstract value="false"/>
-  <type value="StructureDefinition"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
-  <derivation value="constraint"/>
+  <description
+    value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure" />
+  <copyright value="This is free and unencumbered software released into the public domain." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="StructureDefinition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/StructureDefinition" />
+  <derivation value="constraint" />
   <differential>
     <element id="StructureDefinition">
-      <path value="StructureDefinition"/>
+      <path value="StructureDefinition" />
       <constraint>
-        <key value="hl7au-sdf-base-05"/>
-        <severity value="error"/>
-        <human value="The url must end with the id value"/>
-        <expression value="url.replace('http://hl7.org.au/fhir/StructureDefinition/','') = id"/>
+        <key value="hl7au-sdf-base-05" />
+        <severity value="error" />
+        <human value="The url must end with the id value" />
+        <expression value="url.replace('http://hl7.org.au/fhir/StructureDefinition/','') = id" />
       </constraint>
       <constraint>
-        <key value="hl7au-sdf-base-06"/>
-        <severity value="error"/>
-        <human value="The name value matches the title value when spaces are removed"/>
-        <expression value="name = title.replace(' ','')"/>
+        <key value="hl7au-sdf-base-06" />
+        <severity value="error" />
+        <human value="The name value matches the title value when spaces are removed" />
+        <expression value="name = title.replace(' ','')" />
       </constraint>
     </element>
     <element id="StructureDefinition.id">
-      <path value="StructureDefinition.id"/>
-      <min value="1"/>
+      <path value="StructureDefinition.id" />
+      <min value="1" />
     </element>
     <element id="StructureDefinition.implicitRules">
-      <path value="StructureDefinition.implicitRules"/>
-      <max value="0"/>
+      <path value="StructureDefinition.implicitRules" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.language">
-      <path value="StructureDefinition.language"/>
-      <max value="0"/>
+      <path value="StructureDefinition.language" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.contained">
-      <path value="StructureDefinition.contained"/>
-      <max value="0"/>
+      <path value="StructureDefinition.contained" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.url">
-      <path value="StructureDefinition.url"/>
-      <min value="1"/>
+      <path value="StructureDefinition.url" />
+      <min value="1" />
       <constraint>
-        <key value="hl7au-sdf-base-02"/>
-        <severity value="error"/>
-        <human value="The url starts with 'http://hl7.org.au/fhir/StructureDefinition/'"/>
-        <expression value="startsWith('http://hl7.org.au/fhir/StructureDefinition/')"/>
+        <key value="hl7au-sdf-base-02" />
+        <severity value="error" />
+        <human value="The url starts with 'http://hl7.org.au/fhir/StructureDefinition/'" />
+        <expression value="startsWith('http://hl7.org.au/fhir/StructureDefinition/')" />
       </constraint>
     </element>
     <element id="StructureDefinition.identifier">
-      <path value="StructureDefinition.identifier"/>
-      <max value="0"/>
+      <path value="StructureDefinition.identifier" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.name">
-      <path value="StructureDefinition.name"/>
-      <min value="1"/>
+      <path value="StructureDefinition.name" />
+      <min value="1" />
       <constraint>
-        <key value="hl7au-sdf-base-07"/>
-        <severity value="error"/>
-        <human value="The name value contains no spaces"/>
-        <expression value="contains(' ').not()"/>
+        <key value="hl7au-sdf-base-07" />
+        <severity value="error" />
+        <human value="The name value contains no spaces" />
+        <expression value="contains(' ').not()" />
       </constraint>
     </element>
     <element id="StructureDefinition.title">
-      <path value="StructureDefinition.title"/>
-      <min value="1"/>
+      <path value="StructureDefinition.title" />
+      <min value="1" />
       <constraint>
-        <key value="hl7au-sdf-base-08"/>
-        <severity value="error"/>
-        <human value="The title value must contain one or more non-leading or non-trailing single spaces"/>
-        <expression value="matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')"/>
+        <key value="hl7au-sdf-base-08" />
+        <severity value="error" />
+        <human
+          value="The title value must contain one or more non-leading or non-trailing single spaces" />
+        <expression value="matches('^([a-zA-Z0-9]+ )*[a-zA-Z0-9]+$')" />
       </constraint>
     </element>
     <element id="StructureDefinition.experimental">
-      <path value="StructureDefinition.experimental"/>
-      <max value="0"/>
+      <path value="StructureDefinition.experimental" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.date">
-      <path value="StructureDefinition.date"/>
-      <max value="0"/>
+      <path value="StructureDefinition.date" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.publisher">
-      <path value="StructureDefinition.publisher"/>
-      <min value="1"/>
+      <path value="StructureDefinition.publisher" />
+      <min value="1" />
       <constraint>
-        <key value="hl7au-sdf-base-03"/>
-        <severity value="error"/>
-        <human value="The publisher starts with 'Health Level Seven Australia'"/>
-        <expression value="startsWith('Health Level Seven Australia')"/>
+        <key value="hl7au-sdf-base-03" />
+        <severity value="error" />
+        <human value="The publisher starts with 'Health Level Seven Australia'" />
+        <expression value="startsWith('Health Level Seven Australia')" />
       </constraint>
     </element>
     <element id="StructureDefinition.contact">
-      <path value="StructureDefinition.contact"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="StructureDefinition.contact" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="StructureDefinition.contact.name">
-      <path value="StructureDefinition.contact.name"/>
-      <max value="0"/>
+      <path value="StructureDefinition.contact.name" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.contact.telecom">
-      <path value="StructureDefinition.contact.telecom"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="StructureDefinition.contact.telecom" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="StructureDefinition.contact.telecom.system">
-      <path value="StructureDefinition.contact.telecom.system"/>
-      <min value="1"/>
-      <fixedCode value="url"/>
+      <path value="StructureDefinition.contact.telecom.system" />
+      <min value="1" />
+      <fixedCode value="url" />
     </element>
     <element id="StructureDefinition.contact.telecom.value">
-      <path value="StructureDefinition.contact.telecom.value"/>
-      <min value="1"/>
-      <fixedString value="http://hl7.com.au"/>
+      <path value="StructureDefinition.contact.telecom.value" />
+      <min value="1" />
+      <fixedString value="http://hl7.com.au" />
     </element>
     <element id="StructureDefinition.contact.telecom.use">
-      <path value="StructureDefinition.contact.telecom.use"/>
-      <min value="1"/>
-      <fixedCode value="work"/>
+      <path value="StructureDefinition.contact.telecom.use" />
+      <min value="1" />
+      <fixedCode value="work" />
     </element>
     <element id="StructureDefinition.contact.telecom.rank">
-      <path value="StructureDefinition.contact.telecom.rank"/>
-      <max value="0"/>
+      <path value="StructureDefinition.contact.telecom.rank" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.contact.telecom.period">
-      <path value="StructureDefinition.contact.telecom.period"/>
-      <max value="0"/>
+      <path value="StructureDefinition.contact.telecom.period" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.description">
-      <path value="StructureDefinition.description"/>
-      <min value="1"/>
+      <path value="StructureDefinition.description" />
+      <min value="1" />
     </element>
     <element id="StructureDefinition.useContext">
-      <path value="StructureDefinition.useContext"/>
-      <max value="0"/>
+      <path value="StructureDefinition.useContext" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.jurisdiction">
-      <path value="StructureDefinition.jurisdiction"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="StructureDefinition.jurisdiction" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="StructureDefinition.jurisdiction.coding">
-      <path value="StructureDefinition.jurisdiction.coding"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="StructureDefinition.jurisdiction.coding" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="StructureDefinition.jurisdiction.coding.system">
-      <path value="StructureDefinition.jurisdiction.coding.system"/>
-      <min value="1"/>
-      <fixedUri value="urn:iso:std:iso:3166"/>
+      <path value="StructureDefinition.jurisdiction.coding.system" />
+      <min value="1" />
+      <fixedUri value="urn:iso:std:iso:3166" />
     </element>
     <element id="StructureDefinition.jurisdiction.coding.version">
-      <path value="StructureDefinition.jurisdiction.coding.version"/>
-      <max value="0"/>
+      <path value="StructureDefinition.jurisdiction.coding.version" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.jurisdiction.coding.code">
-      <path value="StructureDefinition.jurisdiction.coding.code"/>
-      <min value="1"/>
-      <fixedCode value="AU"/>
+      <path value="StructureDefinition.jurisdiction.coding.code" />
+      <min value="1" />
+      <fixedCode value="AU" />
     </element>
     <element id="StructureDefinition.jurisdiction.coding.display">
-      <path value="StructureDefinition.jurisdiction.coding.display"/>
-      <max value="0"/>
+      <path value="StructureDefinition.jurisdiction.coding.display" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.jurisdiction.coding.userSelected">
-      <path value="StructureDefinition.jurisdiction.coding.userSelected"/>
-      <max value="0"/>
+      <path value="StructureDefinition.jurisdiction.coding.userSelected" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.jurisdiction.text">
-      <path value="StructureDefinition.jurisdiction.text"/>
-      <max value="0"/>
+      <path value="StructureDefinition.jurisdiction.text" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.purpose">
-      <path value="StructureDefinition.purpose"/>
-      <max value="0"/>
+      <path value="StructureDefinition.purpose" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.copyright">
-      <path value="StructureDefinition.copyright"/>
-      <min value="1"/>
+      <path value="StructureDefinition.copyright" />
+      <min value="1" />
       <constraint>
-        <key value="hl7au-sdf-base-04"/>
-        <severity value="error"/>
-        <human value="The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'"/>
-        <expression value="startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')"/>
+        <key value="hl7au-sdf-base-04" />
+        <severity value="error" />
+        <human
+          value="The copyright starts with 'HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.'" />
+        <expression
+          value="startsWith('HL7 Australia© 2018+; Licensed Under Creative Commons No Rights Reserved.')" />
       </constraint>
     </element>
     <element id="StructureDefinition.keyword">
-      <path value="StructureDefinition.keyword"/>
-      <max value="0"/>
+      <path value="StructureDefinition.keyword" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.fhirVersion">
-      <path value="StructureDefinition.fhirVersion"/>
-      <min value="1"/>
-      <fixedCode value="4.0.1"/>
+      <path value="StructureDefinition.fhirVersion" />
+      <min value="1" />
+      <fixedCode value="4.0.1" />
     </element>
     <element id="StructureDefinition.abstract">
-      <path value="StructureDefinition.abstract"/>
-      <fixedBoolean value="false"/>
+      <path value="StructureDefinition.abstract" />
+      <fixedBoolean value="false" />
     </element>
     <element id="StructureDefinition.contextInvariant">
-      <path value="StructureDefinition.contextInvariant"/>
-      <max value="0"/>
+      <path value="StructureDefinition.contextInvariant" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.baseDefinition">
-      <path value="StructureDefinition.baseDefinition"/>
-      <min value="1"/>
+      <path value="StructureDefinition.baseDefinition" />
+      <min value="1" />
     </element>
     <element id="StructureDefinition.derivation">
-      <path value="StructureDefinition.derivation"/>
-      <min value="1"/>
-      <fixedCode value="constraint"/>
+      <path value="StructureDefinition.derivation" />
+      <min value="1" />
+      <fixedCode value="constraint" />
     </element>
   </differential>
 </StructureDefinition>
