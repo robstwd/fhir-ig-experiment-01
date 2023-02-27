@@ -3,12 +3,12 @@
   <id value="structuredefinition-hl7au-sdf-1" />
   <url
     value="https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1" />
-  <name value="HL7AUStructureDefinitionBase"/>
+  <version value="0.0.2" />
   <name value="HL7AUStructureDefinitionBase" />
   <title value="HL7 AU StructureDefinition Base" />
   <status value="draft" />
   <experimental value="true" />
-  <date value="2022-03-25" />
+  <date value="2023-02-25" />
   <description
     value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure" />
   <copyright value="This is free and unencumbered software released into the public domain." />
@@ -49,6 +49,31 @@
     <element id="StructureDefinition.contained">
       <path value="StructureDefinition.contained" />
       <max value="0" />
+    </element>
+    <element id="StructureDefinition.extension">
+      <path value="StructureDefinition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="StructureDefinition.extension:fmm">
+      <path value="StructureDefinition.extension" />
+      <sliceName value="fmm" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" />
+      </type>
+      <constraint>
+        <key value="hl7au-sdf-base-09" />
+        <severity value="error" />
+        <human value="The FMM maturity level must be an integer between 0 and 5" />
+        <expression value="valueInteger.value.matches('^[0-5]$')" />
+      </constraint>
     </element>
     <element id="StructureDefinition.url">
       <path value="StructureDefinition.url" />
