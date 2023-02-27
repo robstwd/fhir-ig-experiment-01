@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Feb 24, 2023 06:24+0000 for FHIR v5.0.0-cibuild 
+  Generated on Mon, Feb 27, 2023 13:31+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -21475,6 +21475,11 @@ The duration (usually in minutes) could also be provided to indicate the length 
               <xs:documentation xml:lang="en">Represents a rating, classifier, or assessment of the artifact.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A quantitative rating of the artifact.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="author" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates who or what authored the content.</xs:documentation>
@@ -26471,7 +26476,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Encounters during which this Claim was created or to which the creation of this record is tightly associated.</xs:documentation>
+              <xs:documentation xml:lang="en">Healthcare encounters related to this claim.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="facility" minOccurs="0" maxOccurs="1" type="Reference">
@@ -26895,6 +26900,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">This contains the end of a range of product, service, drug or other billing codes for the item. This element is not used when the .productOrService is a group code. This value may only be present when a .productOfService code has been provided to convey the start of the range. Typically this value may be used only with preauthorizations and not with claims.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="request" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Request or Referral for Goods or Service to be rendered.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Item typification or modifiers codes to convey additional context for the product or service.</xs:documentation>
@@ -26962,7 +26972,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Encounters during which this Claim was created or to which the creation of this record is tightly associated.</xs:documentation>
+              <xs:documentation xml:lang="en">Healthcare encounters related to this claim.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="detail" type="Claim.Detail" minOccurs="0" maxOccurs="unbounded">
@@ -27342,7 +27352,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Encounters during which this Claim was created or to which the creation of this record is tightly associated.</xs:documentation>
+              <xs:documentation xml:lang="en">Healthcare encounters related to this claim.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="diagnosisRelatedGroup" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -27531,7 +27541,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Monetary amount associated with the category.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="value" minOccurs="0" maxOccurs="1" type="decimal">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">A non-monetary value associated with the category. Mutually exclusive to the amount element above.</xs:documentation>
            </xs:annotation>
@@ -27662,6 +27672,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="productOrServiceEnd" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">This contains the end of a range of product, service, drug or other billing codes for the item. This element is not used when the .productOrService is a group code. This value may only be present when a .productOfService code has been provided to convey the start of the range. Typically this value may be used only with preauthorizations and not with claims.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="request" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Request or Referral for Goods or Service to be rendered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -28075,6 +28090,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">An error code, from a specified code system, which details why the claim could not be adjudicated.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="expression" minOccurs="0" maxOccurs="unbounded" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30146,7 +30166,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="property" type="ConceptMap.Property" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Some mappings involve data in additional fields, where codes in multiple fields are combined to a single field (or vice versa). A property defines the property found in the source or target data model where the data will come from or be placed into.</xs:documentation>
+              <xs:documentation xml:lang="en">A property defines a slot through which additional information can be provided about a map from soure -&gt; target.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="mapAttribute" type="ConceptMap.MapAttribute" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Some mappings involve data in additional fields, where codes in multiple fields are combined to a single field (or vice versa). A mapAttribute defines the data element found in the source or target data model where the data will come from or be placed into.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -30181,7 +30206,38 @@ of the resource representation.</xs:documentation>
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code that is used to identify this mapping property. The code is used internally in ConceptMap.group.element.target.dependsOn.property and ConceptMap.group.element.target.product.property.</xs:documentation>
+              <xs:documentation xml:lang="en">A code that is used to identify the property. The code is used internally (in ConceptMap.group.element.target.property.code) and also in the $translate operation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="uri" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to the formal meaning of the property.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A description of the property - why it is defined, and how its value might be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ConceptMapPropertyType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of the property value.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConceptMap.MapAttribute">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code that is used to identify this data attribute. The code is used internally in ConceptMap.group.element.target.dependsOn.mapAttribute and ConceptMap.group.element.target.product.mapAttribute.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="uri" minOccurs="0" maxOccurs="1" type="uri">
@@ -30191,12 +30247,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the mapping property and/or the data element it refers to - why it is defined, and how the value might be used in mappings, and a discussion of issues associated with the use of the data element.</xs:documentation>
+              <xs:documentation xml:lang="en">A description of the mapping attribute and/or the data element it refers to - why it is defined, and how the value might be used in mappings, and a discussion of issues associated with the use of the data element.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ConceptMapPropertyType">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ConceptMapAttributeType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of the property value contained in this concept map for this data element.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of the mapAttribute value contained in this concept map for this data element.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30302,16 +30358,48 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">A description of status/issues in mapping that conveys additional information not represented in  the structured data.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="property" type="ConceptMap.Property1" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A property value for this source -&gt; target mapping.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="dependsOn" type="ConceptMap.DependsOn" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified property can be resolved, and it has the specified value.</xs:documentation>
+              <xs:documentation xml:lang="en">A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified data attribute can be resolved, and it has the specified value.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="product" type="ConceptMap.DependsOn" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Product is the output of a ConceptMap that provides additional values relevant to the interpretation of the mapping target.</xs:documentation>
+              <xs:documentation xml:lang="en">Product is the output of a ConceptMap that provides additional values that go in other attributes / data elemnts of the target data.</xs:documentation>
            </xs:annotation>
           </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConceptMap.Property1">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a mapping property defined in ConceptMap.property.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="1" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The value of this property.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="valueCoding" type="Coding"/>
+            <xs:element name="valueString" type="string"/>
+            <xs:element name="valueInteger" type="integer"/>
+            <xs:element name="valueBoolean" type="boolean"/>
+            <xs:element name="valueDateTime" type="dateTime"/>
+            <xs:element name="valueDecimal" type="decimal"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -30323,14 +30411,14 @@ of the resource representation.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="property" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="mapAttribute" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to the mapping property that holds a value the map depends on.</xs:documentation>
+              <xs:documentation xml:lang="en">A reference to the mapping mapAttribute that holds a value the map depends on.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">Data element value that the mapping property depends on / produces.</xs:documentation>
+              <xs:documentation xml:lang="en">Data element value that the map depends on / produces.</xs:documentation>
             </xs:annotation>
             <xs:element name="valueCode" type="code"/>
             <xs:element name="valueCoding" type="Coding"/>
@@ -30340,7 +30428,7 @@ of the resource representation.</xs:documentation>
           </xs:choice>
           <xs:element name="valueSet" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This mapping applies if the property value is a code from this value set.</xs:documentation>
+              <xs:documentation xml:lang="en">This mapping applies if the data element value is a code from this value set.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30390,14 +30478,59 @@ of the resource representation.</xs:documentation>
   </xs:complexType>
   <xs:simpleType name="ConceptMapPropertyTypeEnum">
     <xs:restriction base="code-primitive">
+      <xs:enumeration value="Coding">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Coding (external reference)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">string</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="integer">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">integer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="boolean">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">boolean</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dateTime">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">dateTime</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="decimal">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">decimal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ConceptMapPropertyType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ConceptMapPropertyTypeEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ConceptMapAttributeTypeEnum">
+    <xs:restriction base="code-primitive">
       <xs:enumeration value="code">
         <xs:annotation>
-          <xs:documentation xml:lang="en">code (internal reference)</xs:documentation>
+          <xs:documentation xml:lang="en">code</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Coding">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Coding (external reference)</xs:documentation>
+          <xs:documentation xml:lang="en">Coding</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="string">
@@ -30417,14 +30550,14 @@ of the resource representation.</xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ConceptMapPropertyType">
+  <xs:complexType name="ConceptMapAttributeType">
     <xs:annotation>
       <xs:documentation xml:lang="en"></xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="ConceptMapPropertyTypeEnum" use="optional"/>
+        <xs:attribute name="value" type="ConceptMapAttributeTypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -33166,6 +33299,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">An error code,from a specified code system, which details why the eligibility check could not be performed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="expression" minOccurs="0" maxOccurs="unbounded" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -38927,7 +39065,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A billed item may include goods or services provided in multiple encounters.</xs:documentation>
+              <xs:documentation xml:lang="en">Healthcare encounters related to this claim.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="facility" minOccurs="0" maxOccurs="1" type="Reference">
@@ -39406,6 +39544,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">This contains the end of a range of product, service, drug or other billing codes for the item. This element is not used when the .productOrService is a group code. This value may only be present when a .productOfService code has been provided to convey the start of the range. Typically this value may be used only with preauthorizations and not with claims.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="request" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Request or Referral for Goods or Service to be rendered.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Item typification or modifiers codes to convey additional context for the product or service.</xs:documentation>
@@ -39473,7 +39616,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A billed item may include goods or services provided in multiple encounters.</xs:documentation>
+              <xs:documentation xml:lang="en">Healthcare encounters related to this claim.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="noteNumber" minOccurs="0" maxOccurs="unbounded" type="positiveInt">
@@ -39574,7 +39717,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Monetary amount associated with the category.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="value" minOccurs="0" maxOccurs="1" type="decimal">
+          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">A non-monetary value associated with the category. Mutually exclusive to the amount element above.</xs:documentation>
            </xs:annotation>
@@ -39835,6 +39978,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="productOrServiceEnd" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">This contains the end of a range of product, service, drug or other billing codes for the item. This element is not used when the .productOrService is a group code. This value may only be present when a .productOfService code has been provided to convey the start of the range. Typically this value may be used only with preauthorizations and not with claims.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="request" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Request or Referral for Goods or Service to be rendered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -48764,7 +48912,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Explanation of why this measure is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A detailed description, from a clinical perspective, of how the measure is used.</xs:documentation>
            </xs:annotation>
@@ -48854,12 +49002,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="riskAdjustment" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="riskAdjustment" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A description of the risk adjustment factors that may impact the resulting score for the measure and how they may be accounted for when computing and reporting measure results.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rateAggregation" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="rateAggregation" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Describes how to combine the information calculated, based on logic in each of several populations, into one summarized result.</xs:documentation>
            </xs:annotation>
@@ -48931,12 +49079,17 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the Measure allowing linkage to the equivalent item in a MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates a meaning for the group. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing groups to be correlated across measures.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The human readable description of this population group.</xs:documentation>
            </xs:annotation>
@@ -48946,6 +49099,13 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The intended subjects for the measure. If this element is not provided, a Patient subject is assumed, but the subject of the measure can be anything.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="subjectReference" type="Reference"/>
+          </xs:choice>
           <xs:element name="basis" minOccurs="0" maxOccurs="1" type="FHIRTypes">
             <xs:annotation>
               <xs:documentation xml:lang="en">The population basis specifies the type of elements in the population. For a subject-based measure, this is boolean (because the subject and the population basis are the same, and the population criteria define yes/no values for each individual in the population). For measures that have a population basis that is different than the subject, this element specifies the type of the population basis. For example, an encounter-based measure has a subject of Patient and a population basis of Encounter, and the population criteria all return lists of Encounters.</xs:documentation>
@@ -48961,9 +49121,19 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Defines the expected units of measure for the measure score. This element SHOULD be specified as a UCUM unit.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="rateAggregation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Describes how to combine the information calculated, based on logic in each of several populations, into one summarized result.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="improvementNotation" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="library" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a Library resource containing the formal logic used by the measure group.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="population" type="Measure.Population" minOccurs="0" maxOccurs="unbounded">
@@ -48987,19 +49157,29 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the Measure allowing linkage to the equivalent population in a MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of population criteria.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The human readable description of this population criteria.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="criteria" minOccurs="1" maxOccurs="1" type="Expression">
+          <xs:element name="criteria" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression that specifies the criteria for the population, typically the name of an expression in a library.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="groupDefinition" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A Group resource that defines this population as a set of characteristics.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="inputPopulationId" minOccurs="0" maxOccurs="1" type="string">
@@ -49023,12 +49203,17 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the Measure allowing linkage to the equivalent item in a MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The human readable description of this stratifier criteria.</xs:documentation>
            </xs:annotation>
@@ -49036,6 +49221,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="criteria" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="groupDefinition" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A Group resource that defines this population as a set of characteristics.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="component" type="Measure.Component" minOccurs="0" maxOccurs="unbounded">
@@ -49054,19 +49244,29 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the Measure allowing linkage to the equivalent item in a MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates a meaning for the stratifier component. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The human readable description of this stratifier criteria component.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="criteria" minOccurs="1" maxOccurs="1" type="Expression">
+          <xs:element name="criteria" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression that specifies the criteria for this component of the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="groupDefinition" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A Group resource that defines this population as a set of characteristics.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -49080,6 +49280,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An identifier that is unique within the Measure allowing linkage to the equivalent item in a MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.</xs:documentation>
@@ -49090,7 +49295,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">The human readable description of this supplemental data.</xs:documentation>
            </xs:annotation>
@@ -49192,6 +49397,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The results of the calculation, one for each population group in the measure.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="supplementalData" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a Resource that represents additional information collected for the report. If the value of the supplemental data is not a Resource (i.e. evaluating the supplementalData expression for this case in the measure results in a value that is not a FHIR Resource), it is reported as a reference to a contained Observation resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="evaluatedResource" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A reference to a Resource that was used in the calculation of this measure.</xs:documentation>
@@ -49208,9 +49418,19 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The group from the Measure that corresponds to this group in the MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The meaning of the population group as defined in the measure definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Optional subject identifying the individual or individuals the report is for.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="population" type="MeasureReport.Population" minOccurs="0" maxOccurs="unbounded">
@@ -49245,6 +49465,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The population from the Measure that corresponds to this population in the MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of the population.</xs:documentation>
@@ -49257,7 +49482,17 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="subjectResults" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This element refers to a List of subject level MeasureReport resources, one for each subject in this population.</xs:documentation>
+              <xs:documentation xml:lang="en">This element refers to a List of individual level MeasureReport resources, one for each subject in this population.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subjectReport" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to an individual level MeasureReport resource for a member of the population.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subjects" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Optional Group identifying the individuals that make up the population.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -49271,6 +49506,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The stratifier from the Measure that corresponds to this stratifier in the MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The meaning of this stratifier, as defined in the measure definition.</xs:documentation>
@@ -49334,6 +49574,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The stratifier component from the Measure that corresponds to this stratifier component in the MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The code for the stratum component value.</xs:documentation>
@@ -49360,6 +49605,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="linkId" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The population from the Measure that corresponds to this population in the MeasureReport resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of the population.</xs:documentation>
@@ -49372,7 +49622,17 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="subjectResults" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.</xs:documentation>
+              <xs:documentation xml:lang="en">This element refers to a List of individual level MeasureReport resources, one for each subject in this population in this stratum.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subjectReport" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to an individual level MeasureReport resource for a member of the population.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subjects" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Optional Group identifying the individuals that make up the population.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -49507,7 +49767,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Describes the form of the item.  Powder; tablets; capsule.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="totalVolume" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:element name="totalVolume" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">When the specified product code does not infer a package size, this is the specific amount of drug in the product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).</xs:documentation>
            </xs:annotation>
@@ -49520,6 +49780,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="batch" type="Medication.Batch" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Information that only applies to packages (not products).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="definition" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a knowledge resource that provides more information about this medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -50772,7 +51037,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the grouping or category of medication request (for example, drug classification like ATC, where meds would be administered, legal category of the medication.).</xs:documentation>
+              <xs:documentation xml:lang="en">An arbitrary categorization or grouping of the medication request.  It could be used for indicating where meds are intended to be administered, eg. in an inpatient setting or in a patient's home, or a legal category of the medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="RequestPriority">
@@ -55747,12 +56012,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The date when this resource was created.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="provider" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="reporter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner who is responsible for the services rendered to the patient.</xs:documentation>
+              <xs:documentation xml:lang="en">The party who reports the payment notice.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="payment" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="payment" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A reference to the payment which is the subject of this notice.</xs:documentation>
            </xs:annotation>
@@ -62781,7 +63046,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="filterBy" type="Subscription.FilterBy" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The filter properties to be applied to narrow the subscription topic stream.  When multiple filters are applied, evaluates to true if all the conditions are met; otherwise it returns false.   (i.e., logical AND).</xs:documentation>
+              <xs:documentation xml:lang="en">The filter properties to be applied to narrow the subscription topic stream.  When multiple filters are applied, evaluates to true if all the conditions applicable to that resource are met; otherwise it returns false (i.e., logical AND).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="channelType" minOccurs="1" maxOccurs="1" type="Coding">
@@ -62791,17 +63056,17 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="endpoint" minOccurs="0" maxOccurs="1" type="url">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The url that describes the actual end-point to send messages to.</xs:documentation>
+              <xs:documentation xml:lang="en">The url that describes the actual end-point to send notifications to.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="header" minOccurs="0" maxOccurs="unbounded" type="string">
+          <xs:element name="parameter" type="Subscription.Parameter" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Additional headers / information to send as part of the notification.</xs:documentation>
+              <xs:documentation xml:lang="en">Channel-dependent information to send as part of the notification (e.g., HTTP Headers).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="heartbeatPeriod" minOccurs="0" maxOccurs="1" type="unsignedInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If present,  a 'hearbeat&quot; notification (keepalive) is sent via this channel with an interval period equal to this elements integer value in seconds.    If not present, a heartbeat notification is not sent.</xs:documentation>
+              <xs:documentation xml:lang="en">If present, a 'heartbeat' notification (keep-alive) is sent via this channel with an interval period equal to this elements integer value in seconds.  If not present, a heartbeat notification is not sent.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="timeout" minOccurs="0" maxOccurs="1" type="unsignedInt">
@@ -62811,7 +63076,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="contentType" minOccurs="0" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. The MIME types &quot;text/plain&quot; and &quot;text/html&quot; may also be used for Email subscriptions.</xs:documentation>
+              <xs:documentation xml:lang="en">The MIME type to send the payload in - e.g., `application/fhir+xml` or `application/fhir+json`. Note that:
+
+* clients may request notifications in a specific FHIR version by using the [FHIR Version Parameter](http.html#version-parameter) - e.g., `application/fhir+json; fhirVersion=4.0`.
+
+* additional MIME types can be allowed by channels - e.g., `text/plain` and `text/html` are defined by the Email channel.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="content" minOccurs="0" maxOccurs="1" type="SubscriptionPayloadContent">
@@ -62821,7 +63090,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="maxCount" minOccurs="0" maxOccurs="1" type="positiveInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If present, the maximum number of triggering resources that will be included in a notification bundle (e.g., a server will not include more than this number of trigger resources in a single notification).  Note that this is not a strict limit on the number of entries in a bundle, as dependent resources can be included.</xs:documentation>
+              <xs:documentation xml:lang="en">If present, the maximum number of events that will be included in a notification bundle. Note that this is not a strict limit on the number of entries in a bundle, as dependent resources can be included.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -62837,22 +63106,48 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="resourceType" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If the element is a reference to another resource, this element contains &quot;Reference&quot;, and the targetProfile element defines what resources can be referenced. The targetProfile may be a reference to the general definition of a resource (e.g. http://hl7.org/fhir/StructureDefinition/Patient).</xs:documentation>
+              <xs:documentation xml:lang="en">A resource listed in the `SubscriptionTopic` this `Subscription` references (`SubscriptionTopic.canFilterBy.resource`). This element can be used to differentiate filters for topics that include more than one resource type.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="filterParameter" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The filter as defined in the `SubscriptionTopic.canfilterBy.filterParameter` element.</xs:documentation>
+              <xs:documentation xml:lang="en">The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter` element.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="modifier" minOccurs="0" maxOccurs="1" type="SubscriptionSearchModifier">
+          <xs:element name="comparator" minOccurs="0" maxOccurs="1" type="SearchComparator">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Operator to apply when determining matches (Search Modifiers), from the list of allowed modifiers for this filter in the relevant SubscriptionTopic.</xs:documentation>
+              <xs:documentation xml:lang="en">Comparator applied to this filter parameter.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="modifier" minOccurs="0" maxOccurs="1" type="SearchModifierCode">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Modifier applied to this filter parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The literal value or resource path as is legal in search - for example, &quot;Patient/123&quot; or &quot;le1950&quot;.</xs:documentation>
+              <xs:documentation xml:lang="en">The literal value or resource path as is legal in search - for example, `Patient/123` or `le1950`.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Subscription.Parameter">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The subscription resource describes a particular client's request to be notified about a SubscriptionTopic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Parameter name for information passed to the channel for notifications, for example in the case of a REST hook wanting to pass through an authorization header, the name would be Authorization.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Parameter value for information passed to the channel for notifications, for example in the case of a REST hook wanting to pass through an authorization header, the value would be `Bearer 0193...`.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -62863,17 +63158,17 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:restriction base="code-primitive">
       <xs:enumeration value="empty">
         <xs:annotation>
-          <xs:documentation xml:lang="en">empty</xs:documentation>
+          <xs:documentation xml:lang="en">Empty</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="id-only">
         <xs:annotation>
-          <xs:documentation xml:lang="en">id-only</xs:documentation>
+          <xs:documentation xml:lang="en">Id-only</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="full-resource">
         <xs:annotation>
-          <xs:documentation xml:lang="en">full-resource</xs:documentation>
+          <xs:documentation xml:lang="en">Full-resource</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -62929,96 +63224,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="SubscriptionSearchModifierEnum">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="=">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">=</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="eq">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Equal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ne">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Not Equal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="gt">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Greater Than</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="lt">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Less Than</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ge">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Greater Than or Equal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="le">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Less Than or Equal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="sa">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Starts After</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="eb">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Ends Before</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ap">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Approximately</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="above">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Above</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="below">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Below</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="in">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">In</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="not-in">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Not In</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="of-type">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Of Type</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="SubscriptionSearchModifier">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="SubscriptionSearchModifierEnum" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="SubscriptionStatus" type="SubscriptionStatus">
     <xs:annotation>
       <xs:documentation xml:lang="en">The SubscriptionStatus resource describes the state of a Subscription during notifications.</xs:documentation>
@@ -63039,7 +63244,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="SubscriptionNotificationType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of event being conveyed with this notificaiton.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of event being conveyed with this notification.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="eventsSinceSubscriptionStart" minOccurs="0" maxOccurs="1" type="integer64">
@@ -63080,12 +63285,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="eventNumber" minOccurs="1" maxOccurs="1" type="integer64">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The sequential number of this event in this subscription context.</xs:documentation>
+              <xs:documentation xml:lang="en">Either the sequential number of this event in this subscription context or a relative event number for this notification.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="timestamp" minOccurs="0" maxOccurs="1" type="instant">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The actual time this event occured on the server.</xs:documentation>
+              <xs:documentation xml:lang="en">The actual time this event occurred on the server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="focus" minOccurs="0" maxOccurs="1" type="Reference">
@@ -63293,7 +63498,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="supportedInteraction" minOccurs="0" maxOccurs="unbounded" type="InteractionTrigger">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The FHIR RESTful interaction which can be used to trigger a notification for the SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or UPDATE).</xs:documentation>
+              <xs:documentation xml:lang="en">The FHIR RESTful interaction which can be used to trigger a notification for the SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or UPDATE). If not present, all supported interactions are assumed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="queryCriteria" type="SubscriptionTopic.QueryCriteria" minOccurs="0" maxOccurs="1">
@@ -63324,7 +63529,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="resultForCreate" minOccurs="0" maxOccurs="1" type="CriteriaNotExistsBehavior">
             <xs:annotation>
-              <xs:documentation xml:lang="en">For &quot;create&quot; interactions, should the &quot;previous&quot; criteria count as an automatic pass or an automatic fail.</xs:documentation>
+              <xs:documentation xml:lang="en">For `create` interactions, should the `previous` criteria count as an automatic pass or an automatic fail. If not present, the testing behavior during `create` interactions is unspecified (server discretion).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="current" minOccurs="0" maxOccurs="1" type="string">
@@ -63334,12 +63539,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="resultForDelete" minOccurs="0" maxOccurs="1" type="CriteriaNotExistsBehavior">
             <xs:annotation>
-              <xs:documentation xml:lang="en">For &quot;delete&quot; interactions, should the &quot;current&quot; criteria count as an automatic pass or an automatic fail.</xs:documentation>
+              <xs:documentation xml:lang="en">For 'delete' interactions, should the 'current' query criteria count as an automatic pass or an automatic fail. If not present, the testing behavior during `delete` interactions is unspecified (server discretion).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="requireBoth" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If set to true, both current and previous criteria must evaluate true to  trigger a notification for this topic.  Otherwise a notification for this topic will be triggered if either one evaluates to true.</xs:documentation>
+              <xs:documentation xml:lang="en">If set to `true`, both the `current` and `previous` query criteria must evaluate `true` to trigger a notification for this topic.  If set to `false` or not present, a notification for this topic will be triggered if either the `current` or `previous` tests evaluate to `true`.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -63399,9 +63604,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Either the canonical URL to a search parameter (like &quot;http://hl7.org/fhir/SearchParameter/encounter-patient&quot;) or the officially-defined URI for a shared filter concept (like &quot;http://example.org/concepts/shared-common-event&quot;).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded" type="SubscriptionSearchModifier">
+          <xs:element name="comparator" minOccurs="0" maxOccurs="unbounded" type="SearchComparator">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allowable operators to apply when determining matches (Search Modifiers).  If the filterParameter is a SearchParameter, this list of modifiers SHALL be a strict subset of the modifiers defined on that SearchParameter.</xs:documentation>
+              <xs:documentation xml:lang="en">Comparators allowed for the filter parameter.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="modifier" minOccurs="0" maxOccurs="unbounded" type="SearchModifierCode">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Modifiers allowed for the filter parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -63417,7 +63627,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="resource" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">URL of the Resource that is the type used in this shape. This is the &quot;focus&quot; of the topic (or one of them if there are more than one) and the root resource for this shape definition. It will be the same, a generality, or a specificity of SubscriptionTopic.resourceTrigger.resource or SubscriptionTopic.eventTrigger.resource when they are present.</xs:documentation>
+              <xs:documentation xml:lang="en">URL of the Resource that is the type used in this shape. This is the 'focus' resource of the topic (or one of them if there are more than one) and the root resource for this shape definition. It will be the same, a generality, or a specificity of SubscriptionTopic.resourceTrigger.resource or SubscriptionTopic.eventTrigger.resource when they are present.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="include" minOccurs="0" maxOccurs="unbounded" type="string">
@@ -63468,12 +63678,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:restriction base="code-primitive">
       <xs:enumeration value="test-passes">
         <xs:annotation>
-          <xs:documentation xml:lang="en">test passes</xs:documentation>
+          <xs:documentation xml:lang="en">Test passes</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="test-fails">
         <xs:annotation>
-          <xs:documentation xml:lang="en">test fails</xs:documentation>
+          <xs:documentation xml:lang="en">Test fails</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
