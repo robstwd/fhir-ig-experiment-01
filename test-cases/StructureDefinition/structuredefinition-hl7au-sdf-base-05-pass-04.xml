@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="zxcvbgasjkjiu89ioiio"/>
+  <id value="zxcvbgasjkjiu89ioiio" />
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0" />
+  </extension>
   <url value="http://hl7.org.au/fhir/StructureDefinition/zxcvbgasjkjiu89ioiio"/>
   <version value="1.0.0"/>
   <name value="AUBaseCondition"/>
