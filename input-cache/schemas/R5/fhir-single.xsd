@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Feb 27, 2023 21:54+0000 for FHIR v5.0.0-cibuild 
+  Generated on Tue, Feb 28, 2023 15:56+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -30166,12 +30166,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="property" type="ConceptMap.Property" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A property defines a slot through which additional information can be provided about a map from soure -&gt; target.</xs:documentation>
+              <xs:documentation xml:lang="en">A property defines a slot through which additional information can be provided about a map from source -&gt; target.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="mapAttribute" type="ConceptMap.MapAttribute" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="additionalAttribute" type="ConceptMap.AdditionalAttribute" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Some mappings involve data in additional fields, where codes in multiple fields are combined to a single field (or vice versa). A mapAttribute defines the data element found in the source or target data model where the data will come from or be placed into.</xs:documentation>
+              <xs:documentation xml:lang="en">An additionalAttribute defines an additional data element found in the source or target data model where the data will come from or be mapped to. Some mappings are based on data in addition to the source data element, where codes in multiple fields are combined to a single field (or vice versa).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -30224,11 +30224,16 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The type of the property value.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="system" minOccurs="0" maxOccurs="1" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The CodeSystem that defines the codes from which values of type ```code``` in property values.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ConceptMap.MapAttribute">
+  <xs:complexType name="ConceptMap.AdditionalAttribute">
     <xs:annotation>
       <xs:documentation xml:lang="en">A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.</xs:documentation>
     </xs:annotation>
@@ -30237,7 +30242,7 @@ of the resource representation.</xs:documentation>
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code that is used to identify this data attribute. The code is used internally in ConceptMap.group.element.target.dependsOn.mapAttribute and ConceptMap.group.element.target.product.mapAttribute.</xs:documentation>
+              <xs:documentation xml:lang="en">A code that is used to identify this additional data attribute. The code is used internally in ConceptMap.group.element.target.dependsOn.attribute and ConceptMap.group.element.target.product.attribute.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="uri" minOccurs="0" maxOccurs="1" type="uri">
@@ -30247,12 +30252,12 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the mapping attribute and/or the data element it refers to - why it is defined, and how the value might be used in mappings, and a discussion of issues associated with the use of the data element.</xs:documentation>
+              <xs:documentation xml:lang="en">A description of the additional attribute and/or the data element it refers to - why it is defined, and how the value might be used in mappings, and a discussion of issues associated with the use of the data element.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="ConceptMapAttributeType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of the mapAttribute value contained in this concept map for this data element.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of the source data contained in this concept map for this data element.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30399,6 +30404,7 @@ of the resource representation.</xs:documentation>
             <xs:element name="valueBoolean" type="boolean"/>
             <xs:element name="valueDateTime" type="dateTime"/>
             <xs:element name="valueDecimal" type="decimal"/>
+            <xs:element name="valueCode" type="code"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>
@@ -30411,9 +30417,9 @@ of the resource representation.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="mapAttribute" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="attribute" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to the mapping mapAttribute that holds a value the map depends on.</xs:documentation>
+              <xs:documentation xml:lang="en">A reference to the additional attribute that holds a value the map depends on.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -30506,6 +30512,11 @@ of the resource representation.</xs:documentation>
       <xs:enumeration value="decimal">
         <xs:annotation>
           <xs:documentation xml:lang="en">decimal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="code">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">code</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -47081,6 +47092,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Business identifier for the inventory item.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="InventoryItemStatusCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">Status of the item entry.</xs:documentation>
@@ -47093,7 +47109,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Code deesignating the specific type of item.</xs:documentation>
+              <xs:documentation xml:lang="en">Code designating the specific type of item.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="name" type="InventoryItem.Name" minOccurs="0" maxOccurs="unbounded">
@@ -47108,7 +47124,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="description" type="InventoryItem.Description" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The description of the item.</xs:documentation>
+              <xs:documentation xml:lang="en">The descriptive characteristics of the inventory item.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="inventoryStatus" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -47123,7 +47139,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="netContent" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Net content of the item.</xs:documentation>
+              <xs:documentation xml:lang="en">Net content or amount present in the item.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="association" type="InventoryItem.Association" minOccurs="0" maxOccurs="unbounded">
@@ -47131,9 +47147,9 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Association with other items or products.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="characteristics" type="InventoryItem.Characteristics" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="characteristic" type="InventoryItem.Characteristic" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The characteristics of the item.</xs:documentation>
+              <xs:documentation xml:lang="en">The descriptive or identifying characteristics of the item.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instance" type="InventoryItem.Instance" minOccurs="0" maxOccurs="1">
@@ -47164,12 +47180,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="language" minOccurs="1" maxOccurs="1" type="CommonLanguages">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The language of the item name.</xs:documentation>
+              <xs:documentation xml:lang="en">The language that the item name is expressed in.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the item.</xs:documentation>
+              <xs:documentation xml:lang="en">The name or designation that the item is given.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -47206,7 +47222,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="language" minOccurs="0" maxOccurs="1" type="CommonLanguages">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The language of the item description.</xs:documentation>
+              <xs:documentation xml:lang="en">The language for the item description, when an item must be described in different languages and those languages may be authoritative and not translations of a 'main' language.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -47227,7 +47243,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="associationType" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of association e.g. 'packaged within' or 'used with' or 'to be mixed with.</xs:documentation>
+              <xs:documentation xml:lang="en">This attribute defined the type of association when establishing associations or relations between items, e.g. 'packaged within' or 'used with' or 'to be mixed with.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relatedItem" minOccurs="1" maxOccurs="1" type="Reference">
@@ -47244,7 +47260,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="InventoryItem.Characteristics">
+  <xs:complexType name="InventoryItem.Characteristic">
     <xs:annotation>
       <xs:documentation xml:lang="en">A functional description of an inventory item used in inventory and supply-related workflows.</xs:documentation>
     </xs:annotation>
@@ -47253,7 +47269,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="characteristicType" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of characteristic.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of characteristic that is being defined.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
@@ -47292,7 +47308,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="lotNumber" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The lot number of the item.</xs:documentation>
+              <xs:documentation xml:lang="en">The lot or batch number of the item.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="expiry" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -47356,6 +47372,16 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="en">Arabisk</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="bg">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Bulgarian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bg-BG">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Bulgarian (Bulgaria)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="bn">
         <xs:annotation>
           <xs:documentation xml:lang="en">Bengali</xs:documentation>
@@ -47366,9 +47392,29 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="en">Czech</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="cs-CZ">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Czech (Czechia)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bs">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Bosnian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bs-BA">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Bosnian (Bosnia and Herzegovina))</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="da">
         <xs:annotation>
           <xs:documentation xml:lang="en">Danish</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="da-DK">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Danish (Denmark)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="de">
@@ -47394,6 +47440,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       <xs:enumeration value="el">
         <xs:annotation>
           <xs:documentation xml:lang="en">Greek</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="el-GR">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Greek (Greece)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="en">
@@ -47456,6 +47507,16 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="en">Spanish (Uruguay)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="et">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Estonian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="et-EE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Estonian (Estonia)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="fi">
         <xs:annotation>
           <xs:documentation xml:lang="en">Finnish</xs:documentation>
@@ -47479,6 +47540,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       <xs:enumeration value="fr-FR">
         <xs:annotation>
           <xs:documentation xml:lang="en">French (France)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fi-FI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Finnish (Finland)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="fr-CA">
@@ -47506,6 +47572,21 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="en">Croatian</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="hr-HR">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Croatian (Croatia)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="is">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Icelandic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="is-IS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Icelandic (Iceland)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="it">
         <xs:annotation>
           <xs:documentation xml:lang="en">Italian</xs:documentation>
@@ -47529,6 +47610,26 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       <xs:enumeration value="ko">
         <xs:annotation>
           <xs:documentation xml:lang="en">Korean</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Lithuanian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lt-LT">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Lithuanian (Lithuania)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lv">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latvian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lv-LV">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latvian (Latvia)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="nl">
@@ -47566,14 +47667,34 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="en">Polskie</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="pl-PL">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Polish (Poland)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="pt">
         <xs:annotation>
           <xs:documentation xml:lang="en">Portuguese</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="pt-PT">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Portuguese (Portugal)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="pt-BR">
         <xs:annotation>
           <xs:documentation xml:lang="en">Portuguese (Brazil)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ro">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Romanian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ro-RO">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Romanian (Romania)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ru">
@@ -47584,6 +47705,26 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       <xs:enumeration value="ru-RU">
         <xs:annotation>
           <xs:documentation xml:lang="en">Russian (Russia)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sk">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Slovakian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sk-SK">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Slovakian (Slovakia)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sl">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Slovenian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sl-SI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Slovenian (Slovenia)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="sr">
@@ -59787,6 +59928,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="derivedFrom" minOccurs="0" maxOccurs="unbounded" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">Another set of Requirements that this set of Requirements builds on and updates.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reference" minOccurs="0" maxOccurs="unbounded" type="url">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to another artifact that created this set of requirements. This could be a Profile, etc., or external regulation, or business requirements expressed elsewhere.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actor" minOccurs="0" maxOccurs="unbounded" type="canonical">
