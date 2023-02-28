@@ -18,11 +18,6 @@ Feature: HL7 AU StructureDefinition Base profile
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.id
     Then "StructureDefinition.id" has cardinality "1..1"
 
-  Scenario: HL7 AU StructureDefinition Base profile extension FMM
-    * "StructureDefinition.extension:fmm" has cardinality "1..1"
-    * "StructureDefinition.extension:fmm" has an invariant "hl7au-sdf-base-09::error::The FMM maturity level must be an integer between 0 and 5"
-    * extension "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" is present in node "StructureDefinition"
-
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.implicitRules
     Then "StructureDefinition.implicitRules" has cardinality "0..0"
 
@@ -31,6 +26,11 @@ Feature: HL7 AU StructureDefinition Base profile
 
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.contained
     Then "StructureDefinition.contained" has cardinality "0..0"
+
+  Scenario: HL7 AU StructureDefinition Base profile extension FMM
+    * "StructureDefinition.extension:fmm" has cardinality "1..1"
+    * "StructureDefinition.extension:fmm" has an invariant "hl7au-sdf-base-09::error::The FMM maturity level must be an integer between 0 and 5"
+    * extension "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm", with sliceName "fmm", is present in node "StructureDefinition"
 
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.url
     Then "StructureDefinition.url" has cardinality "1..1"

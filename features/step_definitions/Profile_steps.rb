@@ -48,3 +48,7 @@ end
 Given('{string} has fixedCanonical {string}') do |element_name, canonical|
   expect(@profile).to have_element_with_fixedCanonical(element_name, canonical)
 end
+
+Then('extension {string}, with sliceName {string}, is present in node {string}') do |extension_url, extension_sliceName, node|
+  expect(@profile).to have_extension_in_node(extension_url, extension_sliceName, node)
+end

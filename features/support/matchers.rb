@@ -73,6 +73,7 @@ module MatcherHelpers
 
   def get_nodeset_from_snapshot(element)
     file = get_filename(@profile_id)
+    # Kernel.puts file
     doc = get_nokogiri_doc(file)
     xpath = "/StructureDefinition/snapshot/element[@id='#{element}']"
     return doc.xpath(xpath)
@@ -125,13 +126,13 @@ module MatcherHelpers
     return text_to_match.match(validator_output)     
   end
 
-    # this method returns whether an extension is present in a test file, at a specific parent node
+    # this method returns whether an extension is present
   def get_extension_nodeset_present_at_node(file, extension_url, parent_node)
     profile_id = get_profile_id(file)
     fullpath_file = get_filename(profile_id)
     doc = get_nokogiri_doc(fullpath_file)
     extension_xpath = "/#{parent_node.gsub('.','/')}/extension[@url='#{extension_url}']"
-    # Kernel.puts extension_xpath
+    Kernel.puts extension_xpath
     nodeset = doc.xpath(extension_xpath)
     # Kernel.puts nodeset
     return not(nodeset.empty?)
@@ -1051,7 +1052,7 @@ end
 
 
 # This matcher determines if a specific extension is present within a specific node
-RSpec::Matchers.define :have_extension_in_node do |extension_url, node|
+RSpec::Matchers.define :have_extension_in_node do |extension_url, extension_sliceName, node|
 
   include MatcherHelpers
 
@@ -1060,25 +1061,37 @@ RSpec::Matchers.define :have_extension_in_node do |extension_url, node|
     begin
 
       # file under test
-      @file_name = source
-      Kernel.puts @file_name
+      @profile_name = source
+      # Kernel.puts @file_name
+
+      @profile_id = get_profile_id(@profile_name)
+      # Kernel.puts @profile_name, @profile_id
 
       # extension being examined
       @extension_url = extension_url
-      Kernel.puts @extension_url
+      @extension_sliceName = extension_sliceName
+      # Kernel.puts @extension_url
+      # Kernel.puts @extension_sliceName
 
       # the expected node that the extension is to be a child of
       @parent_node = node
-      Kernel.puts @parent_node
+      # Kernel.puts @parent_node
+
+      # nodeset
+      @element_name = "#{@parent_node}.extension:#{@extension_sliceName}"
+      # Kernel.puts @element_name
+      nodeset = get_nodeset_from_snapshot(@element_name)
+      # Kernel.puts nodeset.length, nodeset.empty?
+      # Kernel.puts nodeset
 
       # determine if extension is present
-      extension_present = get_extension_nodeset_present_at_node(@file_name, @extension_url, @parent_node)
+      extension_present = nodeset.xpath("type/profile/@value").to_s
       # Kernel.puts extension_present
 
-      @error_msg = "Expecting the test file '#{@file_name}' to include extension '#{@extension_url}' \n" \
+      @error_msg = "Expecting profile '#{@profile_name}' to include extension '#{@extension_url}' \n" \
           " within node '#{@parent_node}' - instead it was absent."
 
-      expect(extension_present).to be_truthy
+      expect(extension_present).to eq(@extension_url)
       
     end
 
