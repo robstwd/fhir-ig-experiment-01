@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Feb 27, 2023 13:31+0000 for FHIR v5.0.0-cibuild 
+  Generated on Mon, Feb 27, 2023 21:54+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -22273,9 +22273,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">A link to a resource identifying the biologically derived product that is being dispensed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="patient" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A link to a resource representing the subject that the product is dispensed for.</xs:documentation>
+              <xs:documentation xml:lang="en">A link to a resource representing the patient that the product is dispensed for.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="matchStatus" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -47664,7 +47664,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifiers for the InventoryReport.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifier for the InventoryReport.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="InventoryReportStatus">
@@ -47707,7 +47707,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">An inventory listing section (grouped by any of the attributes).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="1" type="Annotation">
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
               <xs:documentation xml:lang="en">A note associated with the InventoryReport.</xs:documentation>
            </xs:annotation>
@@ -47738,7 +47738,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The date and time when the items were counted.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="items" type="InventoryReport.Items" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="item" type="InventoryReport.Item" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The item or items in this listing.</xs:documentation>
            </xs:annotation>
@@ -47747,7 +47747,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="InventoryReport.Items">
+  <xs:complexType name="InventoryReport.Item">
     <xs:annotation>
       <xs:documentation xml:lang="en">A report of inventory or stock items.</xs:documentation>
     </xs:annotation>
@@ -47756,12 +47756,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The category of the item or items.</xs:documentation>
+              <xs:documentation xml:lang="en">The inventory category or classification of the items being reported. This is meant not for defining the product, but for inventory categories e.g. 'pending recount' or 'damaged'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="quantity" minOccurs="1" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The quantity of the item or items.</xs:documentation>
+              <xs:documentation xml:lang="en">The quantity of the item or items being reported.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="item" minOccurs="1" maxOccurs="1" type="CodeableReference">
@@ -53452,7 +53452,7 @@ The MedicationStatement resource was previously called MedicationStatement.</xs:
               <xs:documentation xml:lang="en">The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="administrationInstruction" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="administrationInstruction" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Free text formula administration, feeding instructions or additional instructions or information.</xs:documentation>
            </xs:annotation>
