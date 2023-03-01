@@ -49,7 +49,7 @@ java -jar validator.jar
 -version 4.0.1 
 -ig https://robstwd.github.io/fhir-ig-experiment-01/package.tgz 
 -profile "https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-sdf-1"
-au-fhir-base/resources/au-*.xml</pre>
+au-fhir-base/input/resources/au-*.xml</pre>
 
   <p>
     <a target="_blank" href="https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator">HL7 Using the FHIR Validator</a>:
