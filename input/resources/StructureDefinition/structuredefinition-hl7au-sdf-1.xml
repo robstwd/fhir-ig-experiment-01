@@ -101,6 +101,10 @@
       <path value="StructureDefinition.identifier" />
       <max value="0" />
     </element>
+    <element id="StructureDefinition.version">
+      <path value="StructureDefinition.version" />
+      <max value="0" />
+    </element>
     <element id="StructureDefinition.name">
       <path value="StructureDefinition.name" />
       <min value="1" />

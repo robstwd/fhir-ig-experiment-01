@@ -48,6 +48,9 @@ Feature: HL7 AU StructureDefinition Base profile
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.identifier
     Then "StructureDefinition.identifier" has cardinality "0..0"
 
+  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.version
+    Then "StructureDefinition.version" has cardinality "0..0"
+
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.name
     Then "StructureDefinition.name" has cardinality "1..1"
     And "StructureDefinition.name" has an invariant "hl7au-sdf-base-07::error::The name value contains no spaces"

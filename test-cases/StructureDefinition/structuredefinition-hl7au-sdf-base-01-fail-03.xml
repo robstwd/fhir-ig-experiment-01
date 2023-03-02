@@ -5,7 +5,6 @@
     <valueInteger value="0" />
   </extension>
   <url value="http://hl7.org.au/fhir/StructureDefinition/structuredefinition-hl7au-sdf-base-01-fail-03"/>
-  <version value="0.1.1"/>
   <name value="AUBaseCondition"/>
   <title value="AU Base Condition"/>
   <status value="draft"/>
