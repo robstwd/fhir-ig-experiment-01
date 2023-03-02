@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Feb 28, 2023 15:56+0000 for FHIR v5.0.0-cibuild 
+  Generated on Thu, Mar 2, 2023 19:42+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -5033,7 +5033,12 @@
       </xs:enumeration>
       <xs:enumeration value="5.0.0-snapshot3">
         <xs:annotation>
-          <xs:documentation xml:lang="en">5.0.0-snapshot2</xs:documentation>
+          <xs:documentation xml:lang="en">5.0.0-snapshot3</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5.0.0-draft-final">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">5.0.0-draft-final</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -15393,7 +15398,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
         <xs:sequence>
           <xs:element name="extension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -18963,7 +18968,7 @@ Normal practice is to use the 'mo' code as a calendar month when calculating the
           </xs:element>
           <xs:element name="extension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="modifierExtension" type="Extension" minOccurs="0" maxOccurs="unbounded">
@@ -19862,6 +19867,13 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the actor definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the actor definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A natural language name identifying the actor definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
@@ -23633,6 +23645,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
               <xs:documentation xml:lang="en">An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this CapabilityStatement when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -30784,6 +30801,13 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the condition definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the condition definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A natural language name identifying the condition definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
@@ -41423,6 +41447,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this graph definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the graph definition is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this GraphDefinition when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
@@ -41488,6 +41517,16 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Explanation of why this graph definition is needed and why it has been designed as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the graph definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the graph definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="start" minOccurs="0" maxOccurs="1" type="id">
@@ -44347,6 +44386,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this implementation guide is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the implementation guide is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this implementation guide when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
@@ -44407,6 +44451,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A legal or geographic region in which the implementation guide is intended to be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explanation of why this implementation guide is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -52057,6 +52106,13 @@ The MedicationStatement resource was previously called MedicationStatement.</xs:
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
@@ -52120,6 +52176,11 @@ The MedicationStatement resource was previously called MedicationStatement.</xs:
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="base" minOccurs="0" maxOccurs="1" type="canonical">
@@ -54727,6 +54788,11 @@ Reflex | Repeat | Re-run.</xs:documentation>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
               <xs:documentation xml:lang="en">An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this implementation guide when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -59860,6 +59926,13 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the Requirements when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Requirements author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A natural language name identifying the Requirements. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
@@ -60761,6 +60834,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this search parameter when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
@@ -60831,6 +60909,16 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Explanation of why this search parameter is needed and why it has been designed as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the search parameter and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the search parameter.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
@@ -63519,6 +63607,18 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the subscription topic when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Topic author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A natural language name identifying the subscription topic This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
@@ -66252,6 +66352,13 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the terminology capabilities when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the terminology capabilities author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates the mechanism used to compare versions to determine which is more current.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="versionAlgorithmString" type="string"/>
+            <xs:element name="versionAlgorithmCoding" type="Coding"/>
+          </xs:choice>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A natural language name identifying the terminology capabilities. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
@@ -66310,6 +66417,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyrightLabel" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="kind" minOccurs="1" maxOccurs="1" type="CapabilityStatementKind">
