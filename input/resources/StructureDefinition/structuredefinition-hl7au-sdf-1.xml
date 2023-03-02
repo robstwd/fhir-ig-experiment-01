@@ -58,10 +58,6 @@
       <path value="StructureDefinition.contained" />
       <max value="0" />
     </element>
-    <element id="StructureDefinition.modifierExtension">
-      <path value="StructureDefinition.modifierExtension" />
-      <max value="0" />
-    </element>
     <element id="StructureDefinition.extension">
       <path value="StructureDefinition.extension" />
       <slicing>
@@ -86,6 +82,10 @@
         <human value="The FMM maturity level must be an integer between 0 and 5" />
         <expression value="valueInteger.value.matches('^[0-5]$')" />
       </constraint>
+    </element>
+    <element id="StructureDefinition.modifierExtension">
+      <path value="StructureDefinition.modifierExtension" />
+      <max value="0" />
     </element>
     <element id="StructureDefinition.url">
       <path value="StructureDefinition.url" />
