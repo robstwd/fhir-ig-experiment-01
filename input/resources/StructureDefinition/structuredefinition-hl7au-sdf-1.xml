@@ -175,38 +175,7 @@
     </element>
     <element id="StructureDefinition.jurisdiction">
       <path value="StructureDefinition.jurisdiction" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.coding">
-      <path value="StructureDefinition.jurisdiction.coding" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.coding.system">
-      <path value="StructureDefinition.jurisdiction.coding.system" />
-      <min value="1" />
-      <fixedUri value="urn:iso:std:iso:3166" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.coding.version">
-      <path value="StructureDefinition.jurisdiction.coding.version" />
-      <max value="0" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.coding.code">
-      <path value="StructureDefinition.jurisdiction.coding.code" />
-      <min value="1" />
-      <fixedCode value="AU" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.coding.display">
-      <path value="StructureDefinition.jurisdiction.coding.display" />
-      <max value="0" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.coding.userSelected">
-      <path value="StructureDefinition.jurisdiction.coding.userSelected" />
-      <max value="0" />
-    </element>
-    <element id="StructureDefinition.jurisdiction.text">
-      <path value="StructureDefinition.jurisdiction.text" />
+      <min value="0" />
       <max value="0" />
     </element>
     <element id="StructureDefinition.purpose">

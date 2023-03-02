@@ -91,30 +91,7 @@ Feature: HL7 AU StructureDefinition Base profile
     Then "StructureDefinition.useContext" has cardinality "0..0"
 
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction
-    Then "StructureDefinition.jurisdiction" has cardinality "1..1"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.coding
-    Then "StructureDefinition.jurisdiction.coding" has cardinality "1..1"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.coding.system
-    Then "StructureDefinition.jurisdiction.coding.system" has cardinality "1..1"
-    And "StructureDefinition.jurisdiction.coding.system" has fixedUri "urn:iso:std:iso:3166"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.coding.version
-    Then "StructureDefinition.jurisdiction.coding.version" has cardinality "0..0"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.coding.code
-    Then "StructureDefinition.jurisdiction.coding.code" has cardinality "1..1"
-    And "StructureDefinition.jurisdiction.coding.code" has fixedCode "AU"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.coding.display
-    Then "StructureDefinition.jurisdiction.coding.display" has cardinality "0..0"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.coding.userSelected
-    Then "StructureDefinition.jurisdiction.coding.userSelected" has cardinality "0..0"
-
-  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.jurisdiction.text
-    Then "StructureDefinition.jurisdiction.text" has cardinality "0..0"
+    Then "StructureDefinition.jurisdiction" has cardinality "0..0"
 
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.purpose
     Then "StructureDefinition.purpose" has cardinality "0..0"
