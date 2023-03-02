@@ -18,14 +18,23 @@ Feature: HL7 AU StructureDefinition Base profile
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.id
     Then "StructureDefinition.id" has cardinality "1..1"
 
+  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.meta
+    Then "StructureDefinition.meta" has cardinality "0..0"
+
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.implicitRules
     Then "StructureDefinition.implicitRules" has cardinality "0..0"
 
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.language
     Then "StructureDefinition.language" has cardinality "0..0"
 
+  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.text
+    Then "StructureDefinition.text" has cardinality "0..0"
+
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.contained
     Then "StructureDefinition.contained" has cardinality "0..0"
+
+  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.modifierExtension
+    Then "StructureDefinition.modifierExtension" has cardinality "0..0"
 
   Scenario: HL7 AU StructureDefinition Base profile extension FMM
     * "StructureDefinition.extension:fmm" has cardinality "1..1"

@@ -38,6 +38,10 @@
       <path value="StructureDefinition.id" />
       <min value="1" />
     </element>
+    <element id="StructureDefinition.meta">
+      <path value="StructureDefinition.meta" />
+      <max value="0" />
+    </element>
     <element id="StructureDefinition.implicitRules">
       <path value="StructureDefinition.implicitRules" />
       <max value="0" />
@@ -46,8 +50,16 @@
       <path value="StructureDefinition.language" />
       <max value="0" />
     </element>
+    <element id="StructureDefinition.text">
+      <path value="StructureDefinition.text" />
+      <max value="0" />
+    </element>
     <element id="StructureDefinition.contained">
       <path value="StructureDefinition.contained" />
+      <max value="0" />
+    </element>
+    <element id="StructureDefinition.modifierExtension">
+      <path value="StructureDefinition.modifierExtension" />
       <max value="0" />
     </element>
     <element id="StructureDefinition.extension">
