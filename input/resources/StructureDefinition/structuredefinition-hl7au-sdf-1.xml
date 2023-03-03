@@ -10,7 +10,7 @@
   <experimental value="true" />
   <date value="2023-02-25" />
   <description
-    value="The purpose of this profile is to enforce conventions for profiles, in metadata and structure" />
+    value="The purpose of this profile is to enforce metadata conventions for HL7 Australia FHIR profiles, as documented in the [HL7AU GitHub wiki](https://github.com/hl7au/au-fhir-base/wiki/HL7-AU-Conventions:-profile-and-extension-metadata)" />
   <copyright value="This is free and unencumbered software released into the public domain." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
