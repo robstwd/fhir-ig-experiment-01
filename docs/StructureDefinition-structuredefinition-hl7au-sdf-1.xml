@@ -705,7 +705,7 @@
     </element>
     <element id="StructureDefinition.version">
       <path value="StructureDefinition.version"/>
-      <short value="Generated from ImplementationGuide value"/>
+      <short value="Business version of the structure definition"/>
       <definition value="The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence."/>
       <comment value="There may be different structure definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the structure definition with the format [url]|[version]."/>
       <min value="0"/>
@@ -902,7 +902,7 @@
     </element>
     <element id="StructureDefinition.date">
       <path value="StructureDefinition.date"/>
-      <short value="Generated from ImplementationGuide.date"/>
+      <short value="Date last changed"/>
       <definition value="The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes."/>
       <comment value="Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the structure definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource."/>
       <alias value="Revision Date"/>
@@ -2760,7 +2760,6 @@
     </element>
     <element id="StructureDefinition.version">
       <path value="StructureDefinition.version"/>
-      <short value="Generated from ImplementationGuide value"/>
       <max value="0"/>
     </element>
     <element id="StructureDefinition.name">
@@ -2789,7 +2788,6 @@
     </element>
     <element id="StructureDefinition.date">
       <path value="StructureDefinition.date"/>
-      <short value="Generated from ImplementationGuide.date"/>
       <max value="0"/>
     </element>
     <element id="StructureDefinition.publisher">
