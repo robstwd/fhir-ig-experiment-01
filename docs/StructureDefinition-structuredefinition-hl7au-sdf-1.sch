@@ -36,6 +36,7 @@
       <sch:assert test="count(f:copyright) &gt;= 1">copyright: minimum cardinality of 'copyright' is 1</sch:assert>
       <sch:assert test="count(f:keyword) &lt;= 0">keyword: maximum cardinality of 'keyword' is 0</sch:assert>
       <sch:assert test="count(f:fhirVersion) &gt;= 1">fhirVersion: minimum cardinality of 'fhirVersion' is 1</sch:assert>
+      <sch:assert test="count(f:mapping) &lt;= 0">mapping: maximum cardinality of 'mapping' is 0</sch:assert>
       <sch:assert test="count(f:contextInvariant) &lt;= 0">contextInvariant: maximum cardinality of 'contextInvariant' is 0</sch:assert>
       <sch:assert test="count(f:baseDefinition) &gt;= 1">baseDefinition: minimum cardinality of 'baseDefinition' is 1</sch:assert>
       <sch:assert test="count(f:derivation) &gt;= 1">derivation: minimum cardinality of 'derivation' is 1</sch:assert>
