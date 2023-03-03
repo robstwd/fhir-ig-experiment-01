@@ -103,7 +103,7 @@
     </element>
     <element id="StructureDefinition.version">
       <path value="StructureDefinition.version" />
-      <short value="Generated from ImplementationGuide paremeter `apply-jurisdiction`"/>
+      <short value="Generated from ImplementationGuide value"/>
       <max value="0" />
     </element>
     <element id="StructureDefinition.name">
@@ -138,7 +138,6 @@
     </element>
     <element id="StructureDefinition.publisher">
       <path value="StructureDefinition.publisher" />
-      <short value="Generated from ImplementationGuide paremeter `apply-publisher`" />
       <min value="1" />
       <constraint>
         <key value="hl7au-sdf-base-03" />
