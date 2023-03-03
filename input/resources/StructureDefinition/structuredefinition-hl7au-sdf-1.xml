@@ -221,6 +221,10 @@
       <min value="1" />
       <fixedCode value="4.0.1" />
     </element>
+    <element id="StructureDefinition.mapping">
+      <path value="StructureDefinition.mapping" />
+      <max value="0" />
+    </element>
     <element id="StructureDefinition.abstract">
       <path value="StructureDefinition.abstract" />
       <fixedBoolean value="false" />

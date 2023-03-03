@@ -119,6 +119,9 @@ Feature: HL7 AU StructureDefinition Base profile
     Then "StructureDefinition.fhirVersion" has cardinality "1..1"
     And "StructureDefinition.fhirVersion" has fixedCode "4.0.1"
 
+  Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.mapping
+    Then "StructureDefinition.mapping" has cardinality "0..0"
+
   Scenario: HL7 AU StructureDefinition Base profile constraints on StructureDefinition.abstract
     And "StructureDefinition.abstract" has fixedBoolean "false"
 
