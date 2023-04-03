@@ -98,3 +98,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+Dir['./spec/support/**/*.rb'].each do |f|
+  require f.sub(%r{\./spec/}, '')
+end

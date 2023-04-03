@@ -15,7 +15,8 @@ describe ".gitignore file" do
   end
 
   it "exists" do
-    expect(File.exist?(@file)).to be_truthy
+    # custom matcher :exist
+    expect(@file).to exist
   end
 
   it "has correct content" do

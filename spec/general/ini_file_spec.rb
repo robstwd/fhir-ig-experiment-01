@@ -9,10 +9,8 @@ describe "ig.ini" do
   end
 
   it "exists" do
-    expect(File.exist?(@ini_file)).to be_truthy
-    
-    # TODO custom matcher
-    #expect(@ini_file).to exist
+    # custom matcher :exist
+    expect(@file).to exist
   end
 
   it "has only one section '[IG]'" do
