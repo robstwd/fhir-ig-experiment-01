@@ -1,12 +1,11 @@
-# require 'spec_helper'
+require 'inifile'
+# https://www.rubydoc.info/gems/inifile/3.0.0/IniFile
 
 describe "ig.ini" do
 
   before :each do
-    @ini_file = "ig.ini"
-    @lines = IO.readlines(@ini_file, chomp: true)
-    @lines.map!{|e| e.gsub(/\s/,'')}
-    # Kernel.puts @lines.inspect
+    @file = 'ig.ini'
+    @ini_file = IniFile.load('ig.ini')
   end
 
   it "exists" do
@@ -16,28 +15,29 @@ describe "ig.ini" do
     #expect(@ini_file).to exist
   end
 
-  it "has first line '[IG]'" do
-    firstline = @lines[0]
-    expect(firstline).to eql("[IG]")
-
-    # TODO custom matcher
-    # expect(@ig_ini).to have_first_line_with_value("[IG"]
+  it "has only one section '[IG]'" do
+    sections = @ini_file.sections
+    expect(sections).to eq(["IG"])
   end
 
-  it "has key 'ig = input/resources/ImplementationGuide/fhir.ig.experiment.01.xml'" do
-    expect(@lines).to include("ig=input/resources/ImplementationGuide/fhir.ig.experiment.01.xml")
+  it "has only 3 properties" do
+    count_of_properties = @ini_file['IG'].size
+    expect(count_of_properties).to eq(3)
   end
 
-  it "has key 'template = fhir.base.template'" do
-    expect(@lines).to include("template=fhir.base.template")
+  it " * has property 'ig = input/resources/ImplementationGuide/fhir.ig.experiment.01.xml'" do
+    properties = @ini_file['IG']
+    expect(properties).to include("ig"=>"input/resources/ImplementationGuide/fhir.ig.experiment.01.xml")
   end
 
-  it "has key 'usage-stats-opt-out = true'" do
-    expect(@lines).to include("usage-stats-opt-out=true")
+  it " * has property 'template = fhir.base.template'" do
+    properties = @ini_file['IG']
+    expect(properties).to include("template"=>"fhir.base.template")
   end
 
-  it "has no other keys" do
-    expect(@lines.count).to eql(4)
+  it " * has property 'usage-stats-opt-out = true'" do
+    properties = @ini_file['IG']
+    expect(properties).to include("usage-stats-opt-out"=>true)
   end
   
 end

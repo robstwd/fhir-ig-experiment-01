@@ -14,4 +14,5 @@ group :development do
   gem 'rb-notifu'
   gem 'aruba'
   gem 'jekyll'
+  gem 'inifile'
 end
