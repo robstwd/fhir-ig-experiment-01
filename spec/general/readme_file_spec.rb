@@ -4,6 +4,7 @@ describe "Readme file" do
 
   before :each do
     @file = "README.md"
+    @contents = File.read(@file)
   end
 
   it "exists" do
@@ -11,8 +12,7 @@ describe "Readme file" do
     expect(@file).to exist
   end
 
-  it "has content" do
-    @contents = File.read(@file)
+  it "has content" do    
     expect(@contents).not_to be_empty
   end
 
