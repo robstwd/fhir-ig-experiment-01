@@ -2,7 +2,7 @@
 
 EXPECTED_LICENSE_CONTENT = """MIT License
 
-Copyright (c) 2020 Rob Eastwood
+Copyright (c) 2020+ Rob Eastwood
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the \"Software\"), to deal
