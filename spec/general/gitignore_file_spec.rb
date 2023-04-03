@@ -6,6 +6,7 @@ temp
 template
 output
 
+publisher.jar
 """
 
 describe ".gitignore file" do
