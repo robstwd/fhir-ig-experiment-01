@@ -7,7 +7,9 @@
   <name value="FHIRIGExperiment01"/>
   <title value="FHIR Implementation Guide Experiment 01"/>
   <status value="draft"/>
-  <experimental value="false"/>
+  <experimental value="true"/>
+  <date value="2023-04-05"/>
+  <publisher value="Rob Eastwood (himself)"/>
   <contact>
     <telecom>
       <system value="url"/>
