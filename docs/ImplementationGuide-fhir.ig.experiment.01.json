@@ -10,8 +10,9 @@
   "name" : "FHIRIGExperiment01",
   "title" : "FHIR Implementation Guide Experiment 01",
   "status" : "draft",
-  "experimental" : false,
-  "date" : "2023-03-03T11:30:40+00:00",
+  "experimental" : true,
+  "date" : "2023-04-05",
+  "publisher" : "Rob Eastwood (himself)",
   "contact" : [{
     "telecom" : [{
       "system" : "url",
@@ -328,7 +329,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "copyrightyear"
+        "valueCode" : "copyrightyear"
       },
       {
         "url" : "value",
@@ -339,7 +340,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "releaselabel"
+        "valueCode" : "releaselabel"
       },
       {
         "url" : "value",
@@ -350,7 +351,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "excludettl"
+        "valueCode" : "excludettl"
       },
       {
         "url" : "value",
@@ -361,7 +362,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "excludemap"
+        "valueCode" : "excludemap"
       },
       {
         "url" : "value",
@@ -372,7 +373,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "autoload-resources"
+        "valueCode" : "autoload-resources"
       },
       {
         "url" : "value",
@@ -383,7 +384,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -394,7 +395,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -405,7 +406,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-qa"
+        "valueCode" : "path-qa"
       },
       {
         "url" : "value",
@@ -416,7 +417,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-temp"
+        "valueCode" : "path-temp"
       },
       {
         "url" : "value",
@@ -427,7 +428,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-output"
+        "valueCode" : "path-output"
       },
       {
         "url" : "value",
@@ -438,7 +439,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-suppressed-warnings"
+        "valueCode" : "path-suppressed-warnings"
       },
       {
         "url" : "value",
@@ -449,7 +450,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-history"
+        "valueCode" : "path-history"
       },
       {
         "url" : "value",
@@ -460,7 +461,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "template-html"
+        "valueCode" : "template-html"
       },
       {
         "url" : "value",
@@ -471,7 +472,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "template-md"
+        "valueCode" : "template-md"
       },
       {
         "url" : "value",
@@ -482,7 +483,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-contact"
+        "valueCode" : "apply-contact"
       },
       {
         "url" : "value",
@@ -493,7 +494,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-context"
+        "valueCode" : "apply-context"
       },
       {
         "url" : "value",
@@ -504,7 +505,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-copyright"
+        "valueCode" : "apply-copyright"
       },
       {
         "url" : "value",
@@ -515,7 +516,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-jurisdiction"
+        "valueCode" : "apply-jurisdiction"
       },
       {
         "url" : "value",
@@ -526,7 +527,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-license"
+        "valueCode" : "apply-license"
       },
       {
         "url" : "value",
@@ -537,7 +538,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-publisher"
+        "valueCode" : "apply-publisher"
       },
       {
         "url" : "value",
@@ -548,7 +549,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-version"
+        "valueCode" : "apply-version"
       },
       {
         "url" : "value",
@@ -559,7 +560,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "active-tables"
+        "valueCode" : "active-tables"
       },
       {
         "url" : "value",
@@ -570,7 +571,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "fmm-definition"
+        "valueCode" : "fmm-definition"
       },
       {
         "url" : "value",
@@ -581,7 +582,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "propagate-status"
+        "valueCode" : "propagate-status"
       },
       {
         "url" : "value",
@@ -592,7 +593,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "excludelogbinaryformat"
+        "valueCode" : "excludelogbinaryformat"
       },
       {
         "url" : "value",
@@ -603,7 +604,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "tabbed-snapshots"
+        "valueCode" : "tabbed-snapshots"
       },
       {
         "url" : "value",
@@ -639,21 +640,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/structuredefinition-meta-1"
+        "reference" : "StructureDefinition/structuredefinition-hl7au-csd-ext-1"
       },
-      "name" : "StructureDefinition Meta",
-      "description" : "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/structuredefinition-hl7au-csd-1"
-      },
-      "name" : "HL7 AU CodeSystem Base",
-      "description" : "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
+      "name" : "HL7 AU CodeSystem AU Extended",
+      "description" : "The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia."
     },
     {
       "extension" : [{
@@ -672,10 +662,21 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/structuredefinition-hl7au-csd-ext-1"
+        "reference" : "StructureDefinition/structuredefinition-meta-1"
       },
-      "name" : "HL7 AU CodeSystem AU Extended",
-      "description" : "The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia."
+      "name" : "StructureDefinition Meta",
+      "description" : "The purpose of this profile is to enforce conventions for profiles, in metadata and structure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/structuredefinition-hl7au-csd-1"
+      },
+      "name" : "HL7 AU CodeSystem Base",
+      "description" : "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure"
     }],
     "page" : {
       "extension" : [{

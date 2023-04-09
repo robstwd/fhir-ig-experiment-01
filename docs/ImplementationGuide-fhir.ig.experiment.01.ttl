@@ -17,8 +17,9 @@
   fhir:name [ fhir:v "FHIRIGExperiment01"] ; # 
   fhir:title [ fhir:v "FHIR Implementation Guide Experiment 01"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2023-03-03T11:30:40+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-04-05"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Rob Eastwood (himself)"] ; # 
   fhir:contact ( [
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
@@ -546,22 +547,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1> ;
-         fhir:reference [ fhir:v "StructureDefinition/structuredefinition-meta-1" ]
+         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-ext-1> ;
+         fhir:reference [ fhir:v "StructureDefinition/structuredefinition-hl7au-csd-ext-1" ]
        ] ;
-       fhir:name [ fhir:v "StructureDefinition Meta" ] ;
-       fhir:description [ fhir:v "The purpose of this profile is to enforce conventions for profiles, in metadata and structure" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1> ;
-         fhir:reference [ fhir:v "StructureDefinition/structuredefinition-hl7au-csd-1" ]
-       ] ;
-       fhir:name [ fhir:v "HL7 AU CodeSystem Base" ] ;
-       fhir:description [ fhir:v "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure" ]
+       fhir:name [ fhir:v "HL7 AU CodeSystem AU Extended" ] ;
+       fhir:description [ fhir:v "The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia." ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -579,11 +569,22 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-ext-1> ;
-         fhir:reference [ fhir:v "StructureDefinition/structuredefinition-hl7au-csd-ext-1" ]
+         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-meta-1> ;
+         fhir:reference [ fhir:v "StructureDefinition/structuredefinition-meta-1" ]
        ] ;
-       fhir:name [ fhir:v "HL7 AU CodeSystem AU Extended" ] ;
-       fhir:description [ fhir:v "The purpose of this profile is to enforce metadata and structure conventions for CodeSystems that have been extended for use in Australia." ]
+       fhir:name [ fhir:v "StructureDefinition Meta" ] ;
+       fhir:description [ fhir:v "The purpose of this profile is to enforce conventions for profiles, in metadata and structure" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://about.me/robeastwood/fhir/ig/StructureDefinition/structuredefinition-hl7au-csd-1> ;
+         fhir:reference [ fhir:v "StructureDefinition/structuredefinition-hl7au-csd-1" ]
+       ] ;
+       fhir:name [ fhir:v "HL7 AU CodeSystem Base" ] ;
+       fhir:description [ fhir:v "The purpose of this profile is to enforce conventions for CodeSystems, in metadata and structure" ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
