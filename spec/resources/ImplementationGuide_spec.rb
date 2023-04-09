@@ -13,7 +13,7 @@ describe "ImplementationGuide resource" do
         expect(@file).to have_root_element("ImplementationGuide")
     end
 
-    context 'metadata:' do
+    context '1) metadata:' do
 
         context 'ImplementationGuide.id' do
             it "has value 'fhir.ig.experiment.01'" do
@@ -76,29 +76,29 @@ describe "ImplementationGuide resource" do
             end
         end
 
-        context "contact" do
+        context "ImplementationGuide.contact" do
             it "is present once" do
                 expect(@file).to have_one_of_node("ImplementationGuide.contact")
             end
-            it "contact.name is not present" do
+            it ".name is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.contact.name")
             end
-            it "contact.telecom is present once" do
+            it ".telecom is present once" do
                 expect(@file).to have_one_of_node("ImplementationGuide.contact.telecom")
             end
-            it "* contact.telecom.system has value 'url'" do
+            it ".telecom.system has value 'url'" do
                 expect(@file).to have_element_with_value("ImplementationGuide.contact.telecom.system", "url")
             end
-            it "* contact.telecom.value has value 'https://github.com/robeastwood-agency'" do
+            it ".telecom.value has value 'https://github.com/robeastwood-agency'" do
                 expect(@file).to have_element_with_value("ImplementationGuide.contact.telecom.value", "https://github.com/robeastwood-agency")
             end
-            it "contact.telecom.use is not present" do
+            it ".telecom.use is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.contact.telecom.use")
             end
-            it "contact.telecom.rank is not present" do
+            it ".telecom.rank is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.contact.telecom.rank")
             end
-            it "contact.telecom.period is not present" do
+            it ".telecom.period is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.contact.telecom.period")
             end
         end
@@ -115,26 +115,26 @@ describe "ImplementationGuide resource" do
             end
         end
 
-        context "jurisdiction" do
+        context "ImplementationGuide.jurisdiction" do
             it "is present once" do
                 expect(@file).to have_one_of_node("ImplementationGuide.jurisdiction")
             end
-            it "jurisdiction.coding is present once" do
+            it ".coding is present once" do
                 expect(@file).to have_one_of_node("ImplementationGuide.jurisdiction.coding")
             end
-            it "jurisdiction.coding.system has value 'urn:iso:std:iso:3166'" do
+            it ".coding.system has value 'urn:iso:std:iso:3166'" do
                 expect(@file).to have_element_with_value("ImplementationGuide.jurisdiction.coding.system","urn:iso:std:iso:3166")
             end
-            it "jurisdiction.coding.version is not present" do
+            it ".coding.version is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.jurisdiction.coding.version")
             end
-            it "jurisdiction.coding.code has value 'AU'" do
+            it ".coding.code has value 'AU'" do
                 expect(@file).to have_element_with_value("ImplementationGuide.jurisdiction.coding.code","AU")
             end
-            it "jurisdiction.coding.display is not present" do
+            it ".coding.display is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.jurisdiction.coding.display")
             end
-            it "jurisdiction.coding.userSelected is not present" do
+            it ".coding.userSelected is not present" do
                 expect(@file).not_to have_element("ImplementationGuide.jurisdiction.coding.userSelected")
             end
         end
@@ -189,30 +189,93 @@ describe "ImplementationGuide resource" do
 
     end
 
-    context 'definition.grouping' do
-      
-        it "is not present" do
-            expect(@file).not_to have_element("ImplementationGuide.definition.grouping")
+    context '2) grouping' do
+    
+        context 'definition.grouping' do      
+            it "is not present" do
+                expect(@file).not_to have_element("ImplementationGuide.definition.grouping")
+            end
+        end
+    end
+
+    context '3) resources:' do
+        context 'definition.resource' do
+            it "is something..."
+        end
+    end
+
+    context '4) pages:' do
+
+        context 'ImplementationGuide.definition.page.nameUrl' do
+            it "has value 'toc.html'" do
+                expect(@file).to have_element_with_value("ImplementationGuide.definition.page.nameUrl", "toc.html")
+            end
+        end
+
+        context 'ImplementationGuide.definition.page.title' do
+            it "has value 'Table of Contents'" do
+                expect(@file).to have_element_with_value("ImplementationGuide.definition.page.title", "Table of Contents")
+            end
+        end
+
+        context 'ImplementationGuide.definition.page.generation' do
+            it "has value 'html'" do
+                expect(@file).to have_element_with_value("ImplementationGuide.definition.page.generation", "html")
+            end
         end
 
     end
 
-    context 'definition.resource' do
-      
-        it "is something..." 
+    context '5) parameters:' do
+
+        context "parameter: 'copyrightyear'" do
+            it "is present with value '2020+'" do
+                param_code = "copyrightyear"
+                param_value = "2020+"
+                expect(@file).to have_parameter_with_code_and_value(param_code,param_value)
+            end
+        end
+
+        context "parameter: 'releaselabel'" do
+            it "is present with value 'CI Build'" do
+                param_code = "releaselabel"
+                param_value = "CI Build"
+                expect(@file).to have_parameter_with_code_and_value(param_code,param_value)
+            end
+        end
+
+        context "parameter: 'path-resource'" do
+            it "is present with value 'input/resources'" do
+                param_code = "path-resource"
+                param_value = "input/resources"
+                expect(@file).to have_parameter_with_code_and_value(param_code,param_value)
+            end
+        end
+
+        context "parameter: 'path-resource'" do
+            it "is present with value 'input/resources/StructureDefinition/'" do
+                param_code = "path-resource"
+                param_value = "input/resources/StructureDefinition/"
+                expect(@file).to have_parameter_with_code_and_value(param_code,param_value)
+            end
+        end
+
+        context "parameter: 'excludettl'" do
+            it "is present with value 'true'" do
+                param_code = "excludettl"
+                param_value = "true"
+                expect(@file).to have_parameter_with_code_and_value(param_code,param_value)
+            end
+        end
+
+        context "parameter: 'excludemap'" do
+            it "is present with value 'true'" do
+                param_code = "excludemap"
+                param_value = "true"
+                expect(@file).to have_parameter_with_code_and_value(param_code,param_value)
+            end
+        end
 
     end
 
-    context 'definition.page' do
-      
-        it "is something..." 
-        
-    end
-
-    context 'definition.parameter' do
-      
-        it "is something..." 
-        
-    end
-
-end
+end 

@@ -1,5 +1,7 @@
 
 class NodeNotPresentError < StandardError; end
+class NodesetNotPresentError < StandardError; end
+class ParameterValueNotPresentError < StandardError; end
 
 RSpec::Matchers.define :exist do |file|
 
@@ -185,5 +187,104 @@ RSpec::Matchers.define :have_element do |element_name|
     failure_message do |source|
       print_failure_message(@error_msg)
     end
+
+end
+
+# This matcher determines if the ImplementationGuide resource has a specific parameter with code & value
+RSpec::Matchers.define :have_parameter_with_code_and_value do |param_code, param_value|
+
+  include MatcherHelpers
+
+  def pp(text)
+    Kernel.puts "start===================================="
+    Kernel.puts text
+    Kernel.puts "end===================================="
+  end
+
+  match do |source|
+
+    begin
+
+    # ImplementationGuide resource under test
+    @testfile_name = source
+    # Kernel.puts @testfile_name
+
+    # expected parameter code
+    @param_code = param_code
+    # pp(@param_code)
+
+    # expected parameter value
+    @param_value = param_value
+    # pp(@param_value)
+
+    # get nodeset of all parameter nodes
+    doc = get_nokogiri_doc(@testfile_name)
+    nodeset_all_params = doc.xpath("//parameter")
+    # pp(nodeset_all_params)
+
+    # collect the parameter with the expected code
+    # nodeset_target_param_code = nodeset_all_params.at_xpath("./code[@value='#{param_code}']")        # 'at_xpath' returns Nokogiri::XML::Element
+    nodeset_target_param_code = nodeset_all_params.xpath(".//code[@value='#{param_code}']")             # 'xpath' returns Nokogiri::XML::NodeSet
+    # pp(nodeset_target_param_code)
+
+    # check if the parameter with the expected code is present, and how many times
+    if nodeset_target_param_code.size == 0
+        # Kernel.puts "Parameter for #{@param_code}: NOT found"
+        raise(NodesetNotPresentError)
+
+    elsif nodeset_target_param_code.size == 1
+        # Kernel.puts "Parameter for #{@param_code}: a single node found"
+        value_present = nodeset_target_param_code.at_xpath("//value[@value='#{param_value}']")
+
+        if value_present.nil?
+            raise(ParameterValueNotPresentError)
+        else
+            expect(value_present).to be_a(Nokogiri::XML::Element)
+        end
+
+    elsif nodeset_target_param_code.size > 1
+        # Kernel.puts "Parameter for #{@param_code}: a multiple (#{nodeset_target_param_code.size}) nodes found"
+
+        search_results = []
+
+        nodeset_target_param_code.each do |node|
+
+            value_present = node.parent.at_xpath("value[@value='#{param_value}']")
+            # Kernel.puts "value_present: #{value_present}"
+
+            if value_present.nil?
+                # Kernel.puts "nil"
+            else
+              search_results << "yes"
+            #     expect(value_present).to be_a(Nokogiri::XML::Element)
+            end
+
+        end
+
+        # pp(search_results)
+
+        if search_results.empty?
+          raise(ParameterValueNotPresentError)
+        else
+          expect(search_results).to include("yes")
+        end
+
+    end
+
+    rescue NodesetNotPresentError
+      @error_msg = "Parameter with code '#{@param_code}' is not present"
+      false
+      
+    rescue ParameterValueNotPresentError
+      @error_msg = "Parameter with code '#{@param_code}' is present, but does not have expected value: '#{param_value}'"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
 
 end
