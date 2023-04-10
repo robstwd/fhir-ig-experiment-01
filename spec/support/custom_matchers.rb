@@ -3,6 +3,11 @@ class NodeNotPresentError < StandardError; end
 class NodesetNotPresentError < StandardError; end
 class ParameterValueNotPresentError < StandardError; end
 
+SEMVER_PATTERN = %r{^([0-9]{1,2})[.]([0-9]{1}|[1-9]{1}[0-9]{1})[.]([0-9]{1}|[1-9]{1}[0-9]{1})$}
+# https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
+SEMVER_PATTERN_OFFICIAL = %r{^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$}
+
+
 RSpec::Matchers.define :exist do |file|
 
   include MatcherHelpers
@@ -277,6 +282,59 @@ RSpec::Matchers.define :have_parameter_with_code_and_value do |param_code, param
       
     rescue ParameterValueNotPresentError
       @error_msg = "Parameter with code '#{@param_code}' is present, but does not have expected value: '#{param_value}'"
+      false
+      
+    end
+
+  end
+
+  failure_message do |source|
+    print_failure_message(@error_msg)
+  end
+
+end
+
+
+# This matcher determines if the value of a supplied element matches Semantic Versioning rules
+# Used for the values of ImplementationGuide.version or StructureDefinition.version
+# https://semver.org/
+RSpec::Matchers.define :have_element_with_value_matching_semver_rules do |element_name|
+
+  include MatcherHelpers
+
+  match do |source|
+
+    begin
+
+    # file under test
+    @testfile_name = source
+    # Kernel.puts @testfile_name
+
+    # element being examined
+    @element_name = element_name
+    # Kernel.puts @element_name
+
+    # get xml value in nodeset
+    nodeset = get_nodeset_testfile(@testfile_name,@element_name)
+    # Kernel.puts nodeset.length, nodeset.empty?, nodeset.class
+
+    # check first if element is actually present
+    if nodeset.empty?
+      raise(NodeNotPresentError)
+    else
+
+      # get the value
+      @actual_value = nodeset.xpath("@value").to_s
+      # Kernel.puts @actual_value
+
+      @error_msg = "The value of element: #{@element_name} does not conform to SemVer rules\n" \
+      " - instead found:      '#{@actual_value}'"
+
+      expect(@actual_value).to match(SEMVER_PATTERN_OFFICIAL)
+    end
+      
+    rescue NodeNotPresentError
+      @error_msg = "Element '#{@element_name}' not present"
       false
       
     end

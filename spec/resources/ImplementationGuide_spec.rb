@@ -34,10 +34,12 @@ describe "ImplementationGuide resource" do
         end
 
         context 'ImplementationGuide.version' do
-            it "has value '0.0.1'" do
-                expect(@file).to have_element_with_value("ImplementationGuide.version", "0.0.1")
+            # it "has value '0.0.1'" do
+            #     expect(@file).to have_element_with_value("ImplementationGuide.version", "0.0.1")
+            # end
+            it 'conforms to SemVer rules' do
+                expect(@file).to have_element_with_value_matching_semver_rules("ImplementationGuide.version")
             end
-            it 'conforms to SemVer rules'
         end
 
         context 'ImplementationGuide.name' do        
